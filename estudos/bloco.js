@@ -1,14 +1,14 @@
 {
-    console.log('lula ladrão do caralhoooooo');
-    console.log('lula ladrão do caralhoooooo');
-    console.log('lula ladrão do caralhoooooo');
-    console.log('lula ladrão do caralhoooooo');
+    console.log('oi');
+    console.log('oi');
+    console.log('oi');
+    console.log('oi');
 }
 
 {
-    console.log('lula ladrão do caralhoooooo');
-    console.log('lula ladrão do caralhoooooo');
-    console.log('lula ladrão do caralhoooooo');
+    console.log('oi');
+    console.log('oi');
+    console.log('oi');
 }
 
 {
