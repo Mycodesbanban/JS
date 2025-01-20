@@ -52,4 +52,7 @@ while (opcao != -1) {
     opcao= inteiroaleatorio ( -1, 10)
     console.log(`Opção escolhida foi ${opcao}`)
 }
-console.log('Até a proxima!')
+ console.log('Até a proxima')
+
+// Conclusão
+// O loop while é uma ferramenta poderosa em JavaScript para executar um bloco de código repetidamente enquanto uma condição for verdadeira. É importante garantir que a condição eventualmente se torne falsa para evitar loops infinito
