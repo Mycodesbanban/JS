@@ -65,3 +65,7 @@ let opcao=0
     console.log(`Opção escolhida foi ${opcao}`)
 } while (opcao != -1)
 console.log('Até a proxima!')
+
+// conclusão
+
+// O loop do...while é uma estrutura útil em JavaScript quando você precisa garantir que um bloco de código seja executado pelo menos uma vez, independentemente da condição 

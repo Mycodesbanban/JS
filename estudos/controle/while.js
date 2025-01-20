@@ -17,12 +17,12 @@
 
 // Exemplo Simples
 
-let contador = 1;
+// let contador = 1;
 
-while (contador <= 5) {
-    console.log(contador);
-    contador++; // Incrementa o contador
-}
+// while (contador <= 5) {
+//     console.log(contador);
+//     contador++; // Incrementa o contador
+// }
 // resultado
 1
 2
@@ -34,11 +34,11 @@ while (contador <= 5) {
 // Considerações Importantes
 
 // Condição de Saída: É crucial que a condição eventualmente se torne falsa; caso contrário, você criará um loop infinito, que pode travar o navegador ou o ambiente de execução.
-let i = 0;
-while (i < 5) {
-    console.log(i);
-    // i++; // Se você comentar esta linha, o loop se tornará infinito
-}
+ let i = 0;
+     while (i < 5) {
+     console.log(i);
+    i++; // Se você comentar esta linha, o loop se tornará infinito
+ }
 // Incremento/Decremento: Certifique-se de que a variável que controla a condição (neste caso, contador ou i) seja alterada dentro do loop para evitar loops infinitos.
 
 // 
@@ -49,7 +49,7 @@ function inteiroaleatorio(min, max){
 }
 let opcao=0
 while (opcao != -1) {
-    opcao= inteiroaleatorio ( -1, 10)
+    opcao= inteiroaleatorio ( -1, 100)
     console.log(`Opção escolhida foi ${opcao}`)
 }
  console.log('Até a proxima')
