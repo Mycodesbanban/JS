@@ -50,7 +50,7 @@ function area ( largura , altura){
         return area
     }
 }
-console.log(area(2 , 2 ))
+console.log(area(2 , 2 ))  
 console.log(area(2))
 console.log(area(20, 8 ))
 
