@@ -1,5 +1,4 @@
-function clasificar_triangulo(lado1 , lado2 , lado3){
-    if ( lado1 = 2){
-        
-    }
+for ( let i = 0; i< 51; i++ ){
+    console.log(i)
 }
+
