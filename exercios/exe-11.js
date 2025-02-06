@@ -7,24 +7,24 @@
 // seja, que evite a reprovação do aluno. No caso de a nota ser 38, o arredondamento é possível pois atingirá 40 
 // e o aluno será aprovado.
 
-function sistemanotas(notas){
-    let notaCorrigida= arredondamento(notas)
-    if(notaCorrigida >=40){
-        
-        return console.log(`Meus parabens você passou! ${notaCorrigida}`)
-    } else {
-        console.log("Reprovado")
- 
-        
-    } 
-}
-function arredondamento (notas){
-    if (notas % 5 > 2){
-        return notas  + (5-(5 % notas))
-    } else{
 
+function sistema (nota){
+    let notascorrigidas=arrendodamento(nota)
+    if ( notascorrigidas >=40){
+        console.log("Aprovado")
+    }
+    else{
+        console.log("Reprovado")
     }
 }
-sistemanotas(100)
-sistemanotas(40)
-sistemanotas(20)
+
+function arrendodamento(nota){
+    if (nota % 5 > 2){
+        return nota + (5-(nota % 5))
+    } else{
+        return nota 
+    }
+}
+sistema(100)
+sistema(38)
+sistema(20)
