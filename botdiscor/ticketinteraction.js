@@ -1,72 +1,91 @@
-const{modalBuilder , TextInputBuilder , ActionRowBuilder , TextInputStyle , ChannelType , EmbedBuilder , buttonBuilder , ButtonStyle , PermissionsbitField}=require("discord.js")
-const ticket =require("../Shemas/ticketShema");
-const { createTranscript}= require("discord-html-transcripts");
+const { ModalBuilder, TextInputBuilder, ActionRowBuilder, TextInputStyle, ChannelType, EmbedBuilder, ButtonBuilder, ButtonStyle, PermissionsBitField } = require("discord.js");
+const ticket = require("../Schemas/ticketSchema");
+const { createTranscript } = require("discord-html-transcripts");
 
-module.exports={
-    name:"interactionCreate",
-    async execute(interaction , client){
-        if ( interaction.customId== "ticketCreateSelect"){
-            const modal= new modalBuilder()
-            .setTilte("Create yout ticket")
-            .setCustomId("ticketModal")
+module.exports = {
+    name: "interactionCreate",
+    async execute(interaction, client) {
+        if (interaction.customId == "ticketCreateSelect") {
+            const modal = new ModalBuilder()
+                .setTitle("Create your ticket")
+                .setCustomId("ticketModal");
 
             const why = new TextInputBuilder()
-            .setCustomId("Whyticket")
-            .setRequired(true)
-            .setPlaceHolder("what is reason for creating this ticket")
-            .setLabel("whay are your creating this ticket?")
-            .setStyle(TextInputStyle.Paragraph);
+                .setCustomId("whyTicket")
+                .setRequired(true)
+                .setPlaceholder("What is the reason for creating this ticket?")
+                .setLabel("Why are you creating this ticket?")
+                .setStyle(TextInputStyle.Paragraph);
 
-            const info=new TextInputBuilder()
-            .setCustomId("infoTicket")
-            .setRequired(false)
-            .setPlaceholder("Fell free to leave this blank")
-            .setLabel("Provide us with any additional information")
-            .setStyle(TextInputStyle.Paragraph);
+            const info = new TextInputBuilder()
+                .setCustomId("infoTicket")
+                .setRequired(false)
+                .setPlaceholder("Feel free to leave this blank")
+                .setLabel("Provide us with any additional information")
+                .setStyle(TextInputStyle.Paragraph);
 
-            const one = new ActionRowBuilder().addComponets(why)
-            const two = new ActionRowBuilder().addComponets(info)
+            const one = new ActionRowBuilder().addComponents(why);
+            const two = new ActionRowBuilder().addComponents(info);
 
-            modal.addComponets(one , two);
+            modal.addComponents(one, two);
             await interaction.showModal(modal);
 
-        }else if(interaction.customId=="ticketModal"){
+        } else if (interaction.customId == "ticketModal") {
             const user = interaction.user;
-            const data=await ticket.findOne({Guild:interaction.guild.id});
-            if(!data) return await interaction.reply({content:`Sorry! Looks like you found this message but the ticket system is not setup here` ,ephemeral:true})
-            else{
-                const why = interaction.fields.getTextInputValue("whayTicket");
-                const info=interaction.fields.getTextInputValue("InfoTicket");
-                const category = await interaction.guild.channels.cache.get(data.category)
+            const data = await ticket.findOne({ Guild: interaction.guild.id });
+            if (!data) return await interaction.reply({ content: `Sorry! Looks like the ticket system is not set up here`, ephemeral: true });
+            else {
+                const why = interaction.fields.getTextInputValue("whyTicket");
+                const info = interaction.fields.getTextInputValue("infoTicket");
+                const category = await interaction.guild.channels.cache.get(data.category);
 
-                const channel= await interaction.guld.channel.create({
-                    name:`ticket-${user.id}`,
+                const channel = await interaction.guild.channels.create({
+                    name: `ticket-${user.id}`,
                     type: ChannelType.GuildText,
-                    topic:`Ticket user:${user.username}; Ticket reason:${why}`,
+                    topic: `Ticket user:${user.username}; Ticket reason:${why}`,
                     parent: category,
-                    permissionOverWrites:[
+                    permissionOverwrites: [
                         {
-                            id:interaction.guild.id,
-                            deny:[PermissionsbitField.Flangs.ViewChannel]
-                            
+                            id: interaction.guild.id,
+                            deny: [PermissionsBitField.Flags.ViewChannel]
                         },
                         {
-                            id:interaction.user.id,
-                            allow:[PermissionsbitField.Flags.ViewChannel , PermissionsbitField.Flags.sendMessage,PermissionsbitField.Flags.ReadMessageHistory]
+                            id: interaction.user.id,
+                            allow: [PermissionsBitField.Flags.ViewChannel, PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.ReadMessageHistory]
                         }
                     ]
-                })
+                });
 
-                const embed=new EmbedBuilder()
-                .setColor("Blurple")
-                .setTilte(`Ticket from ${user.username}`)
-                .setDescription(`Opening Reason:${why}\n\nExtra Information:${info}`)
-                .setTimesTamp();
+                const embed = new EmbedBuilder()
+                    .setColor("Blurple")
+                    .setTitle(`Ticket from ${user.username}`)
+                    .setDescription(`Opening Reason: ${why}\n\nExtra Information: ${info}`)
+                    .setTimestamp();
 
+                const button = new ActionRowBuilder()
+                    .addComponents(
+                        new ButtonBuilder()
+                            .setCustomId("closeTicket")
+                            .setLabel("Close Ticket")
+                            .setStyle(ButtonStyle.Primary),
+                        new ButtonBuilder()
+                            .setCustomId("ticketTranscript")
+                            .setLabel("Transcript")
+                            .setStyle(ButtonStyle.Primary)
+                    );
+
+                await channel.send({ embeds: [embed], components: [button] });
+                await interaction.reply({ content: `Your ticket has been opened in ${channel}`, ephemeral: true });
+            }
+
+        } else if (interaction.customId == "closeTicket") {
+            const channel = interaction.channel;
+            if (channel.name.startsWith("ticket-")) {
+                await channel.delete();
+                await interaction.reply({ content: "Your ticket has been closed.", ephemeral: true });
+            } else {
+                await interaction.reply({ content: "This is not a valid ticket channel.", ephemeral: true });
             }
         }
-        
     }
-
-    
-}
+};
