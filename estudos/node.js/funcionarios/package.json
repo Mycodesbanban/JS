@@ -1,0 +1,17 @@
+{
+  "name": "funcionarios",
+  "version": "1.0.0",
+  "description": "Mysons",
+  "main": "outro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "272282"
+  ],
+  "author": "Maydosn d is hell ]",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "1.8.2"
+  }
+}
