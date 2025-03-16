@@ -27,9 +27,17 @@ function getProdutos() {
     return Object.values(produtos); // Retorna um array contendo todos os produtos
 }
 
+function excluirProdutos() { 
+    const produto= produtos[id]
+   delete produtos[id]
+   return produto
+}
+
+
 // Exporta as funções para que possam ser usadas em outros arquivos
 module.exports = {
     salvarProduto,  
     getProduto,
-    getProdutos
+    getProdutos,
+    excluirProdutos
 };
