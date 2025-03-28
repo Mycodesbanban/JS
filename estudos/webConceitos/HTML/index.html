@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercios</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Exercios
+        </h1>
+    </header>
+    <nav>
+        <a href="exerceios/teste.html">001-teste</a> <br>
+        <a href="exerceios/temp.html">002-teste</a>
+    </nav>
+    <section id="conteudo">
+
+    </section>
+    <footer>
+        <br>
+        curso de web mordeno
+    </footer>
+    <script>
+      document.querySelectorAll("a").forEach((link) => {
+    link.onclick = function (e) { // ✅ Correto
+        e.preventDefault();
+        // console.log("Ação!!!!");
+        const conteudo = document.getElementById('conteudo')
+        fetch(link.href)
+        .then(resp => resp.text())
+        .then(html => conteudo.innerHTML = html)
+
+        };
+   });
+
+        //document.querySelector() retorna o primeiro Elemento dentro do documento que corresponde ao seletor CSS especificado, ou grupo de seletores CSS. Se nenhuma correspondência for encontrada, null é retornado.
+
+        // document.querySelectorAll():retorna um NodeList estático (não ao vivo) que representa uma lista dos elementos do documento que correspondem ao grupo de seletores especificado. 
+        //onclick:é um manipulador de eventos que permite executar uma função quando um elemento HTML é clicado.
+
+        // preventDefault():informa ao agente do usuário que, se o evento não for explicitamente tratado, sua ação padrão não deve ser tomada como normalmente seria.
+
+        // document.getElementByID():retorna um objeto Element que representa o elemento cuja propriedade id corresponde à string especificada. Como os IDs de elemento são obrigados a ser exclusivos se especificados, eles são uma maneira útil de acessar um elemento específico rapidamente.
+
+        //fetch(ajax):é uma API do JavaScript usada para fazer requisições HTTP assíncronas e obter dados de servidores, como APIs REST]
+
+        //.text(): é um método usado para converter a resposta de um fetch em texto bruto (string). Ele faz parte do objeto Response retornado pelo fetch().
+        
+        // innerHTML:A propriedade obtém ou define a marcação HTML ou XML contida dentro do elemento. 
+
+
+    </script>
+</body>
+</html>
