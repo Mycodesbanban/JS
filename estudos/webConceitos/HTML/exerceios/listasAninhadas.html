@@ -1,0 +1,50 @@
+<!--  -->
+<h1>Projetos</h1>
+<ul class="tree">
+  <li>
+      <span wr-folder>back-end</span>
+      <ul>
+          <li> 
+              <span wr-folder>app</span>
+              <ul>
+                  <li>produto.js</li>
+                  <li>usuario.js</li>
+                  <li>venda.js</li>
+              </ul>
+          </li>
+          <li>
+             <span wr-folder>config</span> 
+              <ul>
+                  <li>banco.js</li>
+                  <li>rotas.js</li>
+                  <li>servidor.js</li>
+              </ul>
+          </li>
+      </ul>
+  </li>
+  <li> <span wr-folder>Front-end</span> 
+      <ul>
+          <li>
+             <span wr-folder>public</span>  
+              <ul>
+                  <li>app.css</li>
+                  <li>app.js</li>
+                  <li>index.html</li>
+              </ul>
+          </li>
+      </ul>
+  </li>
+</ul>
+<script>
+    document.querySelectorAll('[wr-folder]').forEach(folder=>{
+        folder.onclick=function(e){
+         const ul = folder.nextElementSibling
+        const d = ul.style.display
+        ul.style.display = d === "none" ? "block" :"none" // dizer se o displa é none ou block
+        }
+    })
+  //nextElementSibling retorna o elemento que vem imediatamente após o especificado na lista de filhos de seu pai, ou null se o elemento especificado for o último da lista
+</script>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
