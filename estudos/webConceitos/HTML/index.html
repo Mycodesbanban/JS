@@ -23,6 +23,9 @@
         <a href="exerceios/texto02.html">004-teste</a><br>
         <a href="exerceios/listas.html">005-teste</a><br>
         <a href="exerceios/listasAninhadas.html">006-teste</a><br>
+        <a href="exerceios/links.html">007-teste</a><br>
+        <a href="exerceios/tarbelas.html">008-teste</a> <br>
+        <a href="./exerceios/form/form.html">009-teste</a>
 
     </nav>
     <section id="conteudo">
@@ -40,9 +43,14 @@
         const conteudo = document.getElementById('conteudo')
         fetch(link.href)
         .then(resp => resp.text())
-        .then(html => conteudo.innerHTML = html)
+        .then(html => conteudo.appendChild(document.createRange().createContextualFragment(html)))
 
         };
+        //O método Range.createContextualFragment() retorna um DocumentFragment invocando o algoritmo de análise de fragmento HTML ou o algoritmo de análise de fragmento XML com o início do intervalo (o pai do nó selecionado) como o nó de contexto. O algoritmo de análise de fragmento HTML é usado se o intervalo pertence a um Documento cujo bit HTML está definido. No caso HTML, se o nó de contexto fosse html, por razões históricas, o algoritmo de análise de fragmento é invocado com body como o contexto. 
+
+        // O método appendChild() da interface Node adiciona um nó ao final da lista de filhos de um nó pai especificado.
+
+        //the Document.createRange() method returns a new Range object.
    });
 
     </script>
