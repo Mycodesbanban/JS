@@ -1,5 +1,43 @@
 <h1>Formularios</h1>
-<form action="http://localhost:3003/usuarios" method="post">
-    <input type="text" name="nome">
-    <button>Incluir</button>
+<form method="post">
+    <input type="hidden" name="nome">
+    <input type="password" name="Senha:" >
+    <textarea name="bio" id="" cols="30" rows="30"></textarea> 
+    <!-- textarea:Um controle de entrada de texto de várias linhas -->
+     <div>
+        <input type="radio" name="tipo" value="Admin"> Admin
+        <input type="radio" name="tipo" value="Regular"> Regular
+        <input type="radio" name="tipo" value="Professor"> Professor
+        <!-- Botões de rádio permitem que um usuário selecione apenas uma de um número limitado de opções: 
+ -->
+     </div>
+     <div>
+        <input type="checkbox" name="ativo">Ativo
+     </div>
+     <select name="Estado" id="">
+        <option value="Bahia"> Bahia</option>
+        <option value="Goias">Goias</option>
+        <option value="Guanambi">Guanambi</option>
+        <option value="São paulo">São paulo</option>
+        <option value="Feira de santanda">Feira de santada </option>
+        <option value="Catarina">Catarina</option>
+        <option value="Azul">Azul</option>
+     </select>
+     <!-- <select> é usado para criar uma lista suspensa.-->
+    <!-- option: opções do select -->
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 </form>
+<style>
+    input , textarea
+    , select{
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type=radio]{
+        display: inline;
+    }
+    input[type=checkbox]{
+        display: inline;
+    }
+</style>

@@ -9,4 +9,9 @@ app.post('/usuarios' , (req , resp)=>{
     resp.send('Parabens')
 })
 
+app.post('/usuarios/:id' , (req , resp)=>{
+    console.log(req.body)
+    resp.send('Parabens alterado d')
+})
+
 app.listen(3003)
