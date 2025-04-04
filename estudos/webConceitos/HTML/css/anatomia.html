@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+    .selector{
+        color: #ffffff;;
+        font-size: 30px;
+        text-align: center;
+        /* Multiplos valores */
+        border: solid 5px black; 
+        font-family: Arial, Helvetica, sans-serif;
+        /* funções */
+        width: calc(100% - 100px); /* no caso estamos dizendo que queremos que nosso selector tenha 100% - 100px , 
+        /* calculando largurar  */
+        background-color: rgb(14, 164 , 239);
+    }
+    /* Usando uma pseudo-classe */
+    .selector:hover{
+        /* quando o mouse do usario passar por cima desse elemento */
+        background-color: orangered;
+    }
+    /* usando um pseudo-elemento */
+    .selector::first-letter{
+        font-size: 78px;
+        font-weight: bold;
+    }
+    /* Selecione e estilize a primeira letra de cada elemento */
+    /* padrão de nomeclatura */
+    </style>
+</head>
+
+<body>
+    <div class="selector">Conteúdo</div>
+</body>
+
+</html>

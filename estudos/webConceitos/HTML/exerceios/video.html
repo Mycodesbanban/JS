@@ -1,0 +1,48 @@
+<video id="meuvideo" width="500" controls autoplay controlsList="nodowload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu browser não suporta a tag de video
+</video>
+<div wm-progresso="meuvideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuvideo">Play</button>
+    <button wm-pause="meuvideo">Pause</button>
+</div>
+<style>
+    .progresso{
+        height: 20px;
+        width: 500px;
+        border:solid 1px #444;
+        margin: 20px;
+    }
+    .progresso > div{
+        background-color: mediumspringgreen;
+        color: oldlace;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+<script>
+    function configurarVideo(id){
+      const video = document.getElementById(id)
+      video.oncontextmenu=() => false
+      //.oncontextmenu:usuário clica com o botão direito, o evento contextmenu é acionado , Pode ser usado para personalizar o menu de contexto ou até mesmo bloquear o clique direito
+
+      document.querySelector(` [wm-play = ${id}]`).onclick=e => video.play()
+      document.querySelector(`[wm-pause = ${id}]`).onclick= e => video.pause()
+
+      setInterval(()=>{
+        const percentual=(video.currentTime / video.duration) * 100
+        const valorDiv=document.querySelector(`[wm-progresso=${id}] > div`)
+        valorDiv.style.width =`${percentual}%`
+        valorDiv.innerHTML=`${percentual.toFixed(1)}%`
+        //currentTime:especifica o tempo de reprodução atual em segundos.
+        //duration: é usada para obter a duração total de um elemento de áudio ou vídeo em segundos.
+      } , 500)
+    }
+    configurarVideo("meuvideo")
+</script>
