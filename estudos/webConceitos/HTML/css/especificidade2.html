@@ -6,11 +6,38 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://specificity.keegan.st/ */
+        /*  
+        Lugares de melhores Especificidade
+        1.inline
+        2.ids
+        3.class , pseudo-classe , atributo
+        4. Elemento , pseudo-elementos
+        */
+        body{
+            font-size: 60px;
+        }
+        div{
+            background-color: blue;
+            color: white;
+        }
+        div[wm-cor]{
+            background-color: orange;
+        }
+        div:hover{
+            background-image: linear-gradient(to right , red , blue);
+        }
+        div.estilo{
+            background-color:green ;
+        }
+        #unico1 , #unico2{
+            background-color: rgb(47, 112, 90);
+        }
+
     </style>
 </head>
 
 <body>
-    <div id="unico1" class="estilo">
+    <div id="unico1" class="estilo" style="background-color: red;">
         #unico1 vs .estilo vs inline
     </div>
     <div id="unico2" class="estilo">#unico2 vs .estilo</div>

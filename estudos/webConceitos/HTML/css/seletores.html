@@ -6,7 +6,82 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+         /* seletor universal */
+        *{
+            color: yellow;
+            background-color: palevioletred;
+        }
+        /*classe */
+        .tag{
+            color: palevioletred;
+            background-color: yellow;
+
+        }
+        /* id */
+        #aprovados{
+            color: yellow;
+            background-color: palevioletred;
+        }
+        /*pegando elementos */
+        #aninhado > div{
+            color: yellow;
+            background-color: palevioletred; 
+            /*Seleciona todas as <div> que estão diretamente dentro de #aninhado, mas não seleciona netos, bisnetos, etc. */
+        }
+        /* acessando o section */
+        #aninhado  section{
+            color: yellow;
+            background-color: palevioletred; 
+            /* Seleciona todas as <section> dentro de #aninhado, independentemente de estarem diretamente dentro ou mais profundas. */
+
+        }
+        p + ul{
+            color: yellow;
+            background-color: palevioletred; 
+            /* Selecionar todo <ul> que vem logo após um <p> */
+        }
+        p ~ ul{
+            color: yellow;
+            background-color: palevioletred; 
+            /* Seleciona qualquer <ul> depois de <p> (mesmo que não seja direto)*/
+        }
+         /*Seletor de Atributo*/
+         [feira] {
+            background-color: purple;
+        }
+        /*Seletor de Atributo Específico*/
+        [feira=casa] {
+            color: yellow;
+        }
+         /*Seletor de Atributos Específicos e Compostos*/
+         [feira~=escritorio] {
+            color: gold;
+        }
+         /*Seletor de Atributo por 'Termos'*/
+         [feira*=presa] {
+            color: orangered;
+        }
+        /* Dentro da Section primeiro elemento | section nolabel*/
+         section > :nth-child(1) {
+            color: darkblue;
+            /* Seleciona o primeiro filho (qualquer tag) daquela <section>. */
+            
+        } 
+            /* Dentro da Section elementos ímpares | section nolabel*/
+            section> :nth-child(odd) {
+            color: darkblue;
+            /* seleciona os impares */
+        }
+         /*ol sem nolabel.. pares viram ímpares.. pq label =1*/
+             ol :nth-child(even) {
+            color: darkred;
+                /* seleciona os pares */
+        }
+        /*2o span da section*/
+        section>span:nth-of-type(2) {
+            background-color: rgb(204, 21, 158);
+            /* Aplica um fundo rosa forte (ou magenta escuro) ao segundo elemento <span> que é filho direto de um <section>. */
+        }
     </style>
 </head>
 

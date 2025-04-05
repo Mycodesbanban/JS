@@ -6,6 +6,29 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /* 
+        Em linhas gerais...
+
+            1.regras com !important:é utilizada na declaração do estilo substitui qualquer outra declaração feita no CSS, onde quer que esteja na lista de declaração. Contudo, !important não tem nada a ver com especificação.
+            2.seletores mais especificos:A especificação é baseada na forma de um seletor. No seguinte caso, o seletor contém os atributos no algoritmo de determinação de especificação, embora ele selecione um ID.
+            3.ultima regra processada (empate)
+         */
+         p{
+            background-color: #aaa;
+           
+         }
+         .observacao{
+            background-color: gray !important;
+            border:dashed 5px black;
+            padding: 20px;
+            font-size: 40px;
+          
+         }
+         p.observacao{
+            padding: 5px 60px;
+            background-image: linear-gradient(to right ,  red, yellow);
+         }
+
     </style>
 </head>
 
