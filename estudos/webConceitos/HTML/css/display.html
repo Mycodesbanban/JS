@@ -5,7 +5,39 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+    body{
+        font-size: 40px;
+        background-color: coral;
+        color:#fff;
+    }
+    ul{
+        padding: 0;
+
+    }
+    div{
+        background-color: skyblue;
+    }
+    span{
+        background-color: saddlebrown;
+    }
+    li{
+        background-color: rebeccapurple;
+    }
+    div , span , li{
+        width: 50%;
+        width: 200px;
+        height: 80px;
+        padding-top: 30px;
+        text-align: center;
+        /* displays */
+        display: block;
+        /* display block:O elemento gera uma caixa de elemento de bloco, gerando quebras de linha antes e depois do elemento quando no fluxo normal.*/
+        display: inline; 
+        /*display inline: fica na mesma linha os elementos */
+        display: inline-block;
+        /* display inline-block:O elemento gera uma caixa de elemento de bloco que fluirá com o conteúdo ao redor como se fosse uma única caixa em linha (comportando-se como um elemento substituído faria). */
+    }
+
     </style>
 </head>
 
