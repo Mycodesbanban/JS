@@ -6,15 +6,71 @@
     <title>Texto</title>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <style>
-        /* ... */
         * {
             margin: 0;
+        }
+        html{
+            font-size: 28px;
         }
 
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+        div{
+            font-size: 50px;
+        }
+        p{
+            /* valores padrões*/
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+            /* Unidades obsulutas*/
+            font-size: 100px; /* Tamanho do px é relativo */
+            font-size: 72pt; /* pontos */
+            font-size: 1in; /* polegada*/
+            /* Unidades relativa */
+            font-size: 2.2em; /*tamanho da fonte do elemento pai , multiplicado pelo o valor do pai*/
+            font-size: 2.2rem; /*  tamanho da fonte do elemento <html> , multiplicado pelo o valor do htmml*/
+            font-size: 50vh; /* altura view da view port */
+            font-size: 10vw; /* largura da view port */
+            /* fontes */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: monospace;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
+
+            font-weight: bold; /* espessura (ou negrito)*/
+            font-style: italic; /* define se a fomte vai ser normal , italica ou obliquia*/
+            text-transform: uppercase; /* define como o texto é exibido em termos de letras maiúsculas e minúsculas , suas propriedade são:
+             none (Não altera o texto) , uppercase(Converte tudo para MAIÚSCULAS) , lowercase(converte para minusculas ) e capotalize(Coloca a primeira letra de cada palavra em maiúscula) .*/
+            text-decoration: overline underline line-through; /* adicionar efeitos visuais ao texto, como:Sublinhado, Riscado ,Linha acima, Nenhuma decoração */
+            word-spacing:20px; /* define o espaçamento horizontal entre palavras em um texto.*/
+            letter-spacing: 20px; /*define o espaçamento entre as letras de um texto.*/
+            line-height: 2.5em; /* espaçamento vertical entre as linhas de texto.Basicamente: ele controla a altura da “linha imaginária” que envolve cada linha de texto.*/
+            text-align: left;
+            text-align: center;
+
+        }
+        .botao{
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius:25px ;
+        }
+        .destaque{
+            color: #fff;
+            background-color: tomato;
+            box-shadow: 2px  2px  1px  1px #000;
+        }
+        .destaque:hover{
+            background-color: #884242;
+        }
+        .destaque:active{ 
+            /* O :active é um pseudo-classe que representa o estado de um elemento no momento em que ele está sendo ativado pelo usuário. */
+            box-shadow: none; 
         }
     </style>
 </head>
