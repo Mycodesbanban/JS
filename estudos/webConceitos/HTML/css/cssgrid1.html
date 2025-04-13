@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <title>CSS Grid #01</title>
     <style>
-        /* https://caniuse.com/#feat=css-grid */
+       
+       
         
         html,
         body {
             margin: 20px;
             height: calc(100% - 40px);
             background-color: lightgray;
+
         }
         
         div {
@@ -21,6 +23,53 @@
             font-size: 30px;
             border: solid 5px dodgerblue;
             background: #fff;
+        }
+        body{
+            /*display:grid; transforma um contêiner em um grid bidimensional (com linhas e colunas) para organizar elementos com precisão e flexibilidade. */
+            display: grid;
+            /* grid-template-columns;quantas colunas a grid terá e qual será a largura de cada uma.Os valores são uma lista separada por espaços, onde cada valor especifica o tamanho da coluna respectiva. */
+            grid-template-columns:50% 50%; /* dive a coluna em duas colunas que ocupa 50% do espaço  */
+            /* repeat(): serve para repetir padrões de colunas (ou linhas), sem precisar escrever várias vezes. */
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /* vou ter 12 colunas(esse 4 vai multiplicar os 3: 8.33%) , cada uma ocupando 8.33% do tamanho/(12 divido por 100 = 8.33% para ocupa a tela toda)  */
+            grid-template-columns: repeat(4,8.33%); /* vai dividir em 3 colunas ( cada uma dessas colunas vai ter 4 elementos ) , é não vão ocupar o tamanho total da tela */
+            /* usando em px */
+            grid-template-columns: repeat(11 , 100px)100px; /* Repete o valor 100px 11 vezes (ou seja, cria 11 colunas de 100px) 100px depois do repeat	Adiciona mais 1 coluna com 100px, fora do repeat*/
+            /* minmax:define o tamanho mínimo e máximo que uma coluna ou linha pode ter dentro de um grid. */
+            grid-template-columns: repeat(11  minmax(100px 200px));
+            grid-template-columns: 200px 20% 1fr; /*Esse código define três colunas em um layout de grid, com tamanhos diferentes: primeira coluna (Sempre ocupará exatamente 200 pixels, independentemente do tamanho da tela.) segunda coluna(Ocupará 20% da largura total do elemento pai (container do grid)) terceira coluna(Vai ocupar o restante do espaço disponível.)*/
+            grid-template-columns: 3fr 6fr 3fr; /* 1ª3fr 25%  2ª6fr	50% 3ª3fr 25%*/
+            /* grid-template-rows: ; especifica o número (e as alturas) das linhas em um layout de grade.
+        Os valores são uma lista separada por espaços, onde cada valor especifica a altura da linha respectiva. */
+            grid-template-rows:50% 25% 12.5% 12.5% ; /*vai colocar 50% para a primeira linha , 25% para a segunda , 12.5% para a terceira e 12.5% tambem para a quarta*/
+            grid-template-rows: 100px 1fr; /*a primeira linha tera um tamanho de 100px de altura , a segunda linha ocupa todo o espaço restante disponivel no container e a terceira e a quarta ficam com o valor padrão (auto).*/
+            grid-template-rows: 100px auto; /* a primeira linha vai ter um valor de 100px é as outras vão dividir o valor por igual */  
+        }
+        .d8{
+            /* grid-column-start:  2 ;  define em qual linha da coluna o item começará */
+            grid-column-start:  2 ; /* começa na 2 */
+            /* grid-column-end:A propriedade define quantas colunas um item irá abranger, ou em qual linha de coluna o item irá terminar  */
+            grid-column-end:4 ; /* termina na 4*/
+            grid-column-end: span 2; /* Esse item deve ocupar 2 colunas do grid */
+            /*grid-row-start: A propriedade define em qual linha da linha o item começará. */
+            grid-row-start:3 ;
+            /* grid-row-end:define quantas linhas um item irá abranger, ou em qual linha de linha o item irá terminar */
+            grid-row-end: 5;
+            grid-row-end: span 2 ; /* abranger duas linhas */
+            /* grid-row é uma shorthand de grid-row-start , grid-row-end*/
+            grid-row: 1 2;
+
+        }
+        .d10 , .d11{
+            /* podem se sobrepor */
+            grid-column-start: 1;
+            grid-column-end:3 ;
+            grid-row-start:5 ;
+            grid-row-end:span 1 ;
+        }
+        .d10{
+            z-index: 10;
+            /*z-index especifica a ordem de empilhamento de um elemento.
+            Um elemento com maior ordem de empilhamento está sempre na frente de um elemento com uma ordem de empilhamento menor. */
         }
     </style>
 </head>

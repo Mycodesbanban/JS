@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+       document.getElementById("primeiro").classList.add("destaque")
+
+       const divs = document.getElementsByTagName("div")
+       Array.from(divs).forEach(e => e.classList.remove("destaque"))
+
+       const divsArray=[...divs]
+       divsArray.forEach(e => e.classList.add("destaque"))
+
+       const ultimosElementos = document.getElementsByClassName("ultimo")
+       for (let e of ultimosElementos){
+        e.classList.remove("destaque")
+       }
+    //  HTMLCollection é uma coleção semelhante a um array (lista) de elementos HTML.
+
+    // document.getElementById() da interface Document retorna um objeto Element que representa o elemento cuja propriedade id corresponde à string especificada. Como os IDs de elemento devem ser exclusivos se especificados, eles são uma maneira útil de acessar um elemento específico rapidamente.
+
+    // classList A propriedade retorna os nomes das classes CSS de um elemento
+
+    // .add() insere um novo elemento com um valor especificado neste conjunto, se não houver um elemento com o mesmo valor já neste conjunto.
+
+    //document.getElementsByTagName: O método getElementsByTagName() retorna uma coleção de todos os elementos com um nome de tag especificado.
+
+    //Array.from():retorna um array de qualquer objeto com uma propriedade de comprimento , ele tambem é ultilizado para transformar coisas que parecem arrays  (como HTMLCollection, NodeList, arguments, etc.) em arrays de verdade.
+
+    // .remove() remove um elemento especificado
+
+    // document.getElementsByClassName() retorna uma coleção de elementos com um nome de classe especificado , retorna o HTMLCollection.
+    </script>
+</body>
+</html>

@@ -20,6 +20,36 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+        body{
+            display: grid;
+            grid-template-columns:[inicio] 1fr
+            [metade-1 meio-1] 1fr
+            [metade-2 meio-2] 1fr [fim]; /* colocando nome para as linhas  */
+            grid-template-rows: repeat(3,1fr);
+            /*  column-gap especifica o espaço entre as colunas em layouts de grade, flexbox ou multicoluna. */
+            column-gap: 20px;
+            /* row-gap especifica o espaço entre as linhas em um layout flexbox ou grid. */
+            row-gap: 20px;
+            /* gap define o tamanho do espaço entre as linhas e entre as colunas em layouts flexbox, grid ou multicoluna. É uma abreviação para as seguintes propriedades: row-gap column-gap */
+            gap: 20px 30px; /* a ordem é a seguinte: row-gap e depois o column-gap */
+            gap:20px; /* quando temos esse seguinte valor , vai dar 10px para ambos */
+        }
+        .d1{
+            /* na pratica: */
+            grid-column-start:matade-2 ;
+            grid-column-end:fim ;
+            /* grid-column:é uma shorthand de grid-column-start e grid-column-end */
+            grid-column: meio-1 / fim; /* o / faz parte da sintaxe */
+            /* grid-row: é uma shorthand de grid-row-start e de grid-row-end */
+            grid-row: 1/ span2; /*  o / faz parte da sintaxe */
+            /*  grid-area especifica o tamanho e a localização de um item de grade em um layout de grade, e é uma propriedade abreviada para as seguintes propriedades:grid-row-start grid-column-start  grid-row-end  grid-column-end */
+            grid-area:1 / meio-1 / span 3 / fim ; /* A ordem é a seguinte:
+            primeiro o grid-row-start 
+            segundo o grid-column-start
+            terceito o grid-row-end 
+            quarto o grid-column-end*/
+            
+        }
     </style>
 </head>
 
