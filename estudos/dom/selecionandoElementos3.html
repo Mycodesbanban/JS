@@ -31,7 +31,19 @@
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+        console.log(document.forms) 
+        console.log(document.forms[0])// pega o primeiro index
+        console.log(document.getElementsByName("pesquisa"))
+        console.log(document.getElementsByTagName("form"))
+        console.log(document.pesquisa) // vai procurar o elemento que tem o nome pesquisa , é vai retorna para você
+        console.log(document.pesquisa.q) // ele entrou dentro do formulario pesquisa e pegou o input que tem o name q
+        document.pesquisa.q.value="Linux" // é possivel alterar o valor , acessando apartir dos nomes 
+        document.pesquisa.hl.value="en-us" // é possivel mudar o valor de um select
+        console.log(document.pesquisa.hl.selectedIndex) // vai dizer qual é o index que está selecionado a partir dessa consulta
+
+        //document.forms: retorna uma coleção de todos os elementos <form> em um documento , em forma de  HTMLCollection.
+        //document.getElementsByName():retorna uma coleção de elementos com um name especificado.
+        //document.getElementsByTagName():retorna uma coleção de todos os elementos com um nome de tag especificado.
     </script>
 </body>
 

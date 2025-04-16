@@ -22,7 +22,65 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        function log(){
+            console.log(this)
+        }
+        HTMLCollection.prototype.log= log
+        HTMLElement.prototype.log= log
+        NodeList.prototype.log=log
+        Node.prototype.log=log
+
+        const lista = document.querySelector("div ul")
+        lista.parentNode.log()
+        lista.childNodes.log()
+
+        const primeiro = lista.firstChild
+        primeiro.log()
+        primeiro.nextSibling.log()
+
+        const ultimo = lista.lastChild
+        ultimo.log()
+        ultimo.previousSibling.log()
+
+        lista.children.log()
+        lista.firstElementChild.log()
+        lista.lastElementChild.log()
+        lista.parentNode.previousElementSibling.log() 
+        lista.parentNode.nextElementSibling.log()
+
+        document.querySelectorAll("div ul li").log()
+
+        // nó: unidade básica de dados que armazena informações e permite criar estruturas complexas
+
+        //prototype:é uma propriedade automática que toda função em JavaScript tem.Ela é usada como modelo para criar novos objetos quando você usa o operador new
+
+        //HTMLElement:é a classe base de todos os elementos HTML do DOM.Ou seja, quando você usa document.querySelector() ou getElementById(), o que você recebe de volta é um objeto que é uma instância de HTMLElement (ou alguma subclasse dela, como HTMLDivElement, HTMLInputElement, etc).
+
+        //NodeList:  é uma lista (coleção) de nós extraídos de um documento.Um objeto NodeList é quase o mesmo que um objeto HTMLCollection.
+
+        //Node:Todo elemento HTML, texto, comentário, etc. no DOM é, no fundo, um Node
+
+        //.parentNode: A propriedade parentNode retorna o nó pai de um elemento ou nó. 
+
+        //childNodes:retorna uma coleção (lista) dos nós filhos de um elemento ,A propriedade childNodes retorna um objeto NodeList ,A propriedade childNodes é somente leitura.
+
+        // fristChild:retorna o primeiro nó filho de um nó.
+
+        // nextSibling: retorna o próximo nó no mesmo nível da árvore.
+
+        //.lastChild: retorna o último nó filho de um nó.
+
+        // previusSibling: retorna o nó anterior no mesmo nível da árvore.
+
+        // children: retorna uma coleção dos elementos filhos de um elemento.
+
+        // firstElementChild: retorna o primeiro elemento filho do elemento especificado.
+
+        // lastElementChild: retorna o último elemento filho de um elemento.
+
+        // previousElementSibling: retorna o elemento anterior no mesmo nível da árvore.
+
+        //nextElementSibling: retorna o próximo elemento no mesmo nível da árvore.
     </script>
 </body>
 

@@ -17,7 +17,23 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul".....')
+        console.log("childNodes" , lista.childNodes) // vai pegar os filhos
+        console.log("destino" , lista.destino) // vai ignorar / undefined
+        console.log("getAttribute" , lista.getAttribute("destino")) // vai pegar valores]
+         
+        console.log("hasAttribute" , lista.hasAttribute()) // retorna verdadeiro se o atributo existir, caso contrário, falso.
+        lista.setAttribute("destino" ,"empresa" ) // define um novo valor para um atributo
+        lista.setAttribute("status" , "aberto") // colocando mais atributo
+        lista.removeAttribute("destino") // removendo atributos
+        console.log(lista.dataset) // retorna um atributo personalizado
+        console.log(lista.dataset.urgencia) // retorna o valor dentro de urgencia
+        lista.dataset.urgencia=4 // alterando o valor apartir do dataset
+        console.log(lista.getAttribute("data-urgencia")) // acessando a apartir do getAttribute
+
+
+
     </script>
 </body>
 

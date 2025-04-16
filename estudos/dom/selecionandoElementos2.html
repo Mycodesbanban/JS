@@ -10,7 +10,26 @@
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
-        // ...
+        document.querySelector("#primeiro").classList.add("destaque") // esperar receber um seletor , ent e necessario especificar que é um id
+
+        const selecionar = seletor => document.querySelectorAll(seletor).forEach( e => e.classList.add("destaque"))
+        const deselecionar=seletor => document.querySelectorAll(seletor).forEach(e => e.classList.remove("destaque"))
+        selecionar("div") // selecionar div
+        deselecionar("*") // deselecionar todos os elementos
+        selecionar(".terceiro.ultimo") //selecionar essas class
+        deselecionar("*")
+        selecionar(":not(#primeiro)") // selecionar todos os elementos menos o id primeiro
+        deselecionar("*")
+        selecionar(":nth-child(1)")  // selecionar o primeiro filho
+        deselecionar("*")
+        selecionar("div:nth-of-type(1)") // selecionar o primeito type de filho div 
+        deselecionar("*")
+        selecionar("[wb-attrib]")  //  selecionar atributo
+
+        // document.querySelector() retorna o primeiro elemento que corresponde a um seletor CSS ,Se nenhuma correspondência for encontrada, null é retornado.
+        // querySelectorAll() retorna todos os elementos que correspondem a um ou mais seletores CSS.O método querySelectorAll() retorna um NodeList.
+        // :not() combina com qualquer elemento que NÃO seja o elemento/seletor especificado.
+        
     </script>
 </body>
 </html>
