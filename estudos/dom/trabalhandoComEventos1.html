@@ -9,9 +9,21 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <a href="https://google.com.br" id="Site">Google</a>
     </div>
     <script>
-        // ...
+        function navegarEm5s(e){
+            e.preventDefault()
+            console.log("saindo em 5 segundos")
+            setTimeout(() =>{
+                window.location.href= e.target.href // a página atual seja redirecionada para o link (href) de onde o evento aconteceu 
+
+
+            } , 5000)
+        }
+        const link = document.getElementById("Site")
+        link.onclick = navegarEm5s // espera 5 segundos para acessar o site
+
+        //.preventDefault: impedir o comportamento padrão de um evento no navegador.
     </script>
 </body>

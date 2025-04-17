@@ -12,7 +12,35 @@
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        const div = document.querySelector("div")
+        div.innerHTML= "Texto Alterado"
+        // div.outerHTML = "Texto Alterado"
+        div.insertAdjacentHTML('beforebegin', '<p>Antes do HTML</p>') //antes da div
+        div.insertAdjacentHTML("afterbegin" , "<h1> sdvbgasdvgavsdg </h1>") // depois do inicio 
+        div.insertAdjacentHTML("beforeend" ,"<p> Antes do fim" ) // antes do fim 
+        div.insertAdjacentHTML("afterend" , "<h1> Depois do fim da tag </h1>" ) // depois do fim da tag
+        div.insertAdjacentElement()
+        console.log(div.innerText)
+
+
+        // outerHTML: define ou retorna o elemento HTML, incluindo atributos, tag de início e tag de fechamento.
+
+        // .insertAdjacentHTML(): insere código HTML em uma posição especificada.
+
+         // "beforebegin" → antes do elemento (irmão anterior)
+
+         // "afterbegin" → dentro do elemento, no início
+
+        // "beforeend" → dentro do elemento, no final
+
+        // "afterend" → depois do elemento (irmão posterior)
+
+        // .insertAdjacentElement(): insere um elemento em uma posição especificada. 
+        // mesma posições que o insertAdjacentHTML
+
+        // innerText: vai retorna somente o texto da tag
+
+ 
     </script>
 </body>
 

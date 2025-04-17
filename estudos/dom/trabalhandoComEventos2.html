@@ -10,6 +10,22 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+      const item = document.querySelector("div")
+      item.style.position ="absolute" // posicionar de forma absoluta esse elemento
+
+      item.onmousemove = e =>{
+        item.style.cursor = "move" //  altera o estilo do cursor (ponteiro do mouse) quando ele passa por cima do elemento item , move vai trocar o simbolo do ponteiro (cursor).
+        if(e.buttons){
+            e.target.style.top=`${e.clientY - (item.clientHeight / 2 )}px` //  centraliza verticalmente
+            e.target.style.left= `${e.clientX - (item.clientWidth / 2)}px` // centraliza horizontalmente
+        }
+      }
+
+      //onmousemove: ponteiro do mouse se move sobre um elemento
+      // buttons: é uma propriedade do objeto de evento do mouse (MouseEvent) que indica quais botões do mouse estão sendo pressionados no momento do evento.
+      //clientHeight: t retorna a altura visível de um elemento em pixels, incluindo preenchimento, mas não a borda, barra de rolagem ou margem.
+      // clientY: retorna a coordenada vertical do cliente do ponteiro do mouse quando ocorre um evento de mouse.
+      // clientX: retorna a coordenada horizontal do cliente do ponteiro do mouse quando ocorre um evento de mouse.
+      //clientWidth: retorna a largura visível de um elemento em pixels, incluindo preenchimento, mas não a borda, barra de rolagem ou margem.
     </script>
 </body>
