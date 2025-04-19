@@ -45,7 +45,41 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        const items = document.querySelectorAll("[wm-dropzone] .item") // selecionar todos os item dentro do atributo wm-dropzone
+        items.forEach((item , index)=>{ // vai executando uma função para cada item.
+            item.draggable = true // ele vai ser arrastavel
+            item.id = item.id || `draggable-item-${index}`//Se o item já tiver um id, mantenha ele. Se não tiver, crie um id automático no formato draggable-item-0, draggable-item-1, etc 
+            item.ondragstart = e =>{  // atribuindo uma função para o envento ondragstart
+                e.dataTransfer.setData("item-id" , e.target.id) // gravar dados temporários
+            }
+        }) 
+        const dropzones = document.querySelectorAll("[wm-dropzone]")
+        dropzones.forEach(dropzone =>{ 
+            dropzone.ondragover=e=> e.preventDefault() //quando você arrastar um item sobre a dropzone, o navegador não deve bloquear esse comportamento.
+            dropzone.ondrop = function (e){ // 
+                const id = e.dataTransfer.getData("item-id") 
+                const item = document.getElementById(id) 
+                e.target.appendChild(item) //  adiciona o item dentro do elemento onde ocorreu o evento
+                dropzone.appendChild(item) // Adiciona na zona de drop correta
+            }
+        })
+
+        // draggable:especifica se um elemento é arrastável ou não
+
+        //ondragstart:ocorre quando o usuário começa a arrastar uma seleção.
+
+        // dataTranfer:Ele carrega dados de um elemento que está sendo arrastado, e permite transferir essas informações até o local onde o item será solto (drop)
+
+        //dataTransfer.setData(): É um método usado em eventos de arrastar e soltar (drag and drop). Ele armazena dados temporariamente durante o evento de arraste para que possam ser recuperados depois com getData().
+
+        // getData(): recupera os dados que foram armazenados com .setData() durante um evento de drag and drop (arrastar e soltar)
+
+        //ondragover: ocorre quando uma seleção arrastável é arrastada sobre um alvo.
+
+        //ondrop: O evento ocorre quando uma seleção arrastável é solta em um alvo.
+
+        //.target:representa o elemento exato que disparou o evento
+
     </script>
 </body>
 
