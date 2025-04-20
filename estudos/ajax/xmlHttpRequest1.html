@@ -11,6 +11,84 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        function ajax(config){
+         const xhr = new XMLHttpRequest()
+            xhr.open(config.metodo , config.url , true) // preparando uma requisição HTTP 
+            xhr.onload = e =>{
+                if(xhr.status === 200){ // verificando se a requisição deu certo
+                    config.sucesso(xhr.response) //chame a função sucesso definida em config e passe para ela a resposta do servidor."
+                } else if ( xhr.status >= 400){
+                    config.erro({ // não chame a função é passe a mensagem é o codigo de erro
+                        code:xhr.status , // codigo do erro
+                        text:xhr.statusText // Texto do erro
+                    })
+                }
+
+                
+            }
+            xhr.send()
+            function criaTabela(estados){
+                const linhas = estados.map(estado =>{
+                    const tdID = document.createElement("td") // cria uma cedula td para ID estado
+                    tdID.innerHTML = estado.id //  Preenche a célula com o ID do estado
+
+                    const tdNome = document.createElement("td") // cria  a celula td para o nome do estado
+                    tdNome.innerHTML = estado.nome // preenche a celula com o nome do estado
+
+                    const tdSigla = document.createElement("td") // cria a celula td para  a singla
+                    tdSigla.innerHTML = estado.sigla // preenche a celula com a sigla
+
+                    const tr = document.createElement("tr") // criando uma cedula tr
+
+                    tr.appendChild(tdID) // adiconando a tdID para o tr
+                    tr.appendChild(tdNome) //adiconando a tdNome para o tr
+                    tr.appendChild(tdSigla) // adicionando a tdSigla para o tr
+
+                    return tr // retornando o tr/ linha
+              })
+                const tabela = document.createElement("table") // criando uma cedula table 
+                linhas.forEach(linha => tabela.appendChild(linha)) // adicionando cada uma das linha que criamos 
+                document.body.appendChild(tabela) // adiconar uma tabela no corpo so site 
+
+
+            }
+            }
+        ajax({
+            url:"dados/estados.json",  // a url que vai ser chamanda 
+            metodo:"get",
+            sucesso (resposta){
+              const estados = JSON.parse(resposta) // converte a resposta (Texto json ) para um objeto JS 
+            criaTabela(estados)
+
+
+
+            },
+            erro(e){
+                const msg = document.createTextNode(`${e.code}: ${e.text}`)
+                document.body.appendChild(msg) //retorna uma mensagem de erro no body
+            }
+        })
+
+
+        // XMLHttpRequest():pode ser usado para trocar dados com um servidor web nos bastidores. Isso significa que é possível atualizar partes de uma página da web, sem recarregar a página inteira.
+
+        // o que é XMLHttpRequest: é um objeto do JavaScript usado para fazer requisições HTTP (como GET e POST) de forma assíncrona, ou seja, sem recarregar a página.
+
+        // open():inicializa uma requisição recém-criada, ou reinicializa uma existente / configura a requisição que você vai fazer. (XMLHttpResquest): a ordem é a seguinte (method , url , async)
+        
+        // onload: ocorre quando um objeto foi carregado , é usado com mais frequência dentro do elemento <body> para executar um script assim que uma página da web tiver carregado completamente todo o conteúdo (incluindo imagens, arquivos de script, arquivos CSS, etc.).
+        
+        //.status: é uma propriedade de um objeto de resposta HTTP  que retorna o código de status da requisição feita ao servidor.
+
+        // response:Resposta da requisição
+
+        //.statusText:é uma propriedade do objeto que retorna uma mensagem de texto associada ao código de status HTTP.
+
+        //.send(): envia a requisição ao servidor.
+
+        // document.createTextNode: cria um nó de texto
+
+
+   
     </script>
 </body>
