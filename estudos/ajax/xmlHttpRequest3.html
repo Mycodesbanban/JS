@@ -11,6 +11,57 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+      function ajax (config){
+        const xhr = new XMLHttpRequest() // cria um novo objeto XMLHttpResquest para O HTTP 
+        xhr.open(config.metodo , config.url , true)
+
+        xhr.onreadystatechange = e =>{ //Define o que deve acontecer sempre que o estado da requisição mudar
+            if(xhr.readyState===4){ //  Verifica se a requisição chegou ao estado 4 (concluída)
+              if(xhr.status ===200){ //Se o status da resposta for 200 (OK), chama a função de sucesso passando a resposta XML
+               config.sucesso(xhr.responseXML)
+              } else if(xhr.status >= 400){ // se for maior que 400 chama a função de erro
+                config.erro({
+                    code: xhr.status, // codigo de erro 
+                    Text: xhr.statusText // mensagem de erro
+                })
+
+              }
+            }
+        }
+        xhr.send() // envia a requisição para o servidor 
+      }
+
+      ajax({
+        url:"dados/estados.xml",
+        metodo:"get" , 
+        sucesso(resposta){
+            const estados = resposta.getElementsByTagName("estado") // Busca todos os elementos <estado> dentro do XML retornado
+            const itens = Array.from(estados).reduce( // converti essa const estados a um array de estados, chamei a função reduce que vai transforma esse array em um unico elemento no final , no caso vai ser uma string  
+                (html , estado)=> html + `<li>${estado.attributes.nome.value}</li>` , "" // está construindo uma string HTML com várias <li> (itens de lista), uma para cada estado.
+            )
+            document.body.insertAdjacentHTML("beforeend" , `<ul>${itens} </ul>`) // cria uma lista não relacional para todos os elementos do itens
+        } , 
+        erro(e){
+            const msg = document.createTextNode(`${e.code}: ${e.Text}`)
+            document.body.appendChild(msg) //retorna a mensagem de erro 
+        }
+      })
+
+      // onreadysatechange: Define uma função a ser chamada quando a propriedade readyState muda
+
+      //readyState: Contém o status do XMLHttpRequest. 0: pedido não inicializado 1: conexão com o servidor estabelecida 2: pedido recebido 3: processando o pedido 4: pedido finalizado e resposta pronta
+
+      //abort(): cancela o pedido atual
+
+      // getAllResponseHeaders(): Retorna informações do cabeçalho
+
+      //getResponseHeader():Retorna informações específicas do cabeçalho.
+
+      //setRequestHeader():Adiciona um par rótulo/valor ao cabeçalho a ser enviado
+
+      //.insertAdjacentHTML(): insere o código HTML em uma posição especificada
+
+    // responseXML: resposta no formato XML  
+
     </script>
 </body>
