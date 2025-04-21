@@ -22,6 +22,41 @@
     <div class="progresso"></div>
 
     <script>
-        // ...
+       function ajaxUpload(config){
+        const xhr = new XMLHttpRequest()
+        
+        if(xhr.upload){ // caso estiver presente 
+            xhr.upload.onprogress = e =>{  // monitora o envio do arquivo do cliente para o servidor
+                const atual = e.loaded // os bytes que foram enviados 
+                const total = e.total // tamanho total do arquivo
+                const percentual = Math.floor(atual / total *100) // calcular o percentual de 0 a 100
+                config.progresso ({atual , total , percentual}) // envia dados do progresso
+            }
+        }
+        
+        xhr.open("post" , config.url , true)
+        xhr.send(config.formData)
+       }
+       document.querySelector("input[type=file]").onchange = e =>{ // Quando o usuário selecionar um arquivo no input, este evento será disparado
+        const formData = new FormData()
+        formData.append(e.target.name , e.target.files[0]) //  Adiciona o primeiro arquivo selecionado no input
+        // e.target é o input
+        ajaxUpload({
+            url:"upload",
+            formData:formData,
+            progresso(dados){
+                const progresso = document.querySelector(".progresso")
+                progresso.innerHTML = JSON.stringify(dados) // Exibe os dados do progresso em formato JSON (bytes enviados, total, e percentual)
+
+            }
+        })
+       }
+
+
+       //onprogress: ocorre quando o navegador está baixando um áudio ou vídeo .
+
+       // formData():  fornece uma maneira fácil de construir um conjunto de pares chave/valor representando campos de um elemento form e seus valores, os quais podem ser facilmente enviados utilizado o método send() do XMLHttpRequest
+
+       // onchange:O evento onchange ocorre quando o valor de um elemento HTML é alterado.
     </script>
 </body>

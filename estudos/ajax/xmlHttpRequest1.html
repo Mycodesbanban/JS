@@ -13,13 +13,13 @@
     <script>
         function ajax(config){
          const xhr = new XMLHttpRequest()
-            xhr.open(config.metodo , config.url , true) // preparando uma requisição HTTP 
+            xhr.open(config.metodo,config.url , true) // preparando uma requisição HTTP 
             xhr.onload = e =>{
                 if(xhr.status === 200){ // verificando se a requisição deu certo
                     config.sucesso(xhr.response) //chame a função sucesso definida em config e passe para ela a resposta do servidor."
                 } else if ( xhr.status >= 400){
                     config.erro({ // não chame a função é passe a mensagem é o codigo de erro
-                        code:xhr.status , // codigo do erro
+                        code:xhr.status, // codigo do erro
                         text:xhr.statusText // Texto do erro
                     })
                 }
@@ -27,6 +27,9 @@
                 
             }
             xhr.send()
+
+            }
+            
             function criaTabela(estados){
                 const linhas = estados.map(estado =>{
                     const tdID = document.createElement("td") // cria uma cedula td para ID estado
@@ -50,8 +53,6 @@
                 linhas.forEach(linha => tabela.appendChild(linha)) // adicionando cada uma das linha que criamos 
                 document.body.appendChild(tabela) // adiconar uma tabela no corpo so site 
 
-
-            }
             }
         ajax({
             url:"dados/estados.json",  // a url que vai ser chamanda 
