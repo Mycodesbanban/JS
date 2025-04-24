@@ -11,6 +11,24 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        const url= "dados/estados.json"
+        fetch(url) // faz a requisição HTTP para pegar o conteúdo do arquivo
+        .then(resp => resp.json()) // Converte a resposta da requisição para um objeto JS
+        .then(estados =>{
+            const itens = estados.reduce(
+                (html , estado) => html + `<li>${estado.nome}</li>` , "" 
+                // para cada estado, adiciona um item <li> com o nome Valor inicial do acumulador é uma string vazia
+
+            )
+            // Insere a lista gerada no final do body da página
+            document.body.insertAdjacentHTML("beforeend" , `<ul> ${itens} </ul>`)
+        })
+        
+
+
+
+        // fetch:  permite que navegadores web façam requisições HTTP a servidores web. Não há mais necessidade de XMLHttpRequest , ele tambem retorna uma promise por isso usamos o then.
+
+
     </script>
 </body>

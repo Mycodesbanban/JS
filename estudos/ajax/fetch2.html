@@ -29,6 +29,42 @@
     </form>
     <div id="resultado"></div>
     <script>
-        // ...
+        document.usuarioForm.onsubmit = async e =>{ // quando o formulario for enviado execute a função assícrona 
+            e.preventDefault() // impede comportamento padrão dos navegadores 
+
+            const form = e.target // form recebe o elemento que disparou o evento
+            const data = new FormData(form) // cria um objeto FormData com os dados do formulario
+            data.append("ajax" , true) // adiciona um campo extra chamado ajax com o valor true
+            
+            const options = { 
+                method: form.method , // usando o metodo que definimos  
+                body: new URLSearchParams(data) // converteos dados para um formato URL-encoded 
+            }
+             fetch(form.action , options) // envia os dados para a URL definida em "action" do formulario
+             .then(resp => resp.json()) // converte para json 
+             .then(json => {
+                 const resultado = document.getElementById("resultado")  // pega a div com o id resultadd
+                 resultado.innerHTML = JSON.stringify(json) // exibe o Json como string
+             })
+              .catch(e =>{
+                 const resultado = document.getElementById("resultado"); // se der erro exibe a mensagem na tela 
+                 resultado.innerHTML = e
+             })
+             // usando de forma async / await
+            try { 
+                const resp = await fetch(form.action , options) // envia a requisição e espera pela a resposta 
+                const json = await resp.json() // converte a resposta json
+                const resultado = document.getElementById("resultado")
+                resultado.innerHTML = JSON.stringify(json) // exebi o resultado como texto Json 
+            } catch(e){
+                const resultado = document.getElementById("resultado") // caso der erro mostra o erro na tela 
+                resultado.innerHTML = e
+            }
+        }
+        // onsubmit: ocorre quando o formulário é enviado
+
+        // append:insere um conjunto de objetos Node ou strings após o último filho do Elemento
+
+        // URLSearchParams: define métodos utilitários para trabalhar com a string de consulta de uma URL.
     </script>
 </body>

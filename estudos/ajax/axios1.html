@@ -12,6 +12,14 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        const url = "dados/estados.json"
+        axios(url).then(resp => {
+            const itens = resp.data.reduce( // essa data já é um json convertido
+            (html ,estado) => html + `<li>${estado.nome} </li>` , "" // p
+            )
+            document.body.insertAdjacentHTML("beforeend" , `<ul>${itens}</ul>`)
+        })
+
+        // axios:  é uma biblioteca cliente HTTP baseada em Promises que roda no navegador e no Node.js.
     </script>
 </body>

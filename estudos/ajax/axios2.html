@@ -14,6 +14,21 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exebirResultado(id, dados){
+            const texto = JSON.stringify(dados) //converte os dados para uma string Json 
+            document.getElementById(id).innerHTML = texto // pegando os id e colocando no html e juntado com a const que acabamos de criar 
+        }
+        axios.get("parOuImpar" , { // definindo para o metodo get com a URL que queremos pegar 
+            params:{ // paramentros 
+                numero: 5
+            }
+        
+        }).then(resp => exebirResultado("get" , resp.data)) // pegando o id get , e os dados enviados ao servidor 
+
+        axios.post("formulario",{
+            // enviado dados para o corpo da requisição
+            nome:"PUTA" , 
+            sobrenome:"mah",
+        }).then(resp => exebirResultado("post" , resp.data)) // pegando o id post , e os dados enviados ao servidor
     </script>
 </body>

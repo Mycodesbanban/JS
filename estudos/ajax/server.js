@@ -35,6 +35,27 @@ app.post("/upload" , (req , res)=>{
     })
 })
 
+app.post("/formulario" ,(req , res) =>{ // define uma rota post para o caminho "/formulario"
+    // envia uma resposta em formato Json para o cliente
+    res.send({
+        // copia todos os dados recebidos no corpo da requisição
+        ...req.body,
+        // adiciona (ou sobreescreve) o campo "id" co o valor 1
+        id:1
+
+    })
+} )
+
+app.get("/parOuImpar", (req , res)=>{
+    const par = parseInt(req.query.numero) % 2===0
+    res.send({
+        resultado:par ? "par" : "impar" // caso for verdadeiro/par retorne a string par , caso for falso retorne a string impar 
+    })
+})
+//formas de recerber dados do front-end
+// req.body:envia dados para o sevidor 
+// req.query: pega os parametros passado na url
+//req.params:parâmetros da rota que estão definidos com : 
 
 
 app.listen(8080 , () => {
