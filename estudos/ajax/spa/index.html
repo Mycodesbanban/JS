@@ -25,6 +25,44 @@
     </nav>
     <div class="pagina"></div>
     <script>
-        // ...
+        function navegarViaAjax(url, seletor , push = true){
+            if(!url || !seletor) return // se não tiver a url ou seletor vai retorna nada
+            const elemento= document.querySelector(seletor) 
+            fetch(url)
+                .then(resp => resp.text()) // converte para texto HTML
+                .then(html =>{
+                    elemento.innerHTML= html //insere o HTML dentro do elemento
+                    if (push){
+                        history.pushState({seletor} , null , url) //adiciona a URL ao histórico do navegador (sem recarregar a página)
+                        // salva o seletor como estado para saber onde inserir o conteudo futuro
+                    }
+                })
+            
+        }   
+        document.querySelectorAll("[wm-link]").forEach(link =>{
+            const url = link.attributes["wm-link"].value // selecionar todos os atributos wm-link e pega os valores com o value
+            const seletorDestino = link.attributes["wm-destino"].value // selecionar todos os atributos com wm-destino
+            
+            link.onclick = e =>{  //adiciona o comportamento ao clicar no link
+                e.preventDefault() 
+                navegarViaAjax(url , seletorDestino) //chama a função para navegar via ajax 
+            }
+        })
+        
+        window.onpopstate = e =>{ // evento disparado quando o usuario usa o botão "voltar" ou "avançar" do navegador 
+            if(e.state){ 
+                navegarViaAjax(window.location.href , e.state.seletor , false) 
+                // Recarrega o conteudo da URL atual usando o seletor salvo histórico
+                // passe false para não empurrar a mesma URL de novo no historico
+            }
+        }
+
+        //.state: propriedade do evento popstate , representa os dados salvos no histórico quando você usou
+        //.onpopstate: Um manipulador de eventos que é acionado quando alterações são feitas no histórico ativo. Chamadas para pushState ou replaceState podem disparar este evento.
+        //.pushState: adiciona uma entrada à pilha de histórico da sessão do navegador.
+        //.popstate:um evento que o navegador dispara quando o usuário:Clica no botão voltar ou avançar Ou usa history.back() / history.forward() via JS
+        // history: historico do navegador
+        //history.back():  volta a pagina anterior do historico
+        //history.forward(): avança a pagina do historico
     </script>
 </body>

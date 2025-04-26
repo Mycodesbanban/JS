@@ -14,6 +14,43 @@
     <div id="post"></div>
 
     <script>
-        // ...
+           function exebirResultado(id, dados){
+            const texto = JSON.stringify(dados) //converte os dados para uma string Json 
+            document.getElementById(id).innerHTML = texto // pegando os id e colocando no html e juntado com a const que acabamos de criar 
+        }
+        $.ajax({
+            url:"parOuImpar", // url
+            data:{ 
+                numero:5 // envia o numero 5 para os parametros da url
+            },
+            success(data){
+                exebirResultado("get" , data)
+            }
+        })
+
+        $.ajax({
+            url:"formulario", // url
+            method:"post", // metodo
+            data:{
+                //enviar esses dados
+                nome:"joão",
+                idade:40
+            },
+
+            success(data){
+                exebirResultado("post" , data) // exibe os dados no ID "post"
+            } , error(e){
+                exebirResultado("post", e) // exibe o erro ,se acontecer 
+            }
+
+        })
+
+
+        //jQuery:é uma biblioteca JavaScript rápida, pequena e rica em recursos. Ela torna coisas como a travessia e manipulação de documentos HTML, tratamento de eventos, animação e Ajax muito mais simples com uma API fácil de usar que funciona em uma infinidade de navegadores , podemos chamar ele com simbolo do dolar $ , ou com seu nome mesmo
+        
+        // success: ela faz parte da configuração da função $.ajax() do jQuery ,  o que fazer se a requisição der certo
+
+        // error: o que fazer quando der erro
+
     </script>
 </body>
