@@ -1,4 +1,5 @@
- export default class Pessoa{
+import "./modulos/moduloA"
+export default class Pessoa{
     comprimentar(){
         return "Bom dia"
     }
