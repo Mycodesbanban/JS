@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "mini-css-extract-plugin": "0.4.0",
+    "css-loader": "0.28.11",
+    "style-loader": "0.21.0",
     "webpack":"4.8.1",
     "webpack-cli":"2.1.3"
   }
