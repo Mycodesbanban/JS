@@ -19,6 +19,7 @@ module.exports = {
             use:[  
                 MiniCssExtractPlugin.loader,  //pega esse CSS processado e salva como arquivo .css separado
                 "css-loader", //interpreta @import , url()...
+                "sass-loader"
             ]
         }]
     }
