@@ -5,6 +5,11 @@ import './App.css'
 import Kwai from "./assets/c5a55ec0a38f65212d5047826e8d1ecc.jpg"
 import ManageData from './components/manageData'
 import ListRender from './components/ListRender'
+import CondicionalRender from './components/CondicionalRender'
+import IFELSE from './components/ifElse'
+import Props from './components/props'
+import DesestruturandoProps from './components/desestruturandoProps'
+import ReutilizandoComponetes from './components/ReutilizandoComponetes'
 
 
 
@@ -23,7 +28,16 @@ function App() {
           {/* imagem em assets */}
       <img src={Kwai} alt="kwai" />
         <ManageData/>
-        <ListRender/>      
+        <ListRender/> 
+        <CondicionalRender/>    
+        <IFELSE/>
+        {/* props */}
+        <Props name="Matheus"/>
+        {/* destructuring */}
+        <DesestruturandoProps brand="VW" km={1933} color="Azul"/>
+        {/* reaproveitando arquivos */}
+        <ReutilizandoComponetes brand="ford" color="blue" km={1842} newCar={true}/>
+        <ReutilizandoComponetes brand="civic" color="ciano" km={32842} newCar={false}/>
         </div>
         
       </div>
