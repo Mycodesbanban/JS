@@ -10,11 +10,18 @@ import IFELSE from './components/ifElse'
 import Props from './components/props'
 import DesestruturandoProps from './components/desestruturandoProps'
 import ReutilizandoComponetes from './components/ReutilizandoComponetes'
+import Fragments1 from './components/Fragments1'
 
 
 
 function App() {
   const [count, setCount] = useState(0)
+
+ const cars=[
+    {id:1 , brand:"RT" ,color:"amarelo", newCar:true , km:0},
+    {id:2 , brand:"PK" , color:"blue", newCar:false , km:931},
+    {id:3 , brand:"KHJ" , color:"pink" , newCar:"false" , km:203}
+ ]
 
   return (
     <>
@@ -38,6 +45,12 @@ function App() {
         {/* reaproveitando arquivos */}
         <ReutilizandoComponetes brand="ford" color="blue" km={1842} newCar={true}/>
         <ReutilizandoComponetes brand="civic" color="ciano" km={32842} newCar={false}/>
+        {/* loop em arrays de objetos */}
+        {cars.map((car)=>(
+          <ReutilizandoComponetes brand={car.brand} color={car.color} km={car.km} newCar={car.newCar}/>
+        ))}
+        {/* usando fragments */}
+        <Fragments1/>
         </div>
         
       </div>
