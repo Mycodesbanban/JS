@@ -15,6 +15,8 @@ import ChildrenProp from "./components/childrenProp";
 import FunctionProps from "./components/functionProps";
 import StateLift from "./components/StateLift";
 import AlterarAmensageem from "./components/AlterarAmensageem";
+import Userdetalhis from "./components/Userdetalhis";
+
 
 function showMessage() {
   console.log("componente pai");
@@ -28,6 +30,12 @@ function App() {
     { id: 2, brand: "PK", color: "blue", newCar: false, km: 931 },
     { id: 3, brand: "KHJ", color: "pink", newCar: "false", km: 203 },
   ];
+
+  const user =[
+    {id:1 ,name:"joão" , age:12 , job:"programador"},
+    {id:2 ,name:"mirela" , age:52 , job:"engenheira"},
+    {id:3 , name:"pedro" , age:18 , job:"desempregado"}, 
+  ]
 
   const [message, setMessage] = useState("");
 
@@ -88,6 +96,10 @@ function App() {
           {/* state lift */}
           <StateLift msg={message}/>
           <AlterarAmensageem handleMessage={handleMessage}/>
+          {/* Userdetahis */}
+         {user.map((users)=>(
+          <Userdetalhis key={users.id} name={users.name} age={users.age} job={users.job} />
+         ))}
         </div>
       </div>
     </>
