@@ -1,0 +1,21 @@
+body{
+  margin: 0;
+  padding: 0;
+ font-family: sans-serif;
+ text-align: center;
+}
+
+h1{
+  color: red;
+}
+
+.car_conteiner{
+  display: flex;
+  background-color: orange;
+  justify-content: center;
+  color:black;
+  
+}
+.car_conteiner div{
+  margin-top:50px;
+}
