@@ -15,6 +15,33 @@
     <div id='conteudo3'></div>
 
     <script>
-        // ...
+        // conteudo 1
+        $("#conteudo1").append("<p> cu </p>") // adicionando um paragrafo elemento 1
+        
+        // conteudo 2
+        const elementos=[
+            $("<li>").append("arroz"),//criando uma tag em jQuery , e adicionando um elemento
+            $("<li>").append("feijão"),
+            $("<li>").append("carne")
+        ]
+        const lista = $("<ul><li>Sorvete</li></ul>").prepend(elementos) // estamos criano uma lista não ordenada e depois colocando os elementos que criamos 
+        $("#conteudo2").append(lista) // passando a lista para o conteudo 2
+
+
+        // conteudo 3
+        $("#conteudo3").append("<h1>1</h1>") //adionando um elemento 1 
+                .append("<h1>2</h1>").prepend("<h1>0</h1>") // adicionando o elemento 2 , e colocando antes do 1 o 0
+        $("#conteudo3").html("<h1>123</h1>") // vai substituir esse conteudo por 123
+        $("#conteudo3").text("<h1>456 </h1>") //vai exibir um texto e não vai interpretar como html
+
+        // alterando todos 
+        $("div[id]").html("<strong> todos </strong>") // vai mudar todas as divs com os id 
+
+        
+        //.append(): vai anexar novos elementos 
+        //.prepend(): vai anexar novos elementos so que no inicio 
+        //.html(): vai substituir o conteudo
+        //.text(): exibir um texto
+
     </script>
 </body>

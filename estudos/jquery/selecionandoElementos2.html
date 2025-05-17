@@ -74,13 +74,51 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <span>Dentro do span</span>
+            </p>
         </section>
     </main>
     <footer>
         <p>Cod3r Ensino</p>
     </footer>
     <script>
-        // ...
+      const comBorda = {"border":"solid 8px red"} //definindo o primeiro objeto com borda
+      const semBorda={"border":"none"} //definindo o segundo objeto sem borda
+
+      $('a[href="#link3"]').parent().css(comBorda).css(semBorda) // estamos pegando o elemento a que tenha o link3 , e estamos pegando o pai desse elemento e aplicando a borda
+
+      $("li:last").prev().css(comBorda).css(semBorda) // esta selecionando o ultimo elemento li , e depois selecionar o elemento anterior selecionado
+
+      $('a[href="#link3"]').parent().next().css(comBorda).css(semBorda) //vai pegar o pai do elemento do link3, o li e depois vai ir para o proximo li
+
+      $('a[href="#link1"]').parents().css(comBorda).css(semBorda) //seleciona o a que o tenha o link1 , e depois ele vai selecionar todos os ancentrais(familiares antes do a) 
+
+      $('a[href="#link1"]').parentsUntil($("body")).css(comBorda).css(semBorda) // vai selecionar todos os parents até o body , o body não será selecionado
+
+      $("main").children().css(comBorda).css(semBorda) // vai pegar todos os filhos da tag main e serão selecionandos
+
+      $("body").find("a").css(comBorda).css(semBorda) //vai selecionar a tag body , e se na tag body tiver a , ele vai selecionar todos os a
+
+      const elementoDOM = document.getElementsByClassName("menu") //seleciona a class menu 
+      $(elementoDOM).css(comBorda).css(semBorda)// o jQuery vai recer o elemento DOM e passar o estilos que definimos
+
+      $("main").children().each((index , elemento) =>$(elemento).css(comBorda).css(semBorda)) //selecionar todos os filhos do main , e itera sobre cada filho passando dois parâmetros , o index (posição do elemento na lista de filhos) e o elemento(O elemento DOM atual)
+     
+      $("li").each((i , e)=>{
+        $(e).css(comBorda) // aplica o estilo para cada um dos li
+      })
+
+
+
+
+    //.parent():é utilizado para selecionar o elemento pai direto de cada elemento no conjunto de elementos selecionados
+    //.prev(): seleciona o irmão anterior de um elemento
+    //.next(): selecionar o irmão seguinte de cada elemento
+    //.parents():Seleciona todos os ancestrais do elemento
+    //.parentsUntil(): Seleciona todos os elementos ancestrais de um elemento que especificamos mas não incluindo o que selecionamos
+    //.children(): selecionar todos os filho de um elemento
+    //.find(): selecionar todos os decendentes de cada elemento
+    //.each(): Itera sobre um conjunto de elementos , executando uma função para cada um deles , index: o conjunto de elementos , e o elemento : O elemento DOM atual
     </script>
 </body>
