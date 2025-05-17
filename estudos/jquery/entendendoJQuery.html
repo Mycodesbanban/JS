@@ -14,6 +14,35 @@
     <div>2</div>
 
     <script>
-        // ...
+        $("div").hide(5000) // estamos selecionando todas as div e fazendo uma animação para quando ela sumir de 5 segundos
+        $("div").hide(5000).show(5000) // os elementos das divs vão sumir e depois de 5 segundos vão voltar
+        $("div").hide(5000).show(5000).fadeOut(5000) // os elementos vão sumir depois voltar e depois desaparecer 
+        console.log($("div").get(0)) // vai selecionar todas as divs e depois vai pegar o primeiro elemento da DOM
+        console.log($.isEmptyObject({name:null})) // vai retorna falso por que tem elementos nesse objeto
+        console.log($.inArray(3, [1 , 2, 3])) // vai retorna o index onde o 3 se encontra
+
+        $.fn.fundoVerde = function() {
+            this.css("background-color" , "green") // vai alterar a cor de fundo para verde
+            return this //vai retornar esse objeto
+        } 
+        $("html").css("background-color" , "green") // aplica a cor de fundo para o html
+        $("body").fundoVerde().fadeOut(1000) // chamando a função fundo verde e desaparencendo os elementos 
+
+
+
+    // para chamar o jquery usamos o simbolo do $ ou pelo o proprio nome jQuery
+    // podemos passar funções anomimas , seletores entre outros 
+    //.hide():Ocultar elementos
+    //.show():Exibir elementos 
+    //.fadeOut(): Oculta elementos correspondentes gradualmente alterando sua opacidade para 0
+    //.fadein(): exibe todos os elementos gradualmente , alterando sua opacidade de 0 para 1
+    //.get(): pega o elemento espeficico da DOM
+    //.isEmptyObject(): verifica se um objeto está vazio ou não , ele retorna valores booleanos 
+    //.inArray(): verifica se existe um array e retorna o index , caso não tenha o index desse elemento ele retorna -1
+    //.toggle():é usado para alternar a visibilidade de elementos. Ele funciona como um interruptor, alternando entre show() e hide() a cada chamada.
+    //.slideUp(): desliza para cima (oculta) os elementos selecionados
+    //.slideDown(): deslizar para baixo (oculta) os elementos selecionados
+    //.css(): serve para mudar ou adicionar estilo da pagina , podemos mudar como cor , fonte , etc
+    //.fn: Objeto onde ficam os metodos do jQuery
     </script>
 </body>

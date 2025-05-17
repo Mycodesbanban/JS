@@ -49,6 +49,30 @@
     </form>
 
     <script>
-        // ...
+        $("#feira").addClass("destaque") // adiciona a classe destaque
+        $("#feira").removeClass("destaque")// removendo a classe destaque
+        $("li").addClass("destaque")//adicionando em todos os li a classe destaque
+        $("[wm-obrigatorio]").removeClass("destaque") //removendo a classe de atributos
+        $("li.opcional").removeClass("destaque") // tirando o destaque dos li que tem a classe opcional
+        $("div p span").addClass("destaque") //dentro da div tem o p e dentro do p tem um span , então esse codigo vai fazer adicionar a classe destaque para span
+
+        // exclusivo do jQuery
+
+        $("li:first").css("border" ,"solid 3px yellow") // vai pegar o primeiro elemento do tipo li e vai colocar o estilos que definimos 
+        $("li:odd").css("border" , "solid 3px blue") // vai pegar todos os elementos impares e vai colocar o estilos que definimos 
+        $("li:gt(1)").css("border" , "solid 3px black") // primeiro vamos selecionar o index , então selecionamos o index 1 no gt , isso siginifica que vai selecionar todos os index depois do index 1 , então o index 2 e 3 será selecionado
+        $("li:not(:last)").css("border"  ,"none")// vai pegar todos os elementos que não seja ultimo , isso acontece por que usamos o not , é vai selecionar com o estilo que definimos 
+        $('li:contains("r")').css("background-color" , "blue") // vai analisar se algum li tem a letra L , caso tiver vai selecionar com o estilos que definimos
+        $("form *").hide() // estamos usando o seletor universal * , ele vai selecionar todos os elementos desse formulario e vai esconder 
+        $("form :text").show() // caso tiver um formulario com o tipo texto , vai exibir esse formulario 
+        $("form:password").show // caso tiver um formulario com o tipo senha , vai exibir esse formulario
+        
+
+
+
+
+        // .addBack():
+        //.addClass(): adiciona uma classe
+        //.removeClass(): remove uma classe 
     </script>
 </body>
