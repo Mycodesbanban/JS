@@ -20,5 +20,11 @@
             { nome: 'Julia', nota: 9.7 }
         ]
         
+       const tabela = $("<table><tr><th>NOME</th></tr><tr><th>NOTA</th></tr></table>").css("border" , "solid 1px black") //criando o codigo para criar uma tabela e colocando um estilo
+       
+       pessoas.forEach((p)=>{ // percorrendo um array para acessar o objeto
+        tabela.append($(`<tr><td>${p.nome}</td></tr><tr><td>${p.nota}</td></tr>`))
+       }) // adicionando para a tabela
+       $("#conteudo").append(tabela) // colocando na div
     </script>
 </body>
