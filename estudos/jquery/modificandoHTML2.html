@@ -17,6 +17,55 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        $("#div1").append(", 2") // adicionando depois , 2 no div 1
+
+        $("#div1").prepend("0 , ") // adicionando antes 0 ,
+
+        $("<span> , 3 </span>").appendTo("#div1") // cria um elemento e insere como ultimo no div1
+
+        $("<span> -1, </span>").prependTo("#div1") //cria um elemento e insere como primeiro na div1
+        
+        $("#div2").before("<p>Antes do 2</p>") //antes do elemento ele vai colocar esse paragrafo
+
+        $("#div2").after("<p>Depois do 2</p>") // depois do elemento ele vai colocar esse paragrafo
+
+        $("<p>Antes do 3 </p>").insertBefore("#div3") //insere um elemento antes do elemento alvo
+
+        $("<p>Depois do 3 </p>").insertAfter("#div3") // insere um elemento depois do elemento alvo
+
+        $("p.numero").wrap("<div>") // vai envolver esse paragrafos com a classe numero cada um em uma div diferente
+
+        $("p.numero").wrapAll('<div id="div4">') // vai envolver esse paragrafos com a clase numero vão ficar juntos numa div e colocamos o id
+
+        $("#div4").empty() // vai limpar o conteudo da div 4
+
+        $("#div3 , #div4").prev().remove() // vai pega a div4 e a div3 e vai pegar os anterios e remover 
+
+         $("<div>Subtitutoo</div>").replaceAll("body > p") // todos os pragrafos que estão diretamente dentro do body vão ser substituido por a div
+
+        $("body > p").replaceWith("<div> Substituto </div>") // vai selecionar todos os paragrafos diretamente dentro do body e substituir pela a div
+
+        $("body > p").replaceWith(function(){ // seleciona todos os p que estão diretamente ligado ao body
+            return $("<div>").html($(this).html()) //cria um novo elemento div , e copiar o conteudo interno do p para a nova div
+        })
+        
+        
+
+
+
+        //.appendTo(): juntar elementos e coloca o elemento que criamos no final
+        //.preprendTo(): juntar elementos e colocar o elemento que criamos no começo
+        //.before(): adiciona antes do elemento
+        //.after(): adiciona depois do elemento
+        //.insertBefore(): insere um elemento antes do elemento alvo
+        //.insertAfter(): insere um elemento depois do elemento alvo
+        //.wrap(): cada metodo selecionado individualmente com a estrutura html que escolhemos
+        //.wrapAll(): envolvendo todos os metodos juntos com a estrutura html escolhida
+        //.empty(): vai limpar o conteudo do elementos
+        //.remove(): remove os elementos selecionados 
+        //.replaceAll():substitui os elementos alvo por um novo conteúdo
+        //.replaceWidth(): substitui os elementos selecionados por um novo conteúdo
+
+
     </script>
 </body>
