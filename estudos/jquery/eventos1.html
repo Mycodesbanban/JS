@@ -20,6 +20,9 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+       function mostrarPosicaoMouse(e) {
+        $("#posicao").html(`x:${e.clientX}`).append(`y:${e.clientY}`)
+       }
+
     </script>
 </body>

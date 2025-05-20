@@ -23,6 +23,42 @@
     <h1>Manipulando Atributos</h1>
     <div wm-relogio='1000'></div>
     <script>
-        // ...
+        function Relogio (Elemento){
+            const HoraCerta= $("<p>").html(0) // mostra um paragrafo com a hora atual e inicia com 0
+            const BotaoMenos = $("<button>").html("-") // diminuindo a diminuindo de tempo que o relogio vai ficar atualizando
+            const BotaoMais = $("<button>").html("+") // aumentando a velocidade de tempo que o relogio vai ficar atualizando
+            
+            const elementojQurey= $(Elemento) // aqui vai ficar todos os elementos jQuery que criamos  
+            elementojQurey.append(HoraCerta , BotaoMenos , BotaoMais) // adicionando os elementos que criamos 
+
+            const getIntervalNew= () => parseInt(elementojQurey.attr("wm-relogio")) //  vai pegar a const que criamos e o atributo e converter para um valor numerico 
+            let Temporizador = null //definindo o Temporizador com o valor de nulo
+            const iniciar = () =>{
+                if(Temporizador)clearInterval(Temporizador) // se o temporizador tiver algum valor verdadeiro ele vai reniciar o temporizador
+                Temporizador = setInterval(()=>{
+                    HoraCerta.html(new Date().toLocaleString("pt-BR")) // criar um objeto com a data e a hora atual e vai formatar essa data e hora no estilo brasileiro
+            } , getIntervalNew()) // definindo em quanto tempo essa função vai ser chamada
+          }
+          const alteraInterval= delta =>{
+            const novo = Math.max(getIntervalNew()+delta , 1000) // pega o valor atual do invetervalo e soma o delta
+            elementojQurey.attr("wm-relogio" , novo) // alterar o valor do atributo 
+            iniciar() // aplica o que definimos 
+          }
+          BotaoMais.click(e => alteraInterval(-1000)) // toda vez que clicar vai ir mais lento
+          BotaoMenos.click(e => alteraInterval(1000)) // toda vez que clicar vai ir mais rapido
+          iniciar()
+
+        }
+        $("[wm-relogio]").each((i , e) => new Relogio(e)) //cria um novo relogio para esse elemento 
+        $("[wm-relogio]").attr({opa:1 , novo:true}) // defini dois novos atributos 
+        $("[wm-relogio]").removeAttr("opa") // remove o atributo opa
+
+
+        //.attr: define ou retorna atributos e valores dos elementos selecionados.
+        //.clearInterval: impa um temporizador definido
+        //.toLocaleString(): retorna data e hora usando as configurações de localidade 
+        //.Math.max(): retorna o numero com o valor maior
+        //.click(): ocorre um evento quando o elemento for clicado
+        //.removeAttr(): remove atributos 
     </script>
 </body>

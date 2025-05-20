@@ -12,9 +12,30 @@
     <h1>Manipulando CSS</h1>
     <div id='div1'>1</div>
     <div id='div2'>2</div>
-    <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+      const fonte = $("#div1").css("font-family") // mudando a fonte 
+      $("#resultado").append(`A fonte é ${fonte}`) // adicionando a fonte para o resultado
+      $("#div1").css("font-size" , "3em") //alterando o tamanho da letra 
+      $("#div1").css({"font-size":  "3.3em" , "color": "blue"})// alterando com um conjuto de objeto
+      $("#div1").css("font-size" , function(){
+        return`${2*2}em`
+      }) // alterando com uma função callback
+      $("#div2").addClass("destaque") //adicionando classe
+      
+      const temClasse = $("#div2").hasClass("destaque") // vendo se o elemento tem class
+      $("#resultado").append(`<br> tem classe? ${temClasse}`) // mostrando o resultado na div resultado
+
+      $("#div2").removeClass("destaque") // remove a classe destaque
+      $("#div2").toggleClass("destaque") // colocando a classe destaque 
+
+
+
+
+        
+    //.hasClass():verficar se um item tem classe
+    //.toggleClasse():se um elemento tiver a classe ele remove e se ele não tiver classe ele adicionar
+
+
     </script>
 </body>
