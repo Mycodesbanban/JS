@@ -1,0 +1,7 @@
+/* definindo o css do app para ficar no centro */
+.App{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} 

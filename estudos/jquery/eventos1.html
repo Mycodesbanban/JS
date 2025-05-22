@@ -20,9 +20,46 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-       function mostrarPosicaoMouse(e) {
-        $("#posicao").html(`x:${e.clientX}`).append(`y:${e.clientY}`)
-       }
+     function mostraMouse(e){ // mostra a posição do mouse em tempo real
+        $("#posicao").html(`x= ${e.clientX} y= ${e.clientY}`) 
+        //clientX: pega a posição horizontal do mouse em cantos esquerdos da janela(view port)
+        //clientY: paga a posição vertical do mouse em relação a janela 
+     } 
+     $("body").on("mousemove" , mostraMouse) // sempre que o mouse se mover vai chamar a função mostraMouse
+     $("#posicao").mouseover(e => { // caso o mouse passe por cima da div com o #posicao seu evento será cancelado
+        $("body").off("mousemove" , mostraMouse)
+     })
+     $("#posicao").mouseleave(e =>{
+        $("body").on("mousemove" , mostraMouse) // quando sair de cima da div com o id posicao o evento sera acionado novamente
+     })
+     
+     let cliques = 0
+     $("body").click(e =>{
+        $("#cliques").html(`Cliques : ${++cliques}`) // toda vez que eu clicar o click vão aparecer
+     }) 
+
+     const BackgroundOriginal =$("body").css("background-color") // toda vez que colocamos uma cor invalida de background ele voltará para a cor original
+
+     $("input").keyup(function(e) { // pega o elemento que disparou
+     const valor = $(this).val() // estamos pegando o valor do this(elemento que disparou a função)
+     if(valor.match(/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/) ){ // esta tentando verificar se o valor digitado no input e de um codigo hexadecimal
+        $("body").css("background-color" , valor)
+     }else{
+        $("body").css("background-color" , BackgroundOriginal)
+     }
+    })
+    // em arrow fuction o this não aponta para o elemento que disparou o evento mas sim para o this de onde a função foi criada
+
+    //.on(): anexar um ou mais manipuladores de eventos para o elemento selecionados e elementos filhos
+    //.mousemove(): o evento e disparado quando o ponteiro do mouse se move dentro do elemento selecionado
+    //.mouseover(): ocorre quando o ponteiro do mouse entra em um elemento ou seus elementos filho 
+    //.off(): remove manipuladores de eventos previamente anexados usando o on
+    //.mouseleave(): quando o ponteiro do mouse sai de um elemento , não sendo acionado se o ponterio entrar no elemento filho
+    //.keyup(): ocorre quando a telca e liberada (solta) depois de precionar 
+    //.keydown(): ocorre quando ua tecla é pressionada para baixo
+    //.keypress(): quando a tecla que produz um caractere é precionada
+    //.val(): retorna ou define o atributo value dos elementos selecionados
+    //.match(): procura uma ou mais correspondências entre uma string e uma expressão regular 
 
     </script>
 </body>

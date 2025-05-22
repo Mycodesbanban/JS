@@ -1,0 +1,8 @@
+.Screen_Game h1{
+  font-size: 56px;
+}
+
+.Screen_Game p {
+    margin-bottom: 32px;
+    color: yellow;
+}
