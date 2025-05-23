@@ -25,6 +25,14 @@ function App() {
   const [pickedCategorie , setPickedCategorie] = useState("") // guarda a cartegoria da palavra
   const [ letters , setLetters]= useState([]) // guarda as letras da palavras
 
+  const[ guestLetters , setGuestLetters] = useState([]) // letras adivinhas 
+  const [ wrongLetters , setWrogLetters] = useState([]) // letras erradas 
+  const [ guesses , setGuesses] = useState(3) // chances do usuario
+  const [ score , setScore] = useState(0) //pontos do usuario
+
+
+
+
   const pickWordCategory = () =>{
     // random category
     const categories =Object.keys(words) // pega as cartegorias do objeto words
@@ -54,13 +62,36 @@ function App() {
 
     console.log(word , caregory)
 
+    // compontentes importante para o jogo
+
+  setPickedWord(word) // atualiza o estado da palavra guardada
+  setPickedCategorie(caregory) // atualizar o estado com a cartegoria sortiada
+  setLetters(wordLetters) //atualizar um estado com todas as letras que foram sortiadas 
 
   setGamestage(stages[1].name)// vai retorna o nome game na tela 
   }
 
   // process the letter input
-  const verifica = () =>{
-    setGamestage(stages[2].name)
+  const verifica = (letter) =>{
+   const letterLower = letter.toLowerCase() // transforma a letra recebida em letra minuscula
+  //  verifique se a letra já foi ultilizada
+  if(guestLetters.includes(letterLower) || wrongLetters.includes(letterLower)){ // verifica se a letra já está sendo usadad correta e incorreta
+
+    return
+  }
+  // tentativas do usuario
+  if(letters.includes(letterLower)){ //se tiver correta adicionar ao array de letras adivinhadas
+    setGuestLetters((atualguessestLetters) =>[
+      ...atualguessestLetters , 
+      letterLower
+    ])
+  }else{
+     setWrogLetters((actualWroglettres) =>[ // se tiver erradas vai adicionar ao array de letras erradas
+      ...actualWroglettres , 
+      letterLower
+    ])
+  }
+
   }
 
   // restart the game 
@@ -74,7 +105,8 @@ function App() {
       <div className='App'>
       {gameStage ==="start" && <StartScrenn startGame={startGame}/>} 
       {/* verifica se o valor de gameStage e start , caso for ele vai retorna o <StartScrenn/> */}
-      {gameStage ==="game" && <Game verifica={verifica}/>}
+      {gameStage ==="game" && <Game verifica={verifica} pickedWord={pickedWord} pickWordCategory={pickWordCategory} letters={letters} guestLetters={guestLetters} guesses={guesses} wrongLetters={wrongLetters} score={score}/>}
+      {/* implimentando para o game esses estagios */}
       {gameStage === "end" && <End retry={retry}/>}
       </div>
     </>
@@ -97,8 +129,6 @@ export default App
 
 // Um array opcional de dependências.
 
-// Object.keys():
+// Object.keys(): pega todas as chaves (nome da propriedade) de um objeto
 
-// keys():
-
-//split():
+//split(): divide um string em partes e devolve para um array

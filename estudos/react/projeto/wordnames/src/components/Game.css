@@ -1,0 +1,44 @@
+/* definindo estilos para as classes abaixo */
+.game h1 {
+  font-size: 40px;
+}
+.pontos span {
+  font-weight: bold;
+}
+.dica span{
+    color:rgba(255, 255, 0, 0.795);
+}
+.letras_exibidas{
+    margin:24px ;
+    padding: 24px;
+    border:solid 20px rgb(204, 204, 19) ;
+    display: flex;
+}
+.letter , .blankSquare{
+   font-size: 70px;
+   line-height: 1.5;
+   /* line-heigth: controla a altura da linha */
+   border: 3px solid rgb(0, 0, 0);
+   height: 100px;
+   width: 100px;
+   background-color: white;
+   color:#000;
+   font-weight: bold;
+}
+.conteiner_de_letras p {
+    margin-bottom:1.2em;
+}
+.conteiner_de_letras form{
+    /* estilo para o centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.conteiner_de_letras input{
+    /*  */
+    height: 50px;
+    font-size:32px ;
+    width: 50px;
+    text-align: center;
+    margin:0px 16px 0px 0px;
+}
