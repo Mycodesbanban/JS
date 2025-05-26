@@ -21,6 +21,40 @@
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
     <script>
-       
+       const altenardestaque = () =>$("#div1").toggleClass("destaque") // caso um elemento tiver classe destaque ele remove , caso ele não tiver ele coloca
+
+    // $("#div1").hover(altenardestaque) // toda vez que passamos por cima da div com id que selecionamos vai receber a classe destaque
+       $("#div1").on("mouseenter mouseleave" , altenardestaque) // toda vez que que o mouse entrar no elemento com o id que selecionamos , ele vai receber a função alterar destaque
+       $("#div1").one("mouseenter" , e =>alert("Aviso importante obrigado")) // quando ele entrar na div com o id que selecionamos ele vai mostrar um alerta na tela do usuario somenta na primeira vez
+       $("#div1").dblclick(e => $("#div1").fadeOut(1000).fadeIn(1000)) // quando demos dois click ele vai desaparecer e depois voltar
+       $(window).resize(function (e){
+            const l = $(window).width() // pega a lagura
+            const a = $(window).height() // pega a altura
+            $("#resultado1").html(`largura ${l} e a altura ${a}`) // mostra isso no id selecionando
+       }) // essa função será executada sempre que a janela for redimensionada
+
+
+       $(":input").select(e =>{
+        const inicio = e.target.selectionStart // posição inicial da seleção
+        const fim = e.target.selectionEnd // posição fim da selação
+        $("#resultado2").html(e.target.value.substring(inicio , fim)) // colcoa o texto selecionando dentro da div com o id selecionando 
+       })
+
+
+    //.hover(): detectar quando o mouse entra e sai de um elemento
+    //.mouseenter(): quando o mouse entra no elemento
+    //.one(): o evento so funcionar uma vez , depois de disparar ele se remove sozinho
+    //.alert(): exibe uma caixa de alerta no navegador
+    //.dblclick():quando ocorrer dois click é disparado
+    //.fadeIn(): aparecer suavemente , aumentando sua opacidade até fica visivel
+    //.fadeTo(): definir um nivek especifico de opacidade , sem sumir totalmente 
+    //.fadeToggle(): altenar , se o elemento tiver visivel ele some suavemente , caso não esteje ele aparece suavemente
+    //.after(): depois que o elemento e selecionando
+    //.resize(): usado para detectar a janela é redimensionada (quando o usuario muda o tamanho da janela)
+    //.width(): pega ou define a largura
+    //.height(): pega ou define a altura
+    //.select(): ocorre quando o usuario seleciona um texto denrro de um input ou textearea
+    //.substring(): retora uma parte da string entre dois indices (ou até o final da string)
+    
     </script>
 </body>
