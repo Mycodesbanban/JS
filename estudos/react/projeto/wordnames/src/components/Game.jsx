@@ -1,7 +1,7 @@
 import { useState , useRef } from "react";
 import "./Game.css";
 
-const Game = ({ verifica , pickedWord ,pickWordCategory , letters , guestLetters , guesses  , wrongLetters , score}) => {
+const Game = ({ verifica , pickedWord , pickedCategorie , letters , guestLetters , guesses  , wrongLetters , score}) => {
 
 
   const [letter , setLetter] =useState("") 
@@ -27,7 +27,7 @@ const Game = ({ verifica , pickedWord ,pickWordCategory , letters , guestLetters
       <h3 className="dica">
         <p>você ainda tem {guesses} tentativas </p> 
         {/* atribuindo para o h3 a classe dica */}
-        dica sobre a palavra: <span>{pickWordCategory}</span>
+        dica sobre a palavra: <span>{ pickedCategorie}</span>
       </h3>
       <div className="letras_exibidas">
         {/* criando uma div para mostra quais letras serão exibidas */}

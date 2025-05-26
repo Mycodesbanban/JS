@@ -32,8 +32,7 @@ function App() {
 
 
 
-
-  const pickWordCategory = () =>{
+  const pickWordCategory = useCallback(() =>{
     // random category
     const categories =Object.keys(words) // pega as cartegorias do objeto words
     const caregory = categories[Math.floor(Math.random()*Object.keys(categories).length)] // vai sortiar uma cartegoria aleatoria
@@ -45,17 +44,21 @@ function App() {
 
     console.log(word)
 
-    return { word , caregory}
+    return { word , caregory} // retornando um objeto com duas informações importante para o jogo
 
-  }
+  } , [words]) // só recrie essa função se a variavel mudar
 
   // start 
-  const startGame = () =>{
+  const startGame = useCallback(() =>{
+    // limpar todas as letras
+    clearLetras()
+
+
     // uma função para a palvra que o jogador vai adivinha e uma catergoria
     const {word , caregory } = pickWordCategory()
 
     // criando um array de letras para a palavra sortiada
-    let wordLetters = word.split("") // vai separar a palavra com todas as letras que tem
+    let wordLetters = word.split("") // vai separar a palavra com todas as letras que tem dentro do array
     wordLetters = wordLetters.map((l) => l.toLowerCase()) // vai percorrer o array e para cada letra do array ele vai transformar em minuscula
   
     console.log(wordLetters)
@@ -69,15 +72,15 @@ function App() {
   setLetters(wordLetters) //atualizar um estado com todas as letras que foram sortiadas 
 
   setGamestage(stages[1].name)// vai retorna o nome game na tela 
-  }
+  }, [pickWordCategory]) // só recrie a fução start se o pickWordCategory mudar 
 
   // process the letter input
-  const verifica = (letter) =>{
+  const verifica = (letter) =>{ // verifica a letra digitava para o usuario
    const letterLower = letter.toLowerCase() // transforma a letra recebida em letra minuscula
   //  verifique se a letra já foi ultilizada
   if(guestLetters.includes(letterLower) || wrongLetters.includes(letterLower)){ // verifica se a letra já está sendo usadad correta e incorreta
 
-    return
+    return // evita gasta a tentativas e usar letras repetidas 
   }
   // tentativas do usuario
   if(letters.includes(letterLower)){ //se tiver correta adicionar ao array de letras adivinhadas
@@ -90,13 +93,47 @@ function App() {
       ...actualWroglettres , 
       letterLower
     ])
+    setGuesses((atualguess) => atualguess - 1) // atualizar o estado de tentativas cada vez que eu erro
   }
 
   }
+
+  // função para limpar as letras 
+  const clearLetras = ()=>{
+    setGuestLetters([]) // limpar o array de letras corretas 
+    setWrogLetters([]) // limpar o array de letras erradas 
+  }
+
+// se as tentativas terminaram
+  useEffect(() =>{  // vai observar as mudanças de algum estado
+    if(guesses <=0){
+      clearLetras(); // limpar as letras digitadas
+      setGamestage(stages[2].name) // muda o estagio do jogo
+    }
+  } , [guesses]) // esse efeito só funcionar quando o valor de guesses (tentativas) mudar 
+
+
+// se ganhamos o jogo
+    useEffect(() =>{
+      const letrasUnicas = [... new Set(letters)] // um array de letras unicas
+      
+    // condição de vitoria
+    if(guestLetters.length === letrasUnicas.length && gameStage ==="game"){ 
+      setScore((atualScore) => atualScore += 100)
+
+    // começar o jogo novamente 
+      startGame();
+    
+    }
+    } , [guestLetters , letters , startGame])
+
+
 
   // restart the game 
   const retry = () =>{
-    setGamestage(stages[0].name)
+    setScore(0) // reseta a pontuação do jogador
+    setGuesses(3) // restaura as tentativas
+    setGamestage(stages[0].name) // volta para o estagio inicial 
   }
 
 
@@ -105,9 +142,9 @@ function App() {
       <div className='App'>
       {gameStage ==="start" && <StartScrenn startGame={startGame}/>} 
       {/* verifica se o valor de gameStage e start , caso for ele vai retorna o <StartScrenn/> */}
-      {gameStage ==="game" && <Game verifica={verifica} pickedWord={pickedWord} pickWordCategory={pickWordCategory} letters={letters} guestLetters={guestLetters} guesses={guesses} wrongLetters={wrongLetters} score={score}/>}
+      {gameStage ==="game" && <Game verifica={verifica} pickedWord={pickedWord} pickedCategorie={pickedCategorie} letters={letters} guestLetters={guestLetters} guesses={guesses} wrongLetters={wrongLetters} score={score}/>}
       {/* implimentando para o game esses estagios */}
-      {gameStage === "end" && <End retry={retry}/>}
+      {gameStage === "end" && <End retry={retry} score={score}/>}
       </div>
     </>
   )
@@ -132,3 +169,7 @@ export default App
 // Object.keys(): pega todas as chaves (nome da propriedade) de um objeto
 
 //split(): divide um string em partes e devolve para um array
+
+// new set(): é uma estrutura de dados que armazena valores únicos de qualquer tipo, seja primitivo ou referência a objetos
+
+//...: espalha os itens de algo — como de um array ou objeto — para usá-los separadamente.
