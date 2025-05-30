@@ -28,6 +28,37 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+       function alterarLargura(valor , duracao , callback){ // definindo uma função com 3 parametros
+        $("div").animate({width:`+=${valor}`} , duracao , callback) // seleciona  a div e aumenta a largura atual , e chama a duração dessa animação e a callback que vai acabar com a animação
+       }
+
+       function MoverDiagonal (valor , duracao , callback){
+        $("div").animate({top: `+=${valor}` , left:`+=${valor}`} , duracao, callback) // move para baixo no valor em pixel e move para a horizontal no valor em pixel
+       }
+
+       function Girar(valor , duracao , callback){
+        $("div").animate({transform:` +=${valor}` } , {   // transform não e animavel diretamentamente então o objeto que chamamos contem as expecificações abaico
+            step: function(valor){ 
+                $(this).css("transform" , `rotate(${valor} deg)`)  // o this se refere ao elemento que está sendo animado
+            } , 
+            duration:duracao, // passando o tempo de duração
+
+          
+        } , "linear" , callback) 
+        
+       }
+
+       alterarLargura(300 , 1000 ,  ()=>{ // passando o tempo e a duração da animação
+        alterarLargura(-300 , "slow" , ()=>{ //passando o tempo e a duração da animação para voltar
+            MoverDiagonal(300 , 600 , ()=>{ // passando outra animação quando essa acaba
+               Girar(3300 , 3300) // vai dar varias voltas e vai demorar 3 segundos
+            }) 
+        }) 
+       })
+       
+
+    //animate():  permite criar animações personalizadas alterando propriedades CSS de elementos HTML ao longo do tempo , dentro do animate o {}  representa propriedades CSS, mas somente aquelas que podem ser animadas
+    //step(): é chamada a cada frame da animação
+    //duration(): indica o tempo em milesegundos que a animação vai durar
     </script>
 </body>

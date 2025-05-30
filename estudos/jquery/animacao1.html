@@ -23,6 +23,18 @@
     <div id='animar'>Animar!</div>
 
     <script>        
-        // ...
+      $("button").click(e => {
+        const t = 1000 
+        // $("#animar").hide(t).show(t) // ele some e depois aparece
+       // $("#animar").toggle(t).toggle(t) // vai coloca a animação de sumir e depois de volta
+       // $("#animar").fadeOut(t).toggle(t) // vai abaixar a opasidade até não fica visivel , e depois vai volta a opasidade
+       // $("#animar").fadeToggle(t).fadeToggle(t) // se tiver com opasidade ele vai abaixar e depois vai colocar novamente
+        //$("#animar").slideUp(t).slideDown(t) // vai subir e depois descer 
+        $("#animar").slideToggle(t).slideToggle(t) // se não tiver a animação de subir ele coloca e depois a de descer 
+
+
+      })
+
+
     </script>
 </body>

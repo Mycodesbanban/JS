@@ -22,6 +22,34 @@
     </div>
 
     <script>
-        // ...
+    const $ = {nome:"não e jQuery"} // não e Jquery pois estamos  , isso pode atrapalhar o nosso jQuery por que o jQuery usar o $ globalmente como uma variavel dele , e como estamos sobrescrevendo isso daria um erro ao usa alguma coisa do Jquery
+    (function ($){
+        $.fn.interpretar = function () { // definindo o metodo interpretar que pode ser usando em qualquer elemento jQuery
+            const RetirarChaves  = s => s.substring(2 , s.length - 2) // ela remove os dois primeiro dessa frase e os dois ultimos 
+            const conteudo = $(this).html() // transforma o elemento selecionando (this) , e guarda em uma variavel esse conteudo
+          const ExpressoesComChaves = conteudo.match(/\{\{.+\}\}/g); // Ele retorna um array com todas as correspondências encontradas, ou null se nada for encontrado.
+          // \{\{: indica que queremos o {
+          // .+: captura qualquer caractere
+          // /}/}: indica que queremos o }
+
+
+          const SemAsChaves = ExpressoesComChaves.map(RetirarChaves) // vai um mapeamento e criar um novo array sem chaves
+          const resultado = SemAsChaves.map(e => eval(e)) //pega todos as expressões e executa dentro dela
+
+          let ConteudoFinal = conteudo 
+          for(let i = 0 ; i < ExpressoesComChaves.length ; i++){ // precorre uma expressão com chaves que foi encontrada no texto original
+            ConteudoFinal = ConteudoFinal.replace(
+                ExpressoesComChaves[i] // texto original com as chaves
+                , resultado[i] // o resultado sem as chaves
+            ) // substituir o texto original com chaves para o resultado das expressões 
+          }
+          $(this).html(ConteudoFinal) // define para o resultado do conteudo final
+        }
+
+    })(jQuery) // usando uma função autoexecutavel , estamos definindo uma função anonima que recebe o parametro de $ , logo em seguida executamos essa função passando o Jquery como argumento , dentro da função o $ , é uma variavel local que vale exatamente o mesmo que o jQuery
+    $("div").interpretar() // chamando a função para a div
+
+    // eval(): executa codigo js representado por uma string
+    // replace(): substituir uma parte ddo texto pelo o outro 
     </script>
 </body>

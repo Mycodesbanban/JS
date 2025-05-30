@@ -20,12 +20,48 @@
 
 <body class='conteudo exercicio'>
     <h1>Eventos #03</h1>
-    <div id='div1'>1</div>
-    <div id='div2'>1</div>
+        <div id='div1'>1</div>
+        <div id='div2'>2</div>
     <input id='input1' type='text' placeholder='Digite Algo!'>
     <span id='resultado'></span>
 
     <script>
-        // ...
+      function exibirDados (e){
+        $("#resultado").empty() // remove todo o conteudo do id resultado
+        const div1 = $("<div>") // colocando uma div na função div 1
+        const div2 = $("<div>") // colocando uma div na função div 2
+        $("#resultado").append(div1 , div2) // colocando no id resultado
+        div1.append(`target: ${e.target.id}`) // pegando o id do elemento que disparou o evento
+
+        const rt = e.relatedTarget ? e.relatedTarget.tagName : null  // verifica se o relatedTarget existe caso exista retorna a Tagname dele , caso não ele receber null 
+        div1.append(`<br> relatedTarget:${rt}`) // mostra na tela
+        div1.append(`<br> type: ${e.type}`) // mosrtra o tipo de evento que aconteceu
+        div1.append(`<br> which: ${e.which}`) // retorna em numero numerico a tecla que foi digitada
+        div1.append(`<br> metaKey: ${e.metaKey}`) // exibe se a tecla meta (win) estiver precionada
+
+        div2.append(`<br> pageX: ${e.pageX}`)  // posição horizontal do mouse
+        div2.append(`<br> pageY:${e.pageY}`) // posição vertical do mouse
+        div2.append(`<br> clientX: ${e.clientX}`) // posição relativa horizontal do mouse
+        div2.append(`<br> clientY: ${e.clientY}`) // posição relativa vertical do mouse 
+
+        const obs = e.data ? e.data.obs:null // verifica se existe alguma entrada , caso for verdadeiro ele vai retornar essa entrada caso for falso ele retorna null
+        div2.append(`<br> obs: ${obs}`)
+
+      }
+
+      $("#div1 , #div2").on("mouseenter  mouseleave", {obs:"Funcionar!!!"},exibirDados) // quando entrar ou sai das divs essa função será chamada , e chamando a entrada do obs
+      $("input").keyup(exibirDados) //seleciona todos os input da pagina  , quando a tecla for solta e depois pressionar a função será chamada
+
+    // relatedTarget: representa o elemento relacionando ao evento , caso não hover nenhum elemento relacionado o valor vai ser null
+    // target: elemento no qual ocorreu o evento
+    // tagName: retorna o nome da tag htl em letras maiúsculas 
+    // type: indica o tipo do evento ocorrido
+    // which: retorna o numero do teclado ou mouse  no qual o botão ou elemento foi acionando
+    // metaKey:retorna um avlor booleano indicado se a tecla meta (win) está sendo precionada no momento 
+    // pageX: retorna as coordenadas horizontais , repectivamente , do ponto onde o evento ocorreu 
+    // pageY: retorna as coordenadas verticais , repectivamente , do ponto onde o evento ocorreu
+    // clientX: retorna as coordenadas horizontais , do ponto evento ocorreu relativa ao canto superior esquerdo da vieport 
+    // clientY: retorna as coordenadas verticais do  ponto evento ocorreu relativa ao canto superior esquerdo da vieport 
+    // data: os dados personalizados para essa função ser executada ficam no data
     </script>
 </body>
