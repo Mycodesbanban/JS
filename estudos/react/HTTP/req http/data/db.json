@@ -1,0 +1,20 @@
+{ 
+    "produtos":[
+        {
+            "id":1,
+            "nome":"camisa",
+            "valor":59.99
+            
+        } , 
+        {
+            "id":2, 
+            "nome":"Calça vermelha", 
+            "valor":89.99
+        } , 
+        {
+            "id":3 ,
+            "nome":"Boné aba reta",
+            "valor": 83.22
+        }  
+    ]
+} 
