@@ -5,7 +5,7 @@ import { useFecth } from './hook/useFetch'
 const url = "http://localhost:3000/produtos" // a url
 function App() {
   const [ produtos , setProdutos] = useState([])  // começa como um array vazio 
-  const {data : items , httpConfiguracao , relogar} = useFecth(url)
+  const {data : items , httpConfiguracao , relogar , error} = useFecth(url)
  
 
   // adicionando dados 
@@ -51,7 +51,9 @@ function App() {
     // json():converte um json para um objeto js
   }
 
-
+  const handlDelete =(id) => {
+    httpConfiguracao(id , "DELETE")
+  }
 
   return (
     <>
@@ -59,9 +61,12 @@ function App() {
         <h1>lista de produtos</h1>  
         {/* loading */}
         {relogar && <p>carregando dados </p>}
+        {error && <p>{error}</p>}
        { !relogar && <ul>
           {items && items.map((produto) => ( // está percorrendo o array produtos , e para cada produto encontrado ele vai retorna dentro da lista cada um deles
-            <li key={produto.id}>{produto.nome} - R${produto.valor}</li>
+            <li key={produto.id}>{produto.nome} - R${produto.valor}
+            <button onClick={() => handlDelete(produto.id)}>apague</button>
+            </li>
           ))}
         </ul> }
         <div className='estiloDiv'>

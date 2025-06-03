@@ -1,19 +1,26 @@
-import {useState , useEffect, use} from "react"
+import {useState , useEffect} from "react"
 
 
 // 4- criando o hooks
 
 export const useFecth = (url) =>{ // estamos exportando a função que estamos criando / custom hooks
     const [data , setData] = useState(null) // definindo o estado
+    const [ItemID , setItemID] = useState(null)
+    const [configuracao , setConfiguracao] = useState(null) 
+    const [metodo , setMetodo] = useState(null) 
+    const [chamadaFetch , setChamadaFetch] = useState(false)
 
 
     // 6- estado de loading
     const [relogar , setRelogar] = useState(false) // definido o estado
 
+    // tratando erro
+    const [error , setErro] = useState(null)
+
     
     // 5 - refatorando o post
-    const httpConfiguracao = (data , method) =>{
-        if(method ==="POST"){
+    const httpConfiguracao = (data , metodo) =>{
+        if(metodo ==="POST"){
             setConfiguracao({
     
                 method:"POST" , 
@@ -22,12 +29,21 @@ export const useFecth = (url) =>{ // estamos exportando a função que estamos c
                 } , 
                 body:JSON.stringify(data) 
             });
-            setMetodo(method)
+            setMetodo("POST")
+        } else if (metodo === "DELETE"){
+            setConfiguracao({
+
+                method:"DELETE" , 
+                    headers:{
+                        "content-type":"application/json" 
+                    }
+            })
+            setMetodo("DELETE")
+            setItemID(data)
         }
+        
     }
-    const [configuracao , setConfiguracao] = useState(null) 
-    const [metodo , setMetodo] = useState(null) 
-    const [chamadaFetch , setChamadaFetch] = useState(false)
+ 
 
 
     
@@ -36,13 +52,15 @@ export const useFecth = (url) =>{ // estamos exportando a função que estamos c
 
             // 6 -loading
             setRelogar(true) // quando ele logar vai alterar para true 
-            
+            try{ // se der certo
             const res = await fetch(url) 
             
             const json = await res.json()
             
             setData(json) 
-
+            } catch { // caso ocorrer um erro
+                setErro("Houver algum erro ao carregar os dados ")
+            }
             setRelogar(false) // quando receber os dados vai se alterar para false
         }
         
@@ -58,15 +76,22 @@ export const useFecth = (url) =>{ // estamos exportando a função que estamos c
                 const res = await fetch(...FetchOpcoes) 
                 const json = await res.json() 
                 setChamadaFetch(json)  
-                
+            }
+            else if (metodo ==="DELETE"){
+               const deleteURL = `${url}/${ItemID}`
+               const res = await fetch (deleteURL , configuracao)
+               const json = await res.json()
+
+               setChamadaFetch(json)
             }
             
         } 
-        asy() 
-        httpConfiguracao()
+        if(metodo) {
+            asy()
+        }
         
     } , [configuracao , metodo, url])
-    return {data ,httpConfiguracao , relogar}; // retornando
+    return {data ,httpConfiguracao , relogar , error}; // retornando
 }
 
 // no app.jsx
