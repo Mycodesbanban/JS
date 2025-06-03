@@ -5,7 +5,7 @@ import { useFecth } from './hook/useFetch'
 const url = "http://localhost:3000/produtos" // a url
 function App() {
   const [ produtos , setProdutos] = useState([])  // começa como um array vazio 
-  const {data : items} = useFecth(url)
+  const {data : items , httpConfiguracao , relogar} = useFecth(url)
  
 
   // adicionando dados 
@@ -28,21 +28,22 @@ function App() {
 // Adicionando dados -02
   const handleSubmit = async (e) =>{
     e.preventDefault() // não deixa o comportamento padrão dos navegadores
-    const produtos = {
+    const produto = {
       nome:nome, //
       valor:valor , 
 
     }
-    const res = await fetch (url , {  // faz a requisção http e aguarda a resposta com o await
-      method:"POST" , // mudando o metodo para POST
-      headers:{ // cabeçalho da requisição
-        "Content-Type":"application/json" // diz ao servidor que está em conteudo json
-      } , 
-      body:JSON.stringify(produtos), // transformar um Json em um objeto jS 
-    }) 
-    // 3- carregamento dinamico
+    // const res = await fetch (url , {  // faz a requisção http e aguarda a resposta com o await
+    //   method:"POST" , // mudando o metodo para POST
+    //   headers:{ // cabeçalho da requisição
+    //     "Content-Type":"application/json" // diz ao servidor que está em conteudo json
+    //   } , 
+    //   body:JSON.stringify(produtos), // transformar um Json em um objeto jS 
+    // }) 
+    // // 3- carregamento dinamico
 
-    const adicionarProduto = await res.json() // espera uma resposta do servidor e converte para um objeto js
+     const adicionarProduto = await httpConfiguracao(produto , "POST") // espera uma resposta do servidor e converte para um objeto js
+
    
  setProdutos((verProdutos) =>[...verProdutos , adicionarProduto ]) // ver a lista antiga e pega todos os seus produtos antigos e os produtos novos nesse novo array
     setNome("")
@@ -56,11 +57,13 @@ function App() {
     <>
       <div className='App'>       
         <h1>lista de produtos</h1>  
-        <ul>
+        {/* loading */}
+        {relogar && <p>carregando dados </p>}
+       { !relogar && <ul>
           {items && items.map((produto) => ( // está percorrendo o array produtos , e para cada produto encontrado ele vai retorna dentro da lista cada um deles
             <li key={produto.id}>{produto.nome} - R${produto.valor}</li>
           ))}
-        </ul> 
+        </ul> }
         <div className='estiloDiv'>
           <form onSubmit={handleSubmit}> 
             {/* quando clicar no botão de enviar ele vai chamar a função handleSubmit  */}
@@ -74,7 +77,9 @@ function App() {
               <input type="number" value={valor} name="valor" onChange={(e) => setValor(e.target.value)} />
               {/* pega o valor do elemento html que disparou o evento */}
             </label>
-            <input type="submit" value="Criar" />
+            {/* 7-state de loading no post */}
+            {!relogar && <input type="submit" value="Criar" />}  
+            {/* se relogar for falso ele vai exibir o botão */}
 
           </form>
         </div>

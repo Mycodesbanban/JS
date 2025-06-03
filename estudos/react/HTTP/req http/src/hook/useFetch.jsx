@@ -1,4 +1,4 @@
-import {useState , useEffect} from "react"
+import {useState , useEffect, use} from "react"
 
 
 // 4- criando o hooks
@@ -6,18 +6,71 @@ import {useState , useEffect} from "react"
 export const useFecth = (url) =>{ // estamos exportando a função que estamos criando / custom hooks
     const [data , setData] = useState(null) // definindo o estado
 
+
+    // 6- estado de loading
+    const [relogar , setRelogar] = useState(false) // definido o estado
+
+    
+    // 5 - refatorando o post
+    const httpConfiguracao = (data , method) =>{
+        if(method ==="POST"){
+            setConfiguracao({
+    
+                method:"POST" , 
+                headers:{
+                    "content-type":"application/json" 
+                } , 
+                body:JSON.stringify(data) 
+            });
+            setMetodo(method)
+        }
+    }
+    const [configuracao , setConfiguracao] = useState(null) 
+    const [metodo , setMetodo] = useState(null) 
+    const [chamadaFetch , setChamadaFetch] = useState(false)
+
+
+    
     useEffect(()=>{
         const fethcData = async () =>{
-            const res = await fetch(url) // espera a resquisição da url
 
-            const json = await res.json() // espera os json ser convertido para js
+            // 6 -loading
+            setRelogar(true) // quando ele logar vai alterar para true 
+            
+            const res = await fetch(url) 
+            
+            const json = await res.json()
+            
+            setData(json) 
 
-            setData(json) // alterando o estado
+            setRelogar(false) // quando receber os dados vai se alterar para false
         }
-
+        
         fethcData()
-    } , [url]) // toda vez que a url mudar ele vai fazer essa requisição
-return {data}; // retorna um objeto contendo o estado de data 
+    } , [url , chamadaFetch])  
+    // o post novo
+    useEffect(() =>{
+        const asy = async () =>{ 
+            if(metodo ==="POST"){ 
+                
+                
+                let FetchOpcoes = [url , configuracao]
+                const res = await fetch(...FetchOpcoes) 
+                const json = await res.json() 
+                setChamadaFetch(json)  
+                
+            }
+            
+        } 
+        asy() 
+        httpConfiguracao()
+        
+    } , [configuracao , metodo, url])
+    return {data ,httpConfiguracao , relogar}; // retornando
 }
+
 // no app.jsx
-//  const {data} = useFecth(url) chamando o data do useFeacth o hook que criamos 
+// const {relogar} = useFecth(url)
+//   {/* loading */}
+//  {relogar && <p>carregando dados </p>} // se for igual a true ele vai retorna o paragrafo carregamento de dados
+
