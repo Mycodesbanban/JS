@@ -1,6 +1,6 @@
 (function () {
     function navegarViaAjax(hash) {
-        if (!hash) return
+        if (!hash) return // se o has for c
 
         const link = document.querySelector(`[wm-link='${hash}']`)
         if(!link) return
@@ -18,7 +18,8 @@
     function configurarLinks() {
         document.querySelectorAll('[wm-link]')
             .forEach(link => {
-                link.href = link.attributes['wm-link'].value
+               const caminho = link.getAttribute("wm-link")
+               link.setAttribute("href" , `#${caminho}`)
             })
     }
 
