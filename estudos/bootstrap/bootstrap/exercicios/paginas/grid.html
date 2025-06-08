@@ -1,5 +1,22 @@
 <!-- Título (jumbotron) -->
-<!-- Breadcrumb -->
+ <div class="jumbotron pt-4 my-1"> 
+    <!-- usado para destacar seções importantes com um fundo suave e texto em destaque , é estamos dando um padding top de 4 (pt-4) e uma margin no exixo y (vertical) de 1 (my-1)-->
+    <h1 class="display-4">Sistema de Grid</h1>
+    <!-- destacar um paragrafo de introdução e estamos dando uma margem de 1 (m-1) -->
+    <p class="lead m-1"> Revolução da responsividade:contains , linhas e 12 colunas </p> 
+ </div>
+ 
+<!-- Breadcrumb :mostrar a navegação hierárquica de um site -->
+
+<!-- colocando uma margim para baixo de tamanho 5 (mb-5) -->
+ <nav class="mb-5"> 
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="bemVindo.html">Home</a>
+        </li>
+           <li class="breadcrumb-item active">grid </li>
+    </ol>
+ </nav>
 
 <p class="lead">
     <a href="https://getbootstrap.com/docs/4.0/layout/grid/"
@@ -7,35 +24,57 @@
 </p>
 
 <div class="exercicio">
-    <h1>1. Grid Básica</h1>
-    <hr>
-
+    
     <!-- Grid Básica -->
+    <h1>1. Grid Básica</h1>
 
-    <h1 class="mt-5">2. Grid Responsiva</h1>
+    <!-- vai ocupar a tela inteira , sem margens laterais (container-fluid) -->
+    <div class="container-fluid"> 
+        <!-- definindo uma linha (row)-->
+        <div class="row">
+            <!-- cria uma coluna flexivel  , funciona para todos os dispositivos (col) e colocando cores -->
+                <div class="col bg-primary">1</div>
+                <div class="col bg-danger">2</div>
+                <div class="col bg-warning">3</div>
+                <div class="col bg-info">4</div>
+        </div>
+        <!-- criando uma linha (row) e definindo uma margem top de 3 (mt-3)  -->
+        <div class="row mt-3">
+            <!-- criando uma coluna (col) e definindo uma cor (bg-danger) -->
+            <div class="col bg-danger">1</div>
+            <!-- estou dizendo que quero ocupar 4 colunas (col-4) , e estamos definindo uma cor (bg-primary) -->
+            <div class="col-4 bg-primary">2</div>
+        </div>
+    </div>
     <hr>
-
+    
     <!-- Grid Responsiva -->
+    
+    <h1 class="mt-5">2. Grid Responsiva</h1>  
 
-    <h1 class="mt-5">3. Quebra de Linha</h1>
+     <hr>
+
+        
+     <!-- Quebra de Linha -->
+     <h1 class="mt-5">3. Quebra de Linha</h1>
+
     <hr>
 
-    <!-- Quebra de Linha -->
+        
+     <!-- Ordem -->
+     <h1 class="mt-5">4. Ordem</h1>
 
-    <h1 class="mt-5">4. Ordem</h1>
     <hr>
 
-    <!-- Ordem -->
-
+    
+    <!-- Offset -->
     <h1 class="mt-5">5. Offset</h1>
     <hr>
-
-    <!-- Offset -->
-
+    
+    
+    <!-- Alinhamento -->
     <h1 class="mt-5">6. Alinhamento</h1>
     <hr>
-
-    <!-- Alinhamento -->
 </div>
 
 <style>

@@ -1,5 +1,22 @@
 <!-- Título (jumbotron) -->
-<!-- Breadcrumb -->
+ <div class="jumbotron pt-4 my-1"> 
+    <!-- usado para destacar seções importantes com um fundo suave e texto em destaque , é estamos dando um padding top de 4 (pt-4) e uma margin no exixo y (vertical) de 1 (my-1)-->
+    <h1 class="display-4">Fundamentos</h1>  <!-- dando um titulo paea a letra  -->
+    <!-- destacar um paragrafo de introdução e estamos dando uma margem de 1 (m-1) -->
+    <p class="lead m-1"> alguns recursos importante do bootstrap</p> 
+ </div>
+ 
+<!-- Breadcrumb :mostrar a navegação hierárquica de um site -->
+
+<!-- colocando uma margim para baixo de tamanho 5 (mb-5) -->
+ <nav class="mb-5"> 
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="bemVindo.html">Home</a>
+        </li>
+           <li class="breadcrumb-item active">fundamentos </li>
+    </ol>
+ </nav>
 
 <div class="exercicio">
     <h1>1. Tipografia -
@@ -26,41 +43,95 @@
 
     <!-- Espaços -->
 
+    <!-- Está dizendo que vai ter uma margem para baixo 5 (mb-5) e tem os valores que vão e 0 a 5   -->
+    <div class="mb-5">1</div>
+     <!-- está dizendo que vai ter uma margem 4 (m-4) , e o outro ta dizendo que vai dar um padding no eixo y (vertical) de 4 (py-4)  -->
+    <div class="m-4 py-4">2</div> 
+    <!-- está dizendo que eu vou dar um padding top (para cima) de 5 (pt-5) -->
+    <div class="pt-5">3</div>
+
+
+    
+    <!-- Cores -->
     <h1 class="mt-5">3. Cores -
         <small>
             <a href="https://getbootstrap.com/docs/4.0/utilities/colors/" target="_black">Documentação Oficial</a>
         </small>
     </h1>
+    <div class="my-1 p-3 bg-primary text-light"> <!-- div com um margem no eixo vertical de 1 (my-1) , um padding de 3 (p-3) e definindo a color como primary (azul) (bg-primary) e colocando um texto da cor bem clara (text-light)  -->
+       1
+    </div>
     <hr>
 
-    <!-- Cores -->
+    
+    <!-- Flex -->
 
+    
     <h1 class="mt-5">4. Flex -
         <small>
             <a href="https://getbootstrap.com/docs/4.0/utilities/flex/" target="_black">Documentação Oficial</a>
         </small>
     </h1>
+    <!-- o d-flex , ativa a flexbox , e depois coloca os itens em uma coluna invertida (flex-column-reverse) e depois damos um padding de 2-->
+    <div class="d-flex flex-column-reverse p-2">
+        <!-- estamos alinhando o item no final (align-self-end) -->
+        <div class="align-self-end">
+            1
+        </div>
+        <!-- alinha o item para o centro  -->
+        <div class="align-self-center">
+            2
+        </div>
+        <!-- alinha o item para o começo -->
+        <div class="align-self-start">
+            3
+        </div>
+    </div>
     <hr>
 
-    <!-- Flex -->
-
+    
+    <!-- Imagens -->
     <h1 class="mt-5">5. Imagens -
         <small>
             <a href="https://getbootstrap.com/docs/4.0/content/images/" target="_black">Documentação Oficial</a>
         </small>
     </h1>
+
+    <div class="p-2">
+
+        <!-- estamos falando que no eixo x quero dar um margem auto e estamos definindo o display como block e definindo a largura em 400px -->
+        <img src="./imgs/img1.png" alt="imagem 1 fudida dos dinosaurros" class="mx-auto d-block" width="400">
+    
+        <!-- aplica um estilo de miniartura na imagem , adicionando uma borda arrendodada e um padding (img-thumbnail) e define uma largura de 400px  -->
+        <img src="./imgs/img1.png" alt="imagem 1 fudida dos dinosaurros" class="img-thumbnail" width="400">
+        
+        <!-- faz a imagem ser responsiva , redimencionar para caber no conteiner (img-fluid) e define uma largura de 400px -->
+        <img src="./imgs/img1.png" alt="imagem 1 fudida dos dinosaurros" class="img-fluid" width="400">
+ 
+    </div>
     <hr>
-
-    <!-- Imagens -->
-
-    <h1 class="mt-5">6. Float -
-        <small>
-            <a href="https://getbootstrap.com/docs/4.0/utilities/float/" target="_black">Documentação Oficial</a>
-        </small>
-    </h1>
-    <hr>
-
+    
     <!-- Float -->
+    
+        <h1 class="mt-5">6. Float -
+            <small>
+                <a href="https://getbootstrap.com/docs/4.0/utilities/float/" target="_black">Documentação Oficial</a>
+            </small>
+        </h1>
+        <!-- defindindo uma margem no eixo y de 1 (my-1) e adicionando um padding de 3 , e fazendo flutuar para a esquerda -->
+        <div class="my-1 p-3 float-left">
+            1
+        </div>
+         <!-- defindindo uma margem no eixo y de 1 (my-1) e adicionando um padding de 3 , e fazendo flutuar para a direita -->
+        <div class="my-1 p-3 float-right">
+            2
+        </div>
+         <!-- defindindo uma margem no eixo y de 1 (my-1) e adicionando um padding de 3 , e fazendo flutuar para a direita mas para apenas telas grandes  -->
+        <div class="my-1 p-3 float-lg-right">
+            3
+        </div>
+
+        <hr>
 </div>
 
 <style>

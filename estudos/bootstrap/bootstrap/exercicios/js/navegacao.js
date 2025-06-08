@@ -1,39 +1,56 @@
 (function () {
     function navegarViaAjax(hash) {
-        if (!hash) return // se o has for c
+        if (!hash) return
 
-        const link = document.querySelector(`[wm-link='${hash}']`)
+        // Remove qualquer barra no início do hash
+        const path = hash.replace(/^#\/?/, '');
+        const link = document.querySelector(`[wm-link="/${path}"]`) || 
+                     document.querySelector(`[wm-link="${path}"]`);
         if(!link) return
 
-        const destino = document.querySelector('[wm-link-destino]')
+        const destino = document.querySelector("[wm-link-destino]")
 
-        const url = hash.substring(1)
+        // Garante que a URL comece com /paginas/ se necessário
+        const url = path.startsWith('paginas/') ? path : `paginas/${path}`;
         fetch(url)
-            .then(resp => resp.text())
-            .then(html => {
-                destino.innerHTML = html
+            .then(resp => {
+                if(!resp.ok) throw new Error('Página não encontrada');
+                return resp.text();
             })
+            .then(html => {
+                destino.innerHTML = html;
+                // Rola para o topo após carregar o conteúdo
+                window.scrollTo(0, 0);
+            })
+            .catch(e => {
+                console.error('Erro ao carregar página:', e);
+                destino.innerHTML = '<h1>Página não encontrada</h1>';
+            });
     }
 
     function configurarLinks() {
-        document.querySelectorAll('[wm-link]')
+        document.querySelectorAll("[wm-link]")
             .forEach(link => {
-               const caminho = link.getAttribute("wm-link")
-               link.setAttribute("href" , `#${caminho}`)
-            })
+                const caminho = link.getAttribute("wm-link");
+                // Remove barra inicial se existir
+                const hashPath = caminho.replace(/^\//, '');
+                link.href = `#${hashPath}`;
+            });
     }
 
     function navegacaoInicial() {
         if (location.hash) {
-            navegarViaAjax(location.hash)
+            navegarViaAjax(location.hash);
         } else {
-            const primeiroLink = document.querySelector('[wm-link]')
-            navegarViaAjax(primeiroLink.hash)
+            // Vai para a página de boas-vindas por padrão
+            const caminhoPadrao = 'paginas/bemVindo.html';
+            history.replaceState(null, null, `#${caminhoPadrao}`);
+            navegarViaAjax(`#${caminhoPadrao}`);
         }
     }
 
-    window.onhashchange = e => navegarViaAjax(location.hash)
+    window.onhashchange = e => navegarViaAjax(location.hash);
     
-    configurarLinks()
-    navegacaoInicial()
-})()
+    configurarLinks();
+    navegacaoInicial();
+})();
