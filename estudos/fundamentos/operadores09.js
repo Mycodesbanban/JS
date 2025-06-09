@@ -28,7 +28,7 @@ console.log(y); // 3 ( valor atual do y)
 console.log(++num1 === num2--)//true
 // o resultado foi true por que o ++ foi excutado antes da comparação , é o -- só foi executar depois de comparar 
 //quando for executar esse codigo se o resultado não foi true e por conta que lá em em cima colocamos os console.log com o num++ dentro entaõ preste bastante atenção
-console.log( num1=== num2) ; //false
+console.log( num1 === num2) ; //false
 
 
 
