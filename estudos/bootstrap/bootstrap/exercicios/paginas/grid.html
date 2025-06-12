@@ -52,28 +52,100 @@
     
     <h1 class="mt-5">2. Grid Responsiva</h1>  
 
+    <!-- vai ocupar a tela inteira , sem margens laterais (container-fluid) -->
+    <div class="container-fluid">
+        <!-- definindo uma linha -->
+        <div class="row">
+            <!-- defindindo as colunas e as cores -->
+
+             <!-- definindo que vai ocupar 12 colunas (col-12) -->
+            <div class="col-12 bg-primary">1</div>
+            <!-- definindo que vai ocupar 6 colunas quando o dispositivo for pequeno (col-sm-6) -->
+            <div class="col-sm-6 bg-danger">2</div>
+            <!-- definindo que vai ocupar 4 colunas quando o dispositivo for medio (col-md-4) -->
+            <div class="col-md-4 bg-warning">3</div>
+            <!-- definindo que vai ocupar 2 colunas quando for um dispositivo grande (col-lg-2) -->
+            <div class="col-lg-2 bg-info">4</div>
+            <!-- definindo que vai ocupar 1 coluna quando for um dispositivo extra grande (col-xl-1)-->
+            <div class="col-xl-1 bg-success">5</div>
+        </div>
+    </div>
      <hr>
 
         
      <!-- Quebra de Linha -->
      <h1 class="mt-5">3. Quebra de Linha</h1>
 
+    <!-- criando um conteiner fluido -->
+     <div class="container-fluid">
+        <!-- criando uma linha -->
+        <div class="row">
+            <!-- vai ocupar 3 colunas em todos os dispositivos -->
+            <div class="col-3 bg-primary">1</div>
+            <!-- vai ocupar 3 colunas em todos os dispositivos -->
+            <div class="col-3 bg-danger">2</div>
+            <!-- vai ocupar 100% da largura da linha que faz que o proximo elemento vá para a proxima linha -->
+            <div class="w-100"></div>
+             <!-- vai ocupar 3 colunas em todos os dispositivos -->
+            <div class="col-3 bg-warning">4</div>
+
+        </div>
+     </div>
+
     <hr>
 
         
      <!-- Ordem -->
      <h1 class="mt-5">4. Ordem</h1>
-
+    
+     <!-- criando um conteiner fluido -->
+     <div class="container-fluid">
+        <!-- criando uma linha  -->
+        <div class="row">
+            <!-- defindindo que vai ocupar 4 coluna e vai ter uma ordem de 5 (vai ficar no 5 lugar)  -->
+            <div class="col-4 order-5 bg-danger">1</div>
+            <!-- defindindo que vai ocupar 4 coluna e vai ter uma ordem de 12 (ultimo) -->
+            <div class="col-4 order-12 bg-primary">2</div>
+            <!-- defindindo que vai ocupar 4 coluna e vai ter uma ordem de 1 (primeiro) -->
+            <div class="col-4 order-1 bg-success">3</div>
+        </div>
+     </div>
     <hr>
 
     
     <!-- Offset -->
     <h1 class="mt-5">5. Offset</h1>
+
+    <!-- criando um container fluido -->
+    <div class="container-fluid">
+        <!-- criando uma linha -->
+        <div class="row">
+            <!--adiciona uma margem esquerda de equivalente a 7 colunas   -->
+          <div class="col-3 offset-7 bg-primary">1</div>  
+          <!-- adiciona uma margem esquerda de equivalente a 3 colunas -->
+          <div class="col-4 offset-3 bg-danger">2</div>
+          <!-- adiociona uma margem esquerda de equivalente a 1 colunas -->
+          <div class="col-6 offset-1 bg-warning">3</div>
+
+        </div>
+    </div>
     <hr>
     
     
     <!-- Alinhamento -->
     <h1 class="mt-5">6. Alinhamento</h1>
+
+   <div class="container-fluid">
+       <!-- defindindo uma linha com 300px de altura -->
+       <div class="row" height="300px">
+           <!-- vai ocupar 4 colunas e vai se alinha ao final -->
+           <div class="col-4 align-self-end bg-primary">1</div>
+           <!-- vai ocupar 4 colunas e vai se alinha ao centro -->
+           <div class="col-4 align-self-center bg-warning">2</div>
+           <!-- vai ocupar 4 colunas e vai se ocupar ao começo -->
+           <div class="col-4 align-self-start bg-success">3</div>
+       </div>
+   </div>
     <hr>
 </div>
 
