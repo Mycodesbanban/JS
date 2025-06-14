@@ -197,6 +197,16 @@
     >
   </small>
 </h1>
+
+
+<div>
+  <!-- definindo um alerta  -->
+  <div class="alert alert-warning">Precisa chama uma função JS <strong>e agora?</strong></div>
+
+  <!-- definindo a classe base dos botões (btn) e colocando uma cor (btn-danger) e depois ativa a funcionalidade tooltip (data-toggle) e depois controla onde o tooltip aparece em relação ao elemento (data-placement) -->
+  <button class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Pense antes">excluir</button>
+  <!-- tooltip:é uma pequena caixa de dica flutuante que aparece quando o usuário passa o mouse (ou toca, em dispositivos touch) -->
+</div>
 <hr />
 
 <!-- Slider -->
@@ -210,6 +220,50 @@
     >
   </small>
 </h1>
+
+<div>
+  <!-- defindindo que vai indentificar o elemento como um carrossel (carousel) , depois adiciona um efeito de transição suave entre os itens (slide) e inicializar automaticamente apois carregar a pagina (data-ride="carousel")   -->
+  <div class="carousel slide" id="slider" data-ride="carousel">
+
+    <!-- cria a area deslizante dentro do carrossel (carousel-inner) -->
+    <div class="carousel-inner bg-dark">
+
+      <!-- definir um slide individual (carousel-item) e vai está sempre ativo (active) -->
+      <div class="carousel-item active">
+        <img src="/imgs/slide1.png" alt="slide1" class="d-block mx-auto">
+      </div>
+
+      <!--  definir um slide individual (carousel-item) -->
+      <div class="carousel-item ">
+        <img src="/imgs/slide2.png" alt="slide2" class="d-block mx-auto">
+
+      </div>
+
+      <!--  definir um slide individual (carousel-item) -->
+      <div class="carousel-item ">
+        <img src="/imgs/slide3.png" alt="slide3" class="d-block mx-auto">
+      </div>
+
+      <!-- estamos apontando para o id slider que criamos , logo apois vai Aplica o estilo e comportamento do botão de controle para o slide anterior (carousel-control-prev) e diz que ao clicar nesse link vai para o para o anterior (data-slide="prev") -->
+      <a href="#slider" class="carousel-control-prev" data-slide="prev">
+        <!-- cria um icone de seta para os slides anterio  -->
+        <span class="carousel-control-prev-icon">
+
+        </span>
+
+      </a>
+         <!-- estamos apontando para o id slider que criamos , logo apois vai Aplica o estilo e comportamento do botão de controle para o proximo slide (carousel-control-next) e diz que ao clicar nesse link vai para o para o proximo (data-slide="next") -->
+      <a href="#slider" class="carousel-control-next" data-slide="next">
+        <!-- cria um icone de seta para o proximo slide   -->
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- data-ride:inicializar automaticamente quando a pagina é carregada -->
+  <!-- data-slide:é um atributo de dados personalizado  para controlar o comportamento de carrosséis (carousels) via HTML -->
+</div>
 <hr />
 
 <!-- Accordion -->
@@ -223,8 +277,39 @@
     >
   </small>
 </h1>
+
+<div>
+  <!-- agrupar esses elementos do tipo colapsável (accordion) -->
+  <div class="mb-5" id="accordion">
+    <!-- uma caixa com borda e sombra para exibir o conteudo (card) -->
+    <div class="card">
+      <!-- cabelhaço do card onde fica o botão de abertura e fechamento (card-header) -->
+      <div class="card-header" id="pergunta1">
+        <h5 class="mb-0">
+          <!-- ao ser clicado irá colapsar/expandir o conteúdo com id (data-toggle="collapse") -->
+          <button class="btn btn-link" data-toggle="collapse" data-target="#resposta1">
+            Quem é o professor de programação mais legal?
+          </button>
+        </h5>
+      </div>
+      <!-- conteudo que será exibido ou escondido (collapse) ,e faz com que só um painel fique aberto por vez (data-parent="#accordion") -->
+      <div class="collapse" id="resposta1" data-parent="#accordion">
+        <!-- onde fica a area do conteudo real/resposta (card-body) -->
+        <div class="card-body">
+          posso dizer? :)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- data-parent: é um atributo usado para fazer com que apenas um item de um grupo colapsável fique aberto por vez. -->
 <hr />
 
 <script>
-  // ...
+
+  $(document).ready(function(){ // espera a dom está totalmente carregada para executar essa função
+    $('[data-toggle="tooltip"]').tooltip(); //Seleciona todos os elementos com o atributo data-toggle="tooltip" e depois inicializar o tooltips do Bootstrap nos elementos selecionados
+  })
+
+  // ready(): executa a função js quando dos os elementos da dom estiverem carregados 
 </script>
