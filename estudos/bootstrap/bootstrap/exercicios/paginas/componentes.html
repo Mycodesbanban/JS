@@ -1,88 +1,230 @@
+<!-- Título (jumbotron) -->
+<div class="jumbotron pt-4 my-1">
+  <!-- usado para destacar seções importantes com um fundo suave e texto em destaque , é estamos dando um padding top de 4 (pt-4) e uma margin no exixo y (vertical) de 1 (my-1)-->
+  <h1 class="display-4">Componentes</h1>
+  <!-- destacar um paragrafo de introdução e estamos dando uma margem de 1 (m-1) -->
+  <p class="lead m-1">Componetes do bootstrap</p>
+</div>
 
- <!-- Título (jumbotron) -->
- <div class="jumbotron pt-4 my-1"> 
-    <!-- usado para destacar seções importantes com um fundo suave e texto em destaque , é estamos dando um padding top de 4 (pt-4) e uma margin no exixo y (vertical) de 1 (my-1)-->
-    <h1 class="display-4">Componentes</h1>
-    <!-- destacar um paragrafo de introdução e estamos dando uma margem de 1 (m-1) -->
-    <p class="lead m-1"> Componetes do bootstrap </p> 
- </div>
- 
 <!-- Breadcrumb :mostrar a navegação hierárquica de um site -->
 
 <!-- colocando uma margim para baixo de tamanho 5 (mb-5) -->
- <nav class="mb-5"> 
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="bemVindo.html">Home</a>
-        </li>
-           <li class="breadcrumb-item active">grid </li>
-    </ol>
- </nav>
-
-
-<h1>1. Botões -
-    <small>
-        <a href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_black">Documentação Oficial</a>
-    </small>
-</h1>
-<hr>
+<nav class="mb-5">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="bemVindo.html">Home</a>
+    </li>
+    <li class="breadcrumb-item active">grid</li>
+  </ol>
+</nav>
 
 <!-- Botões -->
 
-<h1 class="mt-5">2. Progresso -
-    <small>
-        <a href="https://getbootstrap.com/docs/4.0/components/progress/" target="_black">Documentação Oficial</a>
-    </small>
+<h1>
+  1. Botões -
+  <small>
+    <a
+      href="https://getbootstrap.com/docs/4.0/components/buttons/"
+      target="_black"
+      >Documentação Oficial</a
+    >
+  </small>
+
+  <div>
+
+    <!-- colocando um margem para baixo de 3 (mb-3) -->
+    <div class="mb-3">
+
+    <!-- defindindo que vai ter a classe base dos botões (btn) e definindo a cor do botão (btn-primary)  -->
+      <button class="btn btn-primary">salvar</button>
+ 
+     <!-- defindindo que vai ter a classe base dos botões (btn) e definindo a cor do botão (btn-danger) -->
+      <button class="btn btn-danger">apagar</button>
+
+    <!-- defindindo que vai ter a classe base dos botões (btn) e defindo que vai ter aplica um estilo de contorno verde (btn-outline-sucess). -->
+      <button class="btn btn-outline-success">Finalizar</button>
+
+    <!-- defindido que vai ter a classe base dos botões (btn) e vai está desabilitado -->
+    <button class="btn btn-warning" disabled="disabled">Erro</button>
+    
+    <!-- definindo que vai ter a classe base dos botões (btn) e ativa o comportamento de alternância (data-toggle) -->
+    <button class="btn btn-secondary" data-toggle="button">selecione</button>
+
+    <!-- data-bs-toggle: Ativa o comportamento de toggle (alternância) do Bootstrap -->
+    </div>
+
+    <!-- criando um container para agrupar os botões (btn-group) e dando uma margem bottom de 3 (mb-3) -->
+    <div class="btn-group mb-3">
+
+        <!-- definindo que vai ter a classe base dos botões (btn) e dando um estilo de ações informaticas (btn-info) -->
+        <button class="btn btn-info">lado1</button>
+
+        <!-- definindo que vai ter a classe base dos botões (btn) e dando um estilo de ações informaticas (btn-info) e deixa o estado com uma aparencia de precionado/ativo (active)-->
+        <button class="btn btn-info active">lado2</button>        
+    </div>
+
+    <!-- classe para criar um menu suspenso/quando o usuario clicar vai mostra um menu (dropdown)  -->
+    <div class="dropdown">
+
+        <!-- vai ter a classe base dos botões (btn), esse botão vai ser largo (btn-lg), cria uma seta para baixo (dropdown-toggle) e depois ativamos o dropdown (data-bs-toggle)  -->
+        <button class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown">comprar!</button>
+
+        <!-- colocando os itens do menu -->
+         <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">payPal</a>
+         </div>
+    </div>
+  </div>
 </h1>
-<hr>
+
+<hr />
 
 <!-- Progresso -->
-
-<h1 class="mt-5">3. Mensagens (Alertas) -
-    <small>
-        <a href="https://getbootstrap.com/docs/4.0/components/alerts/" target="_black">Documentação Oficial</a>
-    </small>
+<h1 class="mt-5">
+  2. Progresso -
+  <small>
+    <a
+      href="https://getbootstrap.com/docs/4.0/components/progress/"
+      target="_black"
+      >Documentação Oficial</a
+    >
+  </small>
 </h1>
-<hr>
+
+    <div>
+
+      <!-- cria uma barra de progresso visual (progress) e dar um margem bottom de 4 -->
+        <div class="progress mb-4">
+            <!-- dentro da bara de progresso (progress-bar) vai está 25% preenchida -->
+            <div class="progress-bar" style="width:25%"></div>
+
+        </div>
+
+
+        <!-- cria uma barra de progresso visual (progress) e dar um margem bottom de 4 -->
+        <div class="progress mb-4">
+          <!-- dentro da barra de progresso (progress-bar) e Adiciona listras diagonais à barra (progress-bar-striped) e defindindo que vai está 50% preenchida -->
+          <div class="progress-bar progress-bar-striped bg-success" style="width: 50%;">50%</div>
+        </div>
+
+        <!-- cria uma barra de progresso visual (progress) e dar uma altura de 40px -->
+        <div class="progress" style="height: 40px;">
+          <!-- criando varias barras de progressos -->
+          <div class="progress-bar" style="width:15%">15%</div>
+          <div class="progress-bar bg-danger" style="width:30%">30%</div>
+          <div class="progress-bar bg-info" style="width:20%">20%</div>
+          <div class="progress-bar bg-secondary" style="width:45%">45%</div>
+        </div>
+    </div>
+<hr />
 
 <!-- Alertas -->
-
-<h1 class="mt-5">4. Paginação -
-    <small>
-        <a href="https://getbootstrap.com/docs/4.0/components/pagination/" target="_black">Documentação Oficial</a>
-    </small>
+<h1 class="mt-5">
+  3. Mensagens (Alertas) -
+  <small>
+    <a
+      href="https://getbootstrap.com/docs/4.0/components/alerts/"
+      target="_black"
+      >Documentação Oficial</a
+    >
+  </small>
 </h1>
-<hr>
 
-<!-- Peginação -->
+<div>
+  <!-- criar uma mensagem de alerta (alert) da cor verde (alert-success) -->
+  <div class="alert alert-success">Operação realizada com sucesso </div>
 
-<h1 class="mt-5">5. Tooltip -
-    <small>
-        <a href="https://getbootstrap.com/docs/4.0/components/tooltip/" target="_black">Documentação Oficial</a>
-    </small>
+  <!-- criar uma mensagem de alerta (alert) da cor amarela/laranja (alert-warning)  -->
+  <div class="alert alert-warning"><strong>Cuidadoooo!</strong></div>
+
+  <!-- criar uma mensagem de alerta (alert) da cor vermelha (alert-dnager) -->
+  <div class="alert alert-danger">
+    <strong>Erro!</strong> Ocorreu um erro inesperado!
+    <!-- dar um destaque e um contraste ao link dentro da mensagem de alerta (alert-link)  -->
+    <a href="#" class="alert-link">Veja mais detalhes </a>
+  </div>
+
+  <!-- cria uma mensagem de alerta (alert) da cor verde (alert-success)  -->
+  <div class="alert alert-success">
+    <!-- aplica um estilo especial dentro do alerta (alert-heading) -->
+    <h4 class="alert-heading">Parabens!</h4>
+      <p>Por chegar até aqui!</p>
+      <hr>
+      <p class="mb-0">Pode ficar orgulhoso</p>
+  </div>
+
+</div>
+
+
+
+<hr />
+
+<!-- Paginação -->
+<h1 class="mt-5">
+  4. Paginação -
+  <small>
+    <a
+      href="https://getbootstrap.com/docs/4.0/components/pagination/"
+      target="_black"
+      >Documentação Oficial</a
+    >
+  </small>
 </h1>
-<hr>
+
+  <div>
+    <nav>
+      <!-- cria uma estrutura base para a paginação , aqueles controles de paginas como 1, 2, 3,  proximo (pagination) -->
+      <ul class="pagination">
+        <!-- criar os itens da lista  -->
+        <li class="page-item">
+          <!-- os links clicaveis  -->
+          <a href="#" class="page-link">Anterior</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+<hr/>
 
 <!-- Tooltip -->
-
-<h1 class="mt-5">6. Slider -
-    <small>
-        <a href="https://getbootstrap.com/docs/4.0/components/carousel/" target="_black">Documentação Oficial</a>
-    </small>
+<h1 class="mt-5">
+  5. Tooltip -
+  <small>
+    <a
+      href="https://getbootstrap.com/docs/4.0/components/tooltip/"
+      target="_black"
+      >Documentação Oficial</a
+    >
+  </small>
 </h1>
-<hr>
+<hr />
 
 <!-- Slider -->
-
-<h1 class="mt-5">7. Accordion -
-    <small>
-        <a href="https://getbootstrap.com/docs/4.0/components/collapse/" target="_black">Documentação Oficial</a>
-    </small>
+<h1 class="mt-5">
+  6. Slider -
+  <small>
+    <a
+      href="https://getbootstrap.com/docs/4.0/components/carousel/"
+      target="_black"
+      >Documentação Oficial</a
+    >
+  </small>
 </h1>
-<hr>
+<hr />
 
 <!-- Accordion -->
+<h1 class="mt-5">
+  7. Accordion -
+  <small>
+    <a
+      href="https://getbootstrap.com/docs/4.0/components/collapse/"
+      target="_black"
+      >Documentação Oficial</a
+    >
+  </small>
+</h1>
+<hr />
 
 <script>
-    // ...
+  // ...
 </script>

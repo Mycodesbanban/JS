@@ -1,0 +1,19 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "nome": "maycon",
+      "valor": "4873"
+    }, 
+    {
+      "id": "2",
+      "nome": "maysa",
+      "valor": "4534"
+    },
+     {
+      "id": "3",
+      "nome": "eu E maysa",
+      "valor": "4239498282824874"
+    }
+  ]
+}
