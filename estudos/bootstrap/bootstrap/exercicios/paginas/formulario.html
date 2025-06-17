@@ -9,16 +9,80 @@
 <!-- Breadcrumb :mostrar a navegação hierárquica de um site -->
 
 <!-- colocando uma margim para baixo de tamanho 5 (mb-5) -->
- <nav class="mb-5"> 
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="bemVindo.html">Home</a>
-        </li>
-           <li class="breadcrumb-item active">grid </li>
-    </ol>
- </nav>
-<p class="lead">
-    <a href="https://getbootstrap.com/docs/4.0/components/forms/" target="_black">Documentação Oficial</a>
-</p>
 
 <!-- Formulário -->
+
+<!-- uma caixa com borda e sombra para exibir o conteudo (card) -->
+<div class="card">
+    <!-- cabelhaço do card onde fica o botão de abertura e fechamento (card-header) -->
+    <div class="card-header">
+        <h5 class="mb-0">
+            exemplo de formulario
+        </h5>
+    </div>
+     <!-- onde fica a area do conteudo real/resposta (card-body) -->
+    <div class="card-body">
+        <!-- criando um formulario com o container fluido (container-fluid) -->
+        <form action="" class="container-fluid">
+             <!-- campos de formulário em colunas na mesma linha (form-row) -->
+            <div class="form-row ">
+                <!-- ocupa 12 colunas  -->
+                <div class="col-12">
+                    <label for="nome">Nome</label>
+                    <!-- colocando um estilo com bordas , responsividade e acessibilidade (form-control)  -->
+                    <input type="text" class="form-control" id="nome" placeholder="informe o nome ">
+
+                </div>
+            </div>
+            <!--  campos de formulário em colunas na mesma linha (form-row) -->
+            <div class="form-row">
+                <!-- ocupar 12 colunas (col-12) caso o dispositivo tiver um tamanho medio ou maior vai ocupa 6 (col-md-6) -->
+                <div class="col-12 col-md-6">
+                    <!-- agrupando e orgarnizando elementos de formularios (form-group)  -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <!-- agrupando campos de entrada com elementos extras (input-group) -->
+                        <div class="input-group">
+                             <!-- inserir um elemento antes do campo de entrada (input-group-prepend). -->
+                            <div class="input-group-prepend">
+                                <!-- colocando um simbulo antes do campo de entrada (input-group-text) -->
+                                <span class="input-group-text">@</span>
+                            </div>
+                            <!-- colocando um estilo com bordas , responsividade e acessibilidade (form-control) -->
+                            <input type="email" class="form-control" id="email" placeholder="informe o email">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- aplica um espaçamento automatico para o texto ficar abaixo do campo de formulario (form-text) e deixa o texto com uma cor cinza (form-muted) -->
+            <small class="form-text text-muted">
+                Enviaremos um email para confirmar o cadrastro
+            </small>
+            <!-- ocupa 12 colunas se o dispositivo for igual a medio ou maior vai fica em 6 colunas  -->
+            <div class="col-12 col-md-6">
+               <!-- agrupando e orgarnizando elementos de formularios (form-group)  -->
+                <div class="form-group">
+                    <label for="LinguagemPreferida">Linguagem</label>
+                    <!-- aplicando um estilo , responsividade e acessibilidade (form-control) -->
+                    <select name="" id="LinguagemPreferida" class="form-control">
+                        <option>JS</option>
+                        <option>Java</option>
+                        <option>Python</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <!--  campos de formulário em colunas na mesma linha (form-row) e dando um margem-bottom 0 -->
+            <div class="form-row mb-0">
+                <!-- ocupa 12 colunas (col-12) -->
+                <div class="col-12">
+                    <!-- botão para enviar -->
+                    <button class="btn btn-primary mb-2" type="submit">Salvar</button>
+                    <!-- botão para resetar -->
+                     <button class="btn btn-primary mb-2" type="reset">Resetar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
