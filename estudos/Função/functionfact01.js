@@ -10,6 +10,7 @@ function criarCarro(marca, modelo) {
         modelo: modelo,
         acelerar: function() {
             console.log(`O carro ${this.marca} ${this.modelo} está acelerando!`);
+            // o this se refere a pessoa que chamou o que estamos executado , nesse caso e a função acelerar
         },
         frear: function() {
             console.log(`O carro ${this.marca} ${this.modelo} está freando!`);

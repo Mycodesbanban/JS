@@ -1,9 +1,9 @@
 // Funções construtoras 
-// Em JS as  funções construtoras ão uma maneira de criar objetos. Elas permitem que você defina um modelo (ou "classe") para criar múltiplas instâncias de objetos com as mesmas propriedades e métodos. As funções construtoras são uma parte fundamental da programação orientada a objetos
+// Em JS as  funções construtoras são uma maneira de criar objetos. Elas permitem que você defina um modelo (ou "classe") para criar múltiplas instâncias de objetos com as mesmas propriedades e métodos. As funções construtoras são uma parte fundamental da programação orientada a objetos
 
 // como funciona uma função construtora
 
-// Definição: Uma função construtora é definida como uma função normal, mas deve ser chamada com a palavra-chave new. Isso cria um novo objeto e vincula o contexto this à nova instância.
+// Definição: Uma função construtora é definida como uma função normal , mas deve ser chamada com a palavra-chave new. Isso cria um novo objeto e vincula o contexto this à nova instância , e deve ser criada com letras Maiusculas.
 
 // Propriedades e Métodos: Dentro da função construtora, você pode definir propriedades e métodos que serão adicionados ao objeto criado.
 

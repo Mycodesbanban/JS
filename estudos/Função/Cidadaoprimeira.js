@@ -51,3 +51,5 @@ soma( 2, 3 )(4)
 const cinco= soma( 2, 3)
 cinco(4)
 // temos esses dois tipos para fazer
+
+// arguments: sustenta todos os argumentos enviados
