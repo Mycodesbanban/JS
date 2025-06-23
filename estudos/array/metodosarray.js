@@ -13,11 +13,11 @@ pilotos.unshift("Cleiton"); // .unshift adicionar o novo elemento na primeira po
 console.log(pilotos);
 
 // adicionar 
-pilotos.splice( 2 , 0 , "JSoen");
+pilotos.splice( 2 , 0 , "JSoen"); // Adiciona no índice 2, empurrando os elementos existentes para frente
 console.log(pilotos);
 
 // remover 
-pilotos.splice(2 , 1); // removemos o Jsoen
+pilotos.splice(2 , 1); // remove apenas 1 elemento apartir do index 2
 console.log(pilotos);
 
 // novo array
