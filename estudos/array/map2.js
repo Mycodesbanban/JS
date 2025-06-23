@@ -11,3 +11,6 @@ const apenaspreco=produto => produto.preco;
 
 const resultado = carrinho.map(paraObjeto).map(apenaspreco);
 console.log(resultado); 
+
+
+// 

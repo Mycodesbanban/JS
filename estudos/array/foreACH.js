@@ -12,4 +12,3 @@ aprovados.forEach(exibiraprovados) // ele vai imprimir da mesma forma
 
 
 
-  

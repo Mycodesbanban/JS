@@ -21,6 +21,16 @@ const paradinheiro= item =>`R$ ${parseFloat(item).toFixed(2).replace('.' , ',')}
 resultado= nums.map(soma10).map(triplo).map(paradinheiro); // passamos os mesmo array usando o map ,agora vamos imprimir no console
 console.log(resultado);
 
+// dobre os numeros 
+
+const numero = [5 , 50 , 80 , 1 ,2 , 3 , 5 , 8 , 7 , 11]
+const dobrar = numero.map((valor , index , array)=>{
+    return valor * 2
+})
+
+console.log(dobrar)
+
+
 
 
 
