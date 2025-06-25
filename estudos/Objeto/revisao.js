@@ -56,3 +56,4 @@ console.log(carro.condutores) // undefined
 
 // Object.defineProperty(): Define uma nova propriedade ou modifica uma existente em um objeto, retornando o objeto modificado.
 //Object.defineProperties():Define várias propriedades de uma vez em um objeto
+
