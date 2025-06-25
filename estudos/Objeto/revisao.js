@@ -57,3 +57,19 @@ console.log(carro.condutores) // undefined
 // Object.defineProperty(): Define uma nova propriedade ou modifica uma existente em um objeto, retornando o objeto modificado.
 //Object.defineProperties():Define várias propriedades de uma vez em um objeto
 
+//! lembrando que o this se refere-se ao objeto ao qual a função está sendo anexada 
+function Produto2 (nome ,preco , estoque){
+    this.nome = nome // transformando o nome em uma variavel publica 
+    this.preco = preco // transformando o preco em uma variavel publica
+    this.estoque = estoque // transformando o estoque em uma variavel publica 
+
+    Object.defineProperty(this ,"estoque" , { // pega o Objeto alvo,  nome da propriedade a ser definida/modificada (string)
+        enumerable:true , // faz a propriedade ser visil em loops , mostra a chave
+        value:estoque, //valor da propriedade
+        writable: false ,// O valor não pode ser alterado
+        configurable:true , //pode reconfigurar a chave
+    } )
+}   
+
+const p1 = new Produto2 ("camiseta" , 38 , 22)
+console.log(p1)
