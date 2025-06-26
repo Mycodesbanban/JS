@@ -73,3 +73,22 @@ function Produto2 (nome ,preco , estoque){
 
 const p1 = new Produto2 ("camiseta" , 38 , 22)
 console.log(p1)
+
+
+
+// todo: Metodos úteis para objetos
+
+//? Object.assing(): copia as propriedades de um ou mais objetos para um outro objeto. Ele mescla objetos , ele tem dois parametros: O destino onde o objeto que vai receber as propriedades e o fontes: um ou mais objetos que têm as propriedades a copiar.
+
+const caneca = {nome:"Produto" , preco:1.5}
+const caneca2 =Object.assign({} , caneca) // copiar o caneca para dentro do objeto 
+//*: recomendo que use o operador spread , pois funcionar da mesma forma e o codigo fica mais limpo
+console.log(caneca2)
+
+
+//? Object.getOwnPropertyDescriptor(): retorna as informações (descritor) de uma propriedade específica de um objeto , ele tem dois parametros , obj o objeto que tem a propriedade , e a propriedade o nome da propriedade que você quer examinar
+
+const Macaco = {nome:"maycon" , preco:1.6}
+
+console.log(Object.getOwnPropertyDescriptor(Macaco , "nome")) //mostrando o que essa propriedade é 
+

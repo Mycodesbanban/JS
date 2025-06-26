@@ -9,11 +9,19 @@ function Produto2 (nome ,preco , estoque){
 
     Object.defineProperty(this ,"estoque" , { // pega o Objeto alvo,  nome da propriedade a ser definida/modificada (string)
         enumerable:true , // faz a propriedade ser visil em loops , mostra a chave
-        value:estoque, //valor da propriedade
-        writable: false ,// O valor não pode ser alterado
         configurable:true , //pode reconfigurar a chave
+        get:function(){
+            return estoque // vai pegar o valor e exibir ele 
+        },
+        set: function (valor){
+           if (typeof valor !== "number") {
+            console.log("esse valor não é um numero")
+           }
+        }
     } )
 }   
 
 const p1 = new Produto2 ("camiseta" , 38 , 22)
+p1.estoque="valor homoxesual"
 console.log(p1)
+
