@@ -27,7 +27,7 @@ const getTurma = letra => {
 
 // Objetivo de simplificar o uso de promises
 let obteralunos=async()=>{ // async:A declaração cria uma ligação de uma nova função assíncrona a um nome dado
-    const ta=await getTurma("A")//await: permite dentro do curpo da função permitindo que o comportamento assincrono baseado em promessa seja escrito em um estilo mais limpo
+    const ta=await getTurma("A")//await: espera o resultado de uma Promise
     const tb=await getTurma("B")
     const tc=await getTurma("C")
     return[].concat(ta , tb , tc) // retorna um objeto AsyncFunction  , em cima de AsyncFunction chamando  o .then
