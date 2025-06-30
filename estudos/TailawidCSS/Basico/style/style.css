@@ -1,1 +1,26 @@
+@tailwind utilities;
 @import "tailwindcss";
+|@theme{ 
+    /* definindo variaveis */
+    --color-principal:#243c5a;
+}
+
+/* Define uma animação personalizada chamada 'floatUp */
+@keyframes floatUp {
+    /* Início da animação: elemento na posição original , sem movimento vertical */
+    0%{
+      transform:translateY(0px)  
+    }
+     /* Meio da animação: elemento sobe 8 pixels , ele sobe para cima */ 
+    50%{
+        transform:translateY(-8px)
+    }
+    /* final , ele desce para a posição incial novamente */
+    100%{
+        transform:translateY(0px)
+    }
+}
+/* definindo a classe */
+.floatUp{
+     animation: floatUp 2s infinite;
+}

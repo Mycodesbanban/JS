@@ -22,6 +22,103 @@
         <p class="font-serif font-bold">Isso mesmo</p>
      </div>
 
+     <!-- todo: Manipulando a altura, largura e espaçamentos  -->
+     <div>
+        <!-- vai ter uma largura de 384 px (w-96) e uma cor -->
+        <h3 class="w-96 text-sky-600 bg-amber-300">Aqui tem largura</h3>
+        <!-- vai ter uma altura de 384px (h-96) e uma cor -->
+        <h4 class="h-96 text-amber-300 bg-sky-400">Aqui tem altura</h4>
+        <!-- colocando um margem top (mt-5) -->
+        <h4 class="mt-5">Aqui tem margem top</h4>
+        <!-- colocando um margem bottom (mb-5) -->
+        <h4 class="mb-5">Aqui tem margem bottom</h4>
+        <!-- colocando um margem right (mr-5) -->
+         <h4 class="mr-5">aqui tem margem right</h4>
+        <!-- colocando um margem left (ml-5) -->
+         <h4 class="ml-5">aqui tem margem left</h4>
+        <!-- Colocando uma margem em todos os lados (m-5) -->
+        <h4 class="m-5">Aqui tem margem para todos os lados</h4>
+        <!-- Colocando uma margem no eixo vertical (my-5) -->
+        <h4 class="my-5">aqui margem no eixo vertical</h4>
+        <!-- colocando uma margem no eixo horizontal (mx-5) -->
+        <h4 class="mx-5">aqui tem margem no eixo horizontal</h4>
 
+        <!-- colocando um padding top (pt-5) -->
+        <h4 class="pt-5">Aqui tem um padding top</h4>
+        <!-- colocando um padding bottom (pb-5) -->
+        <h4 class="pb-5">Aqui tem um padding bottom</h4>
+        <!-- colocando um padding right (pr-5) -->
+        <h4 class="pr-5">Aqui tem um padding right</h4>
+        <!-- colocando um padding left (pl-5) -->
+        <h4 class="pl-5">aqui tem um padding left</h4>
+        <!-- colocando um padding para todas as direções (p-5) -->
+        <h4 class="p-5">Aqui tem um padding para todas as direções</h4>
+        <!-- colocando um padding para o eixo vertical (py-5) -->
+        <h4 class="py-5">Aqui tem um padding para o eixo vertical</h4>
+        <!-- colocando um padding para o eixo horizontal (px-5) -->
+        <h4 class="px-5"> Aqui tem um padding para o eixo horizontal</h4>
+        </div>
+     </div>
+     <!--  Cria uma div com uma cor de fundo largura de 50% (w-1/2) e altura de 160px (h-40) -->
+     <div class="bg-amber-900 w-1/2 h-40"></div>
+
+     <!-- todo: Criando efeitos e core concepts -->
+
+     <!-- persornalizando a nossa cor (bg-["a codigo da cor que queremos"]) -->
+     <div class="bg-[#f293]">
+        <!-- Ou podemos definir dentro do nosso arquivo style:
+         @theme{
+        --color-principal:#243c5a;
+        }  -->
+        <p class="text-principal">maycon</p>
+        <!-- Colocando uma largura de 128 px (w-32) uma altura de 80px (h-20) e uma borda (border-2) -->
+        <p class="w-32 h-20 border-2">legal</p>
+        <!-- uma sombra pequena (shadow-sm) -->
+         <p class="shadow-sm">pequena</p>
+        <!-- uma sombra media (shadow-md) -->
+        <p class="shadow-md ">media</p>
+        <!-- uma sombra maior (shadow-lg) -->
+        <p class="shadow-lg">maior</p>
+        <!-- uma sombra grande (shadow-xl) -->
+        <p class="shadow-xl">grande</p>
+        <!-- uma sombra gigante (shadow-2xl) -->
+        <p class="shadow-2xl">Gigante</p>
+        <!-- colocando uma cor na sombra (shadow-(cor))-->
+        <p class="shadow-2xl shadow-red-500">vermelha</p>
+     </div>
+
+     <!-- todo:aplicando pseudo classes e pseudos elements -->
+      <!-- !lembrando que:
+       * pseudo-classes: interação com o usuario
+       * pseudo-elements:Altera parte do conteúdo sem a interação do usuario 
+
+      -->
+     <div>
+        <!-- vai colocar a cor vermelha para a primeira letra (first-letter:text-red-500) -->
+        <p class="first-letter:text-red-500">Usando pseudos elements</p>
+        <!-- quer que a primeira letra seja maior que as outras (first-letter:text-2xl)-->
+        <p class="first-letter:text-2xl">Seja maior</p>
+
+       
+        <!-- aplica o estilo para o primeiro filho do elemento (frist:mb-4) -->
+        <h2 class="first:mb-4">titulo</h2>
+        <!-- aplica o estilo para a primeira linha (first-line:text-3xl) -->
+        <p class="first-line:text-3xl">OI <br> olá</p>
+        <!-- cria uma borda arrendoda do tamanho medio (rounded-md) -->
+        <p class="rounded-md">Borda media</p>
+        <!-- quando o mouse passar por cima vai alterar a cor (hover:[cor/elemento]) -->
+        <p class="hover:bg-black hover:text-white">preto quando passar o mouse em cima</p>
+        <!-- demora 1 segundo para fazer a amimação (duration-1000) -->
+        <p class=" hover:bg-sky-200 duration-1000">Duração</p>
+        <!-- quando passar o mouse por cima vai aumentar o botão -->
+        <button class="hover:scale-125"> antes </button>
+        <!-- faz uma animação girando (animate-spin) -->
+        <button class="animate-spin">Criar conta</button>
+        <!-- faz uma animação pulando (animate-bounce) -->
+         <button class="animate-bounce">login</button> <br>
+      </div>
+      <!--todo: Animação  -->
+   <br>
+  <button class=" floatUp bg-blue-500 text-white px-4 py-2 rounded">Minha animação custom!</button>
 </body>
 </html>
