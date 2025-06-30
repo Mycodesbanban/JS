@@ -13,7 +13,7 @@ fs.readFile(caminho , "utf-8" , (erro , conteudo)=>{
 
 // ou podemos fazer assim 
 
-const confi = require("./arquivo.json");
+const confi = require("../arquivo.json");
 const { error } = require("console");
 console.log(confi.db)
 
