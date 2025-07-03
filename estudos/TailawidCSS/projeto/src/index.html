@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de login</title>
+    <link rel="stylesheet" href="../style/output.css"> 
+</head>
+<!-- aplicando um estilo de cor -->
+<body class="bg-slate-200"> 
+    <!-- ativando o flexbox (flex) , passando que vai ter a largura total do html ou do container onde ele está (w-full) ,define que a altura minima seja de 100hv(min-h-screen) e depois alinha no centro (justify-center , items-center) , colocando uma margem horizontal de auto , e depois um flex-row se o dispostivo for medio -->
+     <!--! Lembrando que :-->
+     <!--
+     * O justify-center: alinha no eixo horizontal (quando é row) ou no eixo vertical(quando é col)
+     Já o items-center: alinha no eixo vertical (quando é row) ou no eixo horizontal (quando é col)
+     -->
+    <main class="flex w-full min-h-screen flex-col items-center justify-center mx-auto md:flex-row ">
+        <!--lado esquerdo do conteudo principal da tela  -->
+        <section class="w-full flex-1 bg-red-400">item 1</section>
+
+        <!--lado direito do conteudo principal da tela -->
+        <section class="hidden md:flex w-full flex-1 bg-blue-400">item 2</section>
+        
+    </main>
+</body>
+</html>
