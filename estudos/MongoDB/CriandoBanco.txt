@@ -1,0 +1,16 @@
+Criando um banco de dados
+primeiro vamos usar o comando use , esse comando é ultilizado para criar ou mudar o banco de dados
+
+use PrimeiroBanco
+
+Criando o banco de dados , agora vamos inserir uma collection
+
+db.PrimeiraColletion.insertOne({nome:"maycon", idade:30}) Mostra o banco de dados que estamos usando , e cria a nossa collection logo apos
+
+insertOne: insere um unico documento
+
+db.PrimeiraColletion.findOne() procurando o dado
+
+findOne: Busca um unico documento
+
+

@@ -1,0 +1,7 @@
+MongoDB
+-é o banco de dados não Relacional mais ultilizado 
+-os dados são inseridos em formatos de objeto (JSON)
+-os comandos , em vex de queries , são metodos
+-podemos criar relações entre entidades 
+-facilmente adaptado para diversas linguagens através de drivers
+-possui uma proximidade com JS

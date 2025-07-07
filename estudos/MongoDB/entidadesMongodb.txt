@@ -1,0 +1,6 @@
+Entidades do MongoDB:
+
+-Database: é onde fica nossos conjutos de documentos e dados
+-collections: conjutos de documentos amarzenados dentro de um Database , collections podem ser criadas livremente a qualquer momento e não possuem colunas fixas para os dados
+-Documents: são os dados 
+

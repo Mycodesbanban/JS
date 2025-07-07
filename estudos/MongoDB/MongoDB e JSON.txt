@@ -1,0 +1,9 @@
+MongoDB e JSON
+
+- O tipo de dado inseridos na tabela é o BSON , uma variação do JSON porém com mais recursos
+
+Forma de criar:
+{
+    nome:"maysa",
+    idade:15
+}

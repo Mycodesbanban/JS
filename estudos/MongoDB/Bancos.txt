@@ -1,0 +1,27 @@
+Bancos de dados:
+Relacional x não Relacional
+
+Bancos Relacional:
+
+MySQL
+PostgreSQL
+Oracle
+SQL Server
+SQLite
+
+Caracteristicas:
+-Dados organizados em tabelas e colunas e relações entre tabelas para seu funcionamento
+
+Vantagens:
+-Bom para dados muitos estruturados
+
+Bancos Não Relacional:
+
+MongoDB
+CouhDB
+
+Caracteristicas:
+-Dados armazenados em formatos mais flexíveis 
+
+Vantagens:
+-Flexibilidade de estrutura de dados.
