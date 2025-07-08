@@ -1,0 +1,5 @@
+exibir todas as collections
+
+-para exibir todas as collection temos que usar o comando show collections
+
+-ele mostra apenas as collections do banco de dados selecionados

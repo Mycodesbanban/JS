@@ -1,0 +1,3 @@
+Função pretty em MongoDB
+
+-é usada para exibir dados de uma forma mais legivel

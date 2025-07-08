@@ -1,0 +1,5 @@
+Removendo Bancos de dados
+
+-removendo bancos de dados que não são mais ultilizamos
+
+db.dropDatabase() excluir o banco de dados atual que estamos 

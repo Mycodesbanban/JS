@@ -1,0 +1,5 @@
+removendo collections
+
+-podemos remover collections caso elas não forem mais necessarias
+
+sintaxe: db.(collection que criou).drop()

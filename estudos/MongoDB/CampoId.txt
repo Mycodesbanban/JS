@@ -1,0 +1,7 @@
+Campo _id 
+
+-Todo registro inserido no banco de dados vem com uma chave chamada _id
+
+-Esta chave tem como objetivo cria um identificador unico para o registro
+
+-ele é criado automaticamente caso não criamos 

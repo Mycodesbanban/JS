@@ -1,0 +1,8 @@
+Importando bancos em JSON
+
+- O formato encontrado em MongoDB é JSON
+
+-sintaxe
+
+mongoimport (arquivo json) -d (banco de dados) -c (collection) 
+

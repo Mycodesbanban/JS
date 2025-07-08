@@ -1,0 +1,6 @@
+Criação de collections implicíta
+
+-é possivel cria uma collection de forma implicíta
+-sintaxe:
+db.createCollection("nome" , {opções}) criamos a collection de forma implicíta
+-com a collection criada é so inserir o dado.
