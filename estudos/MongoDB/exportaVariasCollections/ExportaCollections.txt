@@ -1,0 +1,12 @@
+Exportar muitas collections
+
+-quando um banco de dados possui mais de uma collection a melhor opção é usar o mongodump
+
+sintaxe:
+
+mongodump -d (banco de dados) -o (saida/diretorio); onde está o -o cria uma pasta com cada collection
+
+exemplo
+
+mongodump -d booksData -o animaisgaymers 
+

@@ -1,0 +1,5 @@
+Status
+
+-para monitorar os status do mongoDB usamos o seguinte comando no terminal 
+
+mongostat

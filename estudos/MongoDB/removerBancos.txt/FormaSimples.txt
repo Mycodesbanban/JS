@@ -1,0 +1,17 @@
+Forma simples de remover varios bancos não necessarios
+
+-ou seja precisamos preservar o admin , config e local
+
+-criação:
+
+Mongo().getDbNames().Foreach(function(db){
+    if(["admin" ,"config" , "local"].indexOf(db)<0){
+       Mongo().getDB(db).dropDatabase(); 
+    }
+}) apaga todos os bancos de dados menos os admin , config , local
+
+Mongo():Cria a conexão com o mongoDB
+
+getDbNames(): retorna um array com todos os nomes de bancos de dados
+
+getDB(): seleciona o bando de dados

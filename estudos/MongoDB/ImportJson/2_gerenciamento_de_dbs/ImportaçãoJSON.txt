@@ -6,3 +6,6 @@ Importando bancos em JSON
 
 mongoimport (arquivo json) -d (banco de dados) -c (collection) 
 
+exemplo:
+
+mongoimport books.json -d booksData -c books

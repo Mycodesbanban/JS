@@ -1,0 +1,10 @@
+Importando varias collections do mongodump
+
+-para importar os arquivos gerados do mongodump , usamos o mongorestore
+
+sintaxe:
+mongorestore (diretorio)
+
+exemplo:
+mongorestore animaisgaymers
+

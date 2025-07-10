@@ -1,0 +1,9 @@
+Exporta bancos com Json
+
+-Podemos Exporta bancos de dados 
+
+mongoexport -c (collection) -d (banco de dados ) -o (saida)
+
+exemplo:
+
+mongoexport -c books -d booksData -o booksExample.json
