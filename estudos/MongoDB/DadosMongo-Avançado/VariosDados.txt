@@ -1,0 +1,12 @@
+inserindo varios dados 
+
+-podemos inserir varios dados de uma só vez , com o método insertMany
+
+sintaxe:
+db.(collection).insertMany([dados...])
+
+-Importante , note que vamos precisar de um array , que vamos inserir os documents separados por vigula
+
+ex:
+
+ db.provas.insertMany([{nome:"maycon", idade:55}, {nome:"maysa" , idade:67}])

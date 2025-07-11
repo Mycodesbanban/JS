@@ -1,0 +1,8 @@
+insert
+
+- O metodo Insert , serve para inserir quantos dados quisermos 
+
+sintaxe:
+db.collection.insert()
+
+- é recomendo usar ele pois é um metodo mais recente 

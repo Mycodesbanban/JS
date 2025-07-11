@@ -1,0 +1,14 @@
+Write Concern 
+
+-é uma configuração que pode ser inserida no insertMany
+
+-podemos limitar o tempo de execução
+
+-retonando um erro de time out caso exceda o mesmo
+
+sintaxe:
+{w:"majority" , wtimeout:1000}
+
+ex:
+
+db.mercado.insertMany([{nome:"yanRolaFedida"}], {w:"majority" , wtimeout:1000})

@@ -1,0 +1,6 @@
+Tudo é documento
+
+-MongoDB é comum adicionar varias entidades chaves ({})
+
+-quando adicionamos em algum local chamandos de document (documento)
+

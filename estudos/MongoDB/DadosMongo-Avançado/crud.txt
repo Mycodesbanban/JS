@@ -1,0 +1,7 @@
+O que é crud?
+
+-é uma sigla para criação (create) , pronto (read) , atualização(update) e deletamento (delete)
+
+- é onde inserimos dados , resgatamos/lemos dados , atualizando dados e deletamos/removemos dados
+
+- As quatro operações basicas de banco de dados (ambos)

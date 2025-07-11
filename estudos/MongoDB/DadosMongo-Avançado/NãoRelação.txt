@@ -1,0 +1,11 @@
+Não há relação entre dados 
+
+-Em uma collection não precisamos respeitar as outras chaves
+
+-de forma mais simples , em um banco relacional precisamos adicionamos dados das colunas, e em mongoDB não existe essa regras
+
+-então podemos ter documents totalmente diferente em uma collection
+
+ex:
+
+

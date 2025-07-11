@@ -1,0 +1,7 @@
+alterar _Id dos dados inseridos 
+
+-para alterar o id de algum dado usamos _id antes de tudo:
+
+sintaxe:
+
+db(collection).insert({_id:1 , dados..}) dessa forma personalizamos o campo
