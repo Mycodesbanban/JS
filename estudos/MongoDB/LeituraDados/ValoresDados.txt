@@ -1,0 +1,13 @@
+Encontrar dados entre valores
+
+- usaremos o operador $in
+
+-esse operador filtrar documentos que tem um valor na lista de valores
+
+-sintaxe
+
+{campo:{$in:valor1 ,valor2 ,valor3 }}
+
+exemplo:
+
+db.Books.find({categories:{$in:["Java", "Internet"]}})

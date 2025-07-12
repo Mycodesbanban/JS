@@ -1,0 +1,9 @@
+Encontrar dado com o valor especifico
+
+-para Encontrar algum valor especifico precisamos definir o documento dentro do find
+
+sintaxe:
+db.books.find({Nome:"joão"}) // aparecerá os nomes joão
+
+ex:
+db.Books.find({_id:5})

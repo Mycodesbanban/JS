@@ -1,0 +1,8 @@
+Encontrar Todos os dados mongo db
+
+-podemos Encontrar todos os dados , para isso usamos o comando find
+
+sintaxe:
+db.dados.find({}) 
+
+-lembrando que podemos deixar o documento ({}) vazio , sem ele todos os dados será retornados 

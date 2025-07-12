@@ -1,0 +1,14 @@
+Mais sobre pretty
+
+-pretty é um metodo que não retorna todos os dados , e sim um cursor 
+
+-por isso precisamos digitar it para receber mais regristros 
+
+- O cursor é um objeto que possui varios metodos 
+
+sintaxe:
+
+db.dados.find().pretty
+
+Digita a palavra it para mais:
+it
