@@ -1,3 +1,9 @@
 Multiplias condições 
 
--
+-podemos Encontrar dados em Multiplias condições
+
+-basta adicionar a virgula no documento e inserir o proximo requisito
+
+ex:
+db.book.find({pagina:200 , _id:2}).pretty()
+

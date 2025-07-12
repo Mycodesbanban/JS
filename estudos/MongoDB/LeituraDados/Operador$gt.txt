@@ -1,0 +1,8 @@
+operador $gt
+
+-é um operador que busca valores maior que um determinado valor que é defindindo dentro do $gt
+
+-simplificado , omparações maiores que em consultas
+
+ex
+{preco:{$gt:100}} mostra os preços maiores que 100

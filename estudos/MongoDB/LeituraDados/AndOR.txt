@@ -1,0 +1,7 @@
+operador and e or na mesma consulta
+
+-podemos usar junto com o or
+
+ex:
+
+db.Books.find({status:"PUBLISH" , $or:[{pageCount:500},  {authors:"Robi Sen"}]}).pretty()

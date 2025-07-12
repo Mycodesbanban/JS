@@ -1,0 +1,18 @@
+podemos contar o numero de resultados
+
+-para contar o número de retornos de uma consulta, podemos ultilizar o método count
+
+ex:
+db.books.find({pagina:{$gt:600}}).count()
+
+
+
+db.Books.find({categories:"Java"})
+
+db.Books.find({pageCount:{$lt:100}})
+
+db.Books.find({categories:"Microsoft" , pageCount:{$gt:300}})
+
+db.Books.find({categories:"Web Development"}).count()
+
+db.Books.find({$or:[{authors:"Bret Updegraff"} , {categories:"mobile"}]})

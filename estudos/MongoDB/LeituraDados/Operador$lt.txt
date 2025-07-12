@@ -1,0 +1,11 @@
+operador $lt
+
+-menor que algum valor
+
+-então vai mostrar o que tem os menores valor de um determinado valor que definimos
+
+ex:
+{paginas{$lt:120}} mostra todos que tem as paginas menores que 120
+
+db.Books.find({pageCount:{$lt:200}})
+

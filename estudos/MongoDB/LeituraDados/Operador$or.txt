@@ -1,0 +1,9 @@
+Operador $or
+
+-é ultilizado para resgatar dados que possuem um valor ou outro
+
+-simplificando: seria como um OU , tipo se onde pelo menos uma delas deve ser verdadeira
+
+ex:
+
+db.Books.find({$or:[{pagina:{$gt:500}} , {_id:{$lt:5}}]}).pretty() caso não tenha mais de 500 paginas , retorna id abaixo de 5
