@@ -1,0 +1,14 @@
+Atuazlizar todos os itens
+
+-podemos ultilizar o updateMany porem não colocar filtro nenhum
+
+ex:
+db.Books.updateMany({}, {$set:{atualizado:true}})
+
+db.Books.updateMany({}, {$set:{gaymer:false}})
+
+db.Books.updateOne({title:"Flex 4 in Action"} , {$set:{status:"OUT OF STOCK"}})
+
+db.Books.updateMany({pageCount:{$lt:100}} , {$set:{short_Book:true}})
+
+db.Books.updateMany({pageCount:{$gt:500}} , {$set:{categories:"many Pages"}})

@@ -1,0 +1,7 @@
+Adicionando dados com update
+
+-para adicionar dados basta inserir um valor para a chave que não exista
+
+ex:
+
+db.Books.updateMany({authors:"Vikram Goyal"} , {$set:{downloads:1000}}) Adiciomamos a chava downloads com o valor 1000

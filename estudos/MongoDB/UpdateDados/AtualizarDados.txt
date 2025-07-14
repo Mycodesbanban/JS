@@ -1,0 +1,8 @@
+atualizar um dado
+
+-para atualizar um dado usamos o método updateOne
+
+-ex:
+db.Books.updateOne({_id:421}, {$set:{pageCount:1000}}) // aqui vamos atualizar o _id 421 para ter 1000 paginas 
+
+$set: é onde fica os valores a serem atualizados 

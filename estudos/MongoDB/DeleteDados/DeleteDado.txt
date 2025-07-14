@@ -1,0 +1,7 @@
+Removendo um item 
+
+-para remover um item usamos o deleteOne
+
+ex:
+
+db.Books.deleteOne({_id:20}) deleta o _id 20

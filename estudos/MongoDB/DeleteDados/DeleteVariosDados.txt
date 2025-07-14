@@ -1,0 +1,11 @@
+removendo varios dados 
+
+-para remover mais de um dado usamos o deleteMany
+
+ex:
+
+db.Books.deleteMany({categories:"Java"}) deleta todos com a categoria Java
+
+db.Books.deleteOne({isbn:1933988320})
+
+db.Books.deleteMany({categories:"PowerBuilder"})

@@ -1,0 +1,6 @@
+trocando todo documento
+
+-podemos trocar os dados com o replaceOne
+
+ex:
+db.Books.replaceOne({_id:123},{foi:"substituido"}) todos os outros campos foram substituido

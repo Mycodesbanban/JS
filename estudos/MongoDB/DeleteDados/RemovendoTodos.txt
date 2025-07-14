@@ -1,0 +1,6 @@
+Removendo todos os itens
+
+-para remover todos os itens basta usar o deleteMany vazio
+
+ex:
+db.Books.deleteMany({})

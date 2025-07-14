@@ -1,0 +1,8 @@
+Adicionando item a um array
+
+- Para adicionar um item a um array usamos o operador $push
+
+ex:
+
+db.Books.updateOne({_id:1}, {$push:{categories:"PHP"}}) Adicionamos a categoria PHP para o _id 1
+

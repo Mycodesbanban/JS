@@ -1,0 +1,7 @@
+Atualizando varios dados 
+
+-para atualizar varios dados usamos o updateMany
+
+ex:
+
+db.books.updateMany({categories:"Java"} , {$set:{status:"GAY"}}) alteramos todos os status da categoria java para GAY
