@@ -1,0 +1,8 @@
+Datas em mongoDB
+
+-As datas são salvas no formato iso em mongoDB
+
+-podemos criar uma nova data com new Date()
+
+ex:
+db.dates.insertOne({data:new Date()}) crie a data do arquivo

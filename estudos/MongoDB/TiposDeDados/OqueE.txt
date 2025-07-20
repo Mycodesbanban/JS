@@ -1,0 +1,5 @@
+O que são tipos de dados
+
+são categorias para inserir no sistema do mongoDB
+
+-alguns deles são:strings , numbers , boolean ,array e etc

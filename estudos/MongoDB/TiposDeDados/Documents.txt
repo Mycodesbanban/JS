@@ -1,0 +1,8 @@
+Document mongoDB
+
+-document é bem parecido com um objeto JS
+
+-guarda os dados com chaves e valores 
+
+ex:
+db.document.insertOne({nome:"maycon" , des:{profissão:"dev", tamanho:{Frio:8 , calor:12 , magro:16}}})

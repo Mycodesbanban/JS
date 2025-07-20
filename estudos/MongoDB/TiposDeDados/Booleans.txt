@@ -1,0 +1,6 @@
+Boleano 
+
+- aceita apenas dois valores true e false
+
+ex:
+db.bools.insertOne({nome:"Matheus", gay:false})

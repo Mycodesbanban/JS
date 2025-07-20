@@ -1,0 +1,6 @@
+O que são operadores query
+
+
+-saõ funcionalidades para deixar nossa queries/consultas mais precisas
+
+-esses operadores são dividido em tipos, eles são: comparação e lógicos

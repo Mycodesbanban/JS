@@ -1,0 +1,1 @@
+O operador maior já vimos ele é o $gt

@@ -1,0 +1,7 @@
+operador $lte 
+
+-esse operador verificar se o valor é menor ou igual a o valor que colocamos 
+
+ex:
+
+db.dados.find({rating:{$lte:6}}) mostra os valores menores ou igual a 6

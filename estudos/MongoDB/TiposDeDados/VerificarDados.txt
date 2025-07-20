@@ -1,0 +1,9 @@
+verificando o tipo do dados
+
+
+-podemos verifar o tipo do dado apos seleciona a variavel com o findOne() e depois colocar o typeof
+
+-typeof variavel.nome
+
+ex: const variavel = db.strings.findOne({nome: "Matheus"})
+    variavel.nome

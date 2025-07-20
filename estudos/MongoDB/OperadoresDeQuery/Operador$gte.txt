@@ -1,0 +1,6 @@
+operador $gte
+
+- o operador $gte significa que vamos buscar um dado maior ou igual
+
+ex:
+db.dados.find({rating:{$gte:4}}) busca notas de 4 para cima 

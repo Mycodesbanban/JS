@@ -1,0 +1,6 @@
+operador $in
+
+- esse operador e usado para ver se um valor está dentro do campo de valores
+
+ex:
+db.dados.find({type_of_food:{$in:["Pizza" , "Chinese"]}}) procuramos o tipo de comida Pizza ou chinesa

@@ -1,0 +1,6 @@
+Strings (texto)
+
+-strings são texto , elas são escritas por aspas duplas ou simples 
+
+ex:
+{{nome:"maycon"}}

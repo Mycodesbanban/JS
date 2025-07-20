@@ -1,0 +1,6 @@
+operador $eq
+
+-esse operador verificar se um registro é igual a o valor que queremos 
+
+ex:
+db.dados.find({rating:{$eq:5}}) mostra todos com a nota 5

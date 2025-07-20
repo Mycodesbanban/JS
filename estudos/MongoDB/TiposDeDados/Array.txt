@@ -1,0 +1,6 @@
+Array
+
+- para usar o array no mongoDB e a mesa sintaxe do JS , Basta adicionar os valores entre [] , seperados por virgula
+
+ex:
+db.array.insertOne{carro:["Mercedes", "BMW" , "Fusca"]} aceita qualquer valor de dado 

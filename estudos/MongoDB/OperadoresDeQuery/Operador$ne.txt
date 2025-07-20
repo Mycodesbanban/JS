@@ -1,0 +1,6 @@
+Operador $ne
+
+-mostra os valores que não são iguais ao um determinado valor
+
+ex:
+db.dados.find({rating:{$ne:5}}) motra todos os restaurante com a nota diferente de 5

@@ -1,0 +1,7 @@
+Números
+
+
+-Números em mongoDB são classificados como interios e doubles/flutuantes
+
+ex:
+db.numeros.insertOne({INT:1 , DOUBLES:2.34})
