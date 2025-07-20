@@ -1,0 +1,11 @@
+Operador $text
+
+-esse operador faz uma buscar sobre um texto informado no filtro, mas para isso precisamos ter um indice no campo para ele funcionar
+
+ex de indice:
+db.dados.createindex:({nome:"text"}) falaremos mais na frente
+
+exemplo de como usar:
+db.dados.find({$text:{$search:"pizza"}}).pretty()
+
+$search: usado para buscar um dado dentro do $text

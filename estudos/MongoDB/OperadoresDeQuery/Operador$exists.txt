@@ -1,0 +1,10 @@
+Operador $exists
+
+-retorna dados que possui um determinado campo
+
+ex:
+db.dados.find({high_score:{$exists:true}}) mostra o que tem esse campo
+
+
+db.dados.updadeMany({rating:{$lte:2}}, {$set:{bad_restaruant:true}})
+
