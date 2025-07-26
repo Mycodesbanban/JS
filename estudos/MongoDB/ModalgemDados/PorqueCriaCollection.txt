@@ -1,0 +1,5 @@
+Por que criar varias collections
+
+-Pois a um limite de 16mb por documento 
+
+- ou seja paeda projetos grandes isso se tornará um problema 

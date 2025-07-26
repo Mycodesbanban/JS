@@ -1,0 +1,9 @@
+O que são relacionamentos
+
+-são formas de coleções diferentes se conectam entre si
+
+-existe varios tipos: one to one , one to many e many to many
+
+-onde cada uma possui um metodo diferente e pode ser aplicado em MongoDB 
+
+-alem de uma forma especial, graças a flexibilidade dos documents que é a embedded document(colocar um documento dentro do outro)

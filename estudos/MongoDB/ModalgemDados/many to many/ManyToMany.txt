@@ -1,0 +1,60 @@
+many to many
+
+-são varios dados de uma coleção que se realcionam com varios documentos de outra coleção
+
+-acontece quando os registro de duas collection possuem mais de uma relação em si 
+
+exemplo:
+db.curso.insertMany([
+    {nome:"PHP avançado"} , 
+    {nome:"JS basico ao avançado"}, 
+    {nome:"Python basico"},
+])
+
+agora temos que criar uma variavel com as pessoas
+
+db.pessoas.insertOne({
+    nome:"Guga",
+    idade:34,
+    profissao:"traficante"
+
+})
+const gustavo = db.pessoas.findOne({nome:"Guga"})
+gustavoId = gustavo._id
+
+db.pessoas.insertOne({
+    nome:"Maycon",
+    idade:23,
+    classefinaceira:"ultra rico"
+})
+MayconId = maycon._id
+
+const maycon = db.pessoas.findOne({nome:"Maycon"})
+
+agora vamos colocar os curso em uma variavel
+
+const php = db.curso.findOne({nome:"PHP avançado"})
+
+const Javascript = db.curso.findOne({nome:"JS basico ao avançado"})
+
+const Python = db.curso.findOne({nome:"Python basico"})
+
+agora vamos cria uma relação sobre as duas entidades 
+
+db.curso_pessoa.insertMany([
+    {curso_id:php._id, pessoaId: MayconId}, 
+    {curso_id:Python._id , pessoaId:MayconId},
+    {curso_id:Javascript._id, pessoaId:gustavoId}
+])
+
+tirando um resultado dessa inserção de dados 
+
+const idsAlunos = [];
+
+db.curso_pessoa.find({curso_id:Javascript._id}).forEach(aluno =>{
+    idsAlunos.push(aluno.pessoaId)
+}); com esse codigo vai ter um array com todos os alunos que fazem js 
+
+fazer a seleção com o operador $in
+
+db.pessoas.find({_id:{$in:idsAlunos}}) vai mostra os id que estão no id alunos 

@@ -1,0 +1,35 @@
+embedded documents 
+
+-é quando colocamos um documento dentro do outro
+
+exemplo one to one :
+db.dados.insertOne({
+    nome:"maysa", 
+    idade:49,
+    endereco:{
+        rua:"Rua das flores" ,
+        numero:13,
+        complemento:"casa"
+    }
+}) colocamos dentro de endereco um {} as informaçẽs do endereco
+
+exemplo one to many:
+db.dados.insertOne({
+    nome:"joão",
+    idade:17 , 
+    enderecos:{
+        casa:{
+            rua:"joão",
+            numero:31,
+            complemento:"casa"
+        },
+        trabalho:{
+            rua:"roludo",
+            numero:54,
+            complemento:90
+        }
+    }
+}) 
+colocamos mais de um dado {}
+
+

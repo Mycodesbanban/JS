@@ -1,0 +1,23 @@
+one to one 
+
+-significa que quando um documento está ligando com um unico documento
+
+-ideial para acessar dados juntos 
+
+-e quando são acessados separadamente 
+
+exemplo 1:
+db.pessoas.insertOne({
+    nome:"joão", 
+    idade:23,
+    profissao:"gay"
+})
+
+exemplo 2:
+db.endereco.insertOne({
+    rua:"Flores floridas",
+    numero:45,
+    complemento:"casa",
+    aqui vamos colocar o complemento com uma pessoa
+    pessoa_id: joao._id colomos o id do exemplo 1 por conta da variavel 
+})

@@ -1,0 +1,20 @@
+One to many 
+
+- é quando um documento está relacionado com vários outros documentos
+
+- simplificando é quando possui registro que pode possuir mais vinculos com uma outra collection 
+
+exemplo 1:
+db.pessoas.insertOne({
+    nome:"gustavo",
+    idade:12,
+    profissao:"vagabundo"
+})
+
+const gustavo = db.pessoas.findOne({nome:"gustavo}) mostrando
+gustavoId = gustavo._id pegando o id 
+
+db.compras.insertMany([
+    {produtos:["livro" , "celular"], pessoaId:gustavoId}, estamos mostrando o que cada usuario comprou
+    {outro usuario} , então podemos fazer uma coleção de ID pelo o one to many
+    ])
