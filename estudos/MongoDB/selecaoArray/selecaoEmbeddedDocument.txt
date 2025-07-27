@@ -1,0 +1,15 @@
+seleção em embedded documemnts 
+
+-quando temos que acessar um documento dentro de outro docuemnto o mongoDB permite fazer busca com notação ponto
+
+
+exemplo:
+db.pessoas.insertOne({
+    nome:"Maycon", 
+    idade:2,
+    endereco:{
+        chave1:"valor"
+    }
+})
+db.pessoas.findOne({"endereco.chave1":"valor"}) precisamos colocar as aspas quando usamos a notação ponto 
+

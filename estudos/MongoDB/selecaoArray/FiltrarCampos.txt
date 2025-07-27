@@ -1,0 +1,6 @@
+retornado campos específicos
+
+-podemos escolher os campos que realmente são necessario
+
+ex:
+db.pessoas.find({}, {nome:1 , idade:1}) nesse caso retornamos o nome, idade e o _id (que é sempre retornado)

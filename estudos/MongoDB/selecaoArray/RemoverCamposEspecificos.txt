@@ -1,0 +1,10 @@
+Removendo campos especificos
+
+-para remover campos é necessario definir como nulo(0) 
+
+ex:
+db.pessoas.find({} , {nome:0, idade:0}) agora removemos esses dois campos
+
+
+
+

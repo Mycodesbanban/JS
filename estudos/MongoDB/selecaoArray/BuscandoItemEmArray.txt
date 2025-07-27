@@ -1,0 +1,11 @@
+Encontrar valor especifico de arrays
+
+-para Encontrar valores especificos em arrays podemos ultilizar o valor final
+
+ex1:
+db.alunos.find({notas:7}) todos os alunos com nota 7 serão retornados 
+
+-agora para valores exatos precisamos colocar o array inteiro
+
+ex2:
+db.alunos.find({notas:[10, 8 , 6, 5]}) somente os alunos que tiram essa nota vai ser retornado

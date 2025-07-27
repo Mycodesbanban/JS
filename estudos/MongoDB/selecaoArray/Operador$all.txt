@@ -1,0 +1,7 @@
+Operador $all
+
+- para Encontrar apenas alguns valores usamos o $all
+
+ex:
+db.alunos.find({notas:{$all:[8,7]}}) mostra todos os alunos que tenha 8 e 7 na nota
+

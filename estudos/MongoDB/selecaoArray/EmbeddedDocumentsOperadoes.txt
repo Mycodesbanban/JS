@@ -1,0 +1,6 @@
+embedded documents com operadores 
+
+-A sintaxe é a mesma 
+
+ex:
+db.pessoas.find({"endereco.chave1":{$gt:30}})

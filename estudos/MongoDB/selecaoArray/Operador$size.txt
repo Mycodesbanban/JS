@@ -1,0 +1,6 @@
+Operador $size
+
+- é usado para consultar o tamanho (quantidade de elementos) de um array
+
+ex:
+db.alunos.find({matematica:{$size:4}}) mostra o alunos que tenha 4 elementos em matematica

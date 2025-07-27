@@ -1,0 +1,6 @@
+Array de documentos e operadores
+
+-para usar operadores precisamos colcoar entre apenas e em seguidas o operador
+
+ex:
+db.produtos.find({"variacoes.qtd":{$gt:30}})

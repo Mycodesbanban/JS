@@ -1,0 +1,12 @@
+Usando o operador $elemMatch
+
+- usado para buscar elementos específicos dentro de arrays de objetos, onde você precisa que vários critérios sejam verdadeiros dentro do mesmo item do array.
+
+ex:
+db.produtos.find({
+    "matematica":{$elemMatch:{nota:{$gt:3} , status:"aprovado}} mostra a nota maior de 3 e com o status aprovado
+})
+
+db.produtos.find({
+    "tamanho":{$elemMatch:{numero:{$lt:48 }, estoque:{$gt:30}}}
+})

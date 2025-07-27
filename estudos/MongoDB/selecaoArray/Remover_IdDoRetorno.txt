@@ -1,0 +1,6 @@
+removendo o id do retorno;
+
+-para remover o _id do retorno é necessario deixa implicito
+
+ex:
+db.pessoas.find({}, {_id:0, nome:1 , idade:1}) agora que o id é 0 ele não é retornado

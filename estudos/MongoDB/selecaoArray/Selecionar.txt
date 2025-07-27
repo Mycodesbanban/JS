@@ -1,0 +1,6 @@
+seleção de documentos 
+
+-para fazemos uma seleção de especifica é necessario colocar todas as caracteristicas em find
+
+ex:
+db.produtos.find({"variacoes":{cor:"Verde" , tamanho:"G" , qtd:48}}) apenas o item que corresponder a isso será retornado
