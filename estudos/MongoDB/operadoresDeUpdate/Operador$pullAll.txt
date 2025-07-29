@@ -1,0 +1,8 @@
+Operador $pullAll
+
+- serve para remover varios itens de um array 
+
+ex:
+db.blog.updateOne(
+    {author:"may"}, {$pullAll:{categories:["ruby", "Docker"]}}
+) removemos o ruby e o Docker

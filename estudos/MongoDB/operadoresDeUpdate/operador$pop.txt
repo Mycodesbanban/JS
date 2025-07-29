@@ -1,0 +1,8 @@
+Operador $pop
+
+- remove o ultimo ou primeiro elemento de um array , para remover o primeiro usamos o -1 e para remover o ultimo usamos 1
+
+ex:
+db.blog.updateMany(
+    {_id:2} , {$pop:{categories:-1}}
+) tiramos o primeiro

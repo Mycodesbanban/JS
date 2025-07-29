@@ -1,0 +1,8 @@
+operador $unset
+
+-esse operador tem como objetivo remover todos os campo de um item 
+
+ex: 
+db.blog.updateMany(
+    {}, {$unset:{active:""}} 
+) removemos o campo active de todos registros 

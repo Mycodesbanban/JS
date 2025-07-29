@@ -1,0 +1,8 @@
+Operador $max 
+
+- atualiza um valor casi seja maior que um valor registrado
+
+ex:
+db.blog.updateOne(
+    {author:"Maysa meu amor"} , {$max:{maxPosts:250}}
+) aumentar para 250 post caso esse valor seja maior 

@@ -1,0 +1,8 @@
+O operador $min
+
+-atualiza um valor , caso seja menor do que o valor registrado
+
+ex:
+db.blog.UpdateOne(
+    {author:"Maycon"}, {$min:{paginas:3}} 
+) atualizando para 3 caso for menor que o valor registrado 

@@ -1,0 +1,9 @@
+O operador $push para mais itens 
+
+- para adiciona mais itens com o push precisamos do $each
+
+ex: 
+db.blog.updateOne(
+    {author:"mau"}, 
+    {$push:{categories:{$each:["java","python"]}}}
+) adicionamos pyhton e java 

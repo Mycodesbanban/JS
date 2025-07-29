@@ -1,0 +1,8 @@
+O operador $push
+
+-adiciona um ou mias valores a um array
+
+ex:
+db.blog.updateOne(
+    {author:"maycon"} , {$push:{categories:linux}}
+) adicionamos o valor linux nas categories

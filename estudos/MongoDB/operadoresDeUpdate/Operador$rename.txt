@@ -1,0 +1,8 @@
+Operador $rename
+
+- renomeia um campo por outro nome que definimos 
+
+ex:
+db.blog.updateMany(
+    {},{$rename:{author:"author_fullname"}}
+) mudamos o nome do author para author_fullname

@@ -1,0 +1,8 @@
+Operador $addToSet
+
+-adiciona um ou mais valores em arrays, apenas se eles ja nao estiverem la, ou seja nao duplica elementos 
+
+ex:
+db.blog.updateOne(
+    {author:"Maycon"}, {$addToSet:{categories:{$each:["PHP","Vue"]}}} adicionamos esse valores
+)

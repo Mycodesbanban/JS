@@ -1,0 +1,8 @@
+operador $mul 
+
+-ele multiplica o valor registrado por o valor que colocamos 
+
+ex:
+db.blog.updateOne(
+    {author:"Maycon"}, {$mul:{paginas:2}}
+) o valor registrado nas paginas sera multiplicado por 2

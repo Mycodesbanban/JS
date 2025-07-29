@@ -1,0 +1,8 @@
+Como cria um servidor em mongoDB
+
+- para cria um servidor em mongoDB vamos acessar o site: https://www.mongodb.com/products/platform/atlas-database
+
+- logo apos acessar o site vamos fazer um cadrastro
+
+- e depois vamos clicar no botão try for free
+

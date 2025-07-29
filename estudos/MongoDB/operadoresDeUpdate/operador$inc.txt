@@ -1,0 +1,8 @@
+Operador $inc 
+
+-Serve para acresentar e diminuir uma quantidade especifica a um valor 
+
+ex:
+db.blog.UpdateOne(
+    {author:"Maycon SigmaBoy"}, {$inc:{paginas:2}}
+ ) adicionamos duas paginas ao livro do author Maycon SigmaBoy  podemos usar valores negativos para diminuir 
