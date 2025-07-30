@@ -1,0 +1,6 @@
+index de textos
+
+-serve para fazer uma busca por palavras chaves, so pode ter um index de texto por collection
+
+ex:
+ db.comunidade.createIndex({business_name:"text"}) criei um index de texto

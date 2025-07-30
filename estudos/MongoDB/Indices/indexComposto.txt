@@ -1,0 +1,7 @@
+index composto
+
+-podemos criar varios index para varios campos diferentes 
+
+ex:
+
+db.comunidade.createIndex({certificate_number:1 , date:1}) criamos 2 index em uma linha de codigo

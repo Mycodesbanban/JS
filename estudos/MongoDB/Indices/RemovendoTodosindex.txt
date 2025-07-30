@@ -1,0 +1,6 @@
+removendo todos os index
+
+-para remover todos os index usamos o dropIndexes
+
+ex:
+db.comunidade.dropIndexes() so nao exclui o id 

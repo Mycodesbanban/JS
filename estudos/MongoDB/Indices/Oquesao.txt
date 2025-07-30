@@ -1,0 +1,7 @@
+O que sao indices 
+
+-sao formas de acelerar a producao e a modificacao de um arquivo
+
+Por que usar indices? 
+
+-faz uma varredura completa na coleção para encontrar os dados 

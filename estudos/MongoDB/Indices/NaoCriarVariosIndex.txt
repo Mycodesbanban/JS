@@ -1,0 +1,5 @@
+Por que nao criar varios index
+
+-por que eles tem um custo
+
+-pois os index sao desnecessarios vao ocupat o lugar dos qiue precisamos

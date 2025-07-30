@@ -1,0 +1,8 @@
+Plano de consulta 
+
+-podemos obter informacoes de como ele encontrou o resultado , metodo etc 
+
+-para isso usamos o .explain()
+
+ex:  
+db.comunidade.find({certificate_number:3030353}).explain() vai mostra como ele encontrou o certificate_number 3030353

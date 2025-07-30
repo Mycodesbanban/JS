@@ -1,0 +1,9 @@
+Criar um index no campo de documento 
+
+-podemos criar um index para um campo de documento
+
+ex:
+
+db.comunidade.createIndex(
+    {"address.city":1}
+) agora o campo address e dentro dele o campo city vai ter um indice 

@@ -1,0 +1,8 @@
+criando um index
+
+-para criar um index usamos o comando createindex
+
+-ex
+db.comunidade.createIndex(
+    {certificate_number:1}
+) aqui adicionamos um index no dado certificate_number

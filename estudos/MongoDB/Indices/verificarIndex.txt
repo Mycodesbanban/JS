@@ -1,0 +1,6 @@
+verificar index na collection 
+
+-para verificar quais index uma collection possui usamos o getIndexes()
+
+ex:
+db.comunidade.getIndexes()

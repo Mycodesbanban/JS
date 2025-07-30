@@ -1,0 +1,6 @@
+Removendo index
+
+-para remover um index usamos dropIndex 
+
+ex:
+db.comunidade.dropIndex({certificate_number:2}) removemos o index

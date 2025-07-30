@@ -1,0 +1,13 @@
+lista indices do banco de dados
+
+-para lista os indices precisamos realizar uma operacao complexa 
+
+ex:
+db.getCollectionNames().forEach(function(collection){ vai retornar um array com todos os nomes , logo apos vai pecorrer o array e vai fazer uma funcao onde vai lista cada uma delas
+    index = db[collection].getIndexes() acessa os indices deles diretamente 
+    print("Index de " + collection + ":"); mostra no terminal 
+    printjson(index) mostra em formato json
+})
+
+
+-O getCollectionNames e usado para mostra um array com todas as collection do banco
