@@ -1,0 +1,8 @@
+usando o $project
+
+-ele e usado para retorna campos especificos, criar novos campos ou tranformar dados, ele tem valores como 1-que significa incluir , 0- que significa excluir
+
+ex:
+db.books.aggregate([
+    {$project:{title:1}}
+])

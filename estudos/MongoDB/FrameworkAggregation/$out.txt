@@ -1,0 +1,9 @@
+usando o $out
+
+- serve para salvar os resultados em uma nova collection
+
+ex:
+db.books.aggregate([
+    {$match:{categories:"Java"}}, 
+    {$out:"Javaveiros"}
+]) pegamos todos da categories Java e criamos uma collection Javaveiros e colocamos eles dentro

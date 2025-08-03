@@ -1,0 +1,9 @@
+usando o $count
+
+-feito para realizar a contagem de um campo 
+
+ex:
+
+db.books.aggregate([
+    {$count:"categories"}
+]) mostra a quantidade de itens na categories 

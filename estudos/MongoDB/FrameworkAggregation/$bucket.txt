@@ -1,0 +1,28 @@
+Usando o $bucket
+
+- e um operador de agregacao usado dentro do aggregation para dividir documentos em faixas numericas (intervalo)
+
+- e como criar grupo de dados por intervalo
+
+ex:
+
+db.books.aggregate(     usando a funcao aggregate, nos passamos essa funcao como se fosse um metodo
+
+    [ criando um array de etapas para executar na ordem correta
+
+    { primeira etapa
+
+    $bucket:{
+        groupBy: "$pageCount",  selecionando o campo que vai agrupar, e obrigatorio o uso do $ ao selecionar o campo dentro da string
+        boundaries:[100, 200 , 300 , 400 , 500, 600, 700], definindo os intervalos para criar o grupo
+        default:"OTHERS", e usado para tratar os documentos que nao se encaixam nos intervalos definidos no boundaries
+        output:{ definindo a saida de quando ele achar esses resulados
+            "count":{$sum:1} conta quantos documentos foram agrupados em uma operacao de agregacao
+        }
+    }
+    }
+
+    ]
+
+)
+$sum: ele serve tanto para somar tudo

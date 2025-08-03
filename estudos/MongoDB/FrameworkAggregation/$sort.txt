@@ -1,0 +1,9 @@
+usando o $sort
+
+-com esse operador podemos ordenar os resultados 
+
+- 1-cresente , -1 descresente 
+
+ex:
+
+db.books.find().sort({pageCount:-1}) vai mostra na ordem descresente

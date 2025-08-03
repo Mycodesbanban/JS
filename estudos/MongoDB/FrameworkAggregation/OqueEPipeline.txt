@@ -1,0 +1,5 @@
+O que e pipeline?
+
+- e como se fosse o coracao do aggregation() onde cada etapa ransforma os dados e os passa para a próxima
+
+-resumindo e uma linha de montagem: cada etapa pega os documentos, faz algo com eles e manda adiante

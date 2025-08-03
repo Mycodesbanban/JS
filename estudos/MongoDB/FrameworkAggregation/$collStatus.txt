@@ -1,0 +1,25 @@
+usando o $collStatus
+
+- e usando para retornar os dados de uma colecao
+
+-ele mostra informacoes como:
+
+count: quantidade de documentos
+
+size: tamanho da colecao
+
+storageStats: detalhes sobre o armazenamento
+
+latencyStats: estaticas de latencia leitura/gravacao
+
+queryExecStats: execucao de consultas 
+
+ex:
+db.books.aggregate([
+    {
+        $collStats:{
+            queryExecStats:{}, solicilita informacoes sobre a execucao de consultas
+            count: {} solicilita a contagem de documentos
+        }
+    }
+]).pretty()

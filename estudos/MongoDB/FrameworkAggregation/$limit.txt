@@ -1,0 +1,13 @@
+usando o $limit
+
+-usado para limitar o numero de resultados
+
+ex:
+
+db.books.aggregate(
+    [
+        {$sort:{pageCount:-1}},
+         {$limit:3}
+        
+    ]
+) vai mostrar 3 resultados na ordem descresente

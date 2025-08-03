@@ -1,0 +1,8 @@
+usando o $sample
+
+-Serve para selecionar documentos aleatorios da collection
+
+ex:
+db.books.aggregate([
+    {$sample:{size:10}} o size aqui serve para identificar a quantidade
+]) retorna 10 itens aleatorios 

@@ -1,0 +1,4 @@
+O que e aggregation?
+
+- E uma ferramenta usada para agregacao de dados e para retorna resultados que nao temos apartir dos dados , isso permite criar relatorios mais complexos dos dados do sistema 
+

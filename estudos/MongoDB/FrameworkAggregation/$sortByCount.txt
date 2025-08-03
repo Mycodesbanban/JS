@@ -1,0 +1,8 @@
+usando o $sortByCount
+
+-agrupar os documentos por um campo especificos, e conta quantos documento tem em cada grupo
+
+ex:
+db.books.aggregate([
+    {$sortByCount:"$categories"}
+]) faz a conta de quantos tem em cada um 

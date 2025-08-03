@@ -1,0 +1,10 @@
+usando o $match
+
+-usado para filtrar documentos assim como fazemos com o find.
+
+ex:
+db.books.aggregate(
+    [
+        {$match:{categories:"Java"}}
+    ]
+) mostrando todos da categories Java 

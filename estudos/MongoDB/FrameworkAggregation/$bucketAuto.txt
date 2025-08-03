@@ -1,0 +1,16 @@
+usando o $bucketAuto
+
+- ele e como o bucket so que criar intervalos automaticamente
+
+ex:
+
+db.books.aggregate(
+    [
+        {
+            $bucketAuto:{
+                groupBy:"$categories",
+                buckets:3 defini o numero de intervalos que serao gerados
+            }
+        }
+    ]
+)

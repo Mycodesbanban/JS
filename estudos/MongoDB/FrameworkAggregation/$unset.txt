@@ -1,0 +1,10 @@
+usando o $unset
+
+- e usado para remover campos especificos de um retorno da nossa agregacao
+
+ex:
+
+db.books.aggregate([
+    {$unset:["categories","pageCount"]}
+    
+])removendo esses dois campos da nossa agregacao

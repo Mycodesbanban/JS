@@ -1,0 +1,8 @@
+usando $unwind
+
+-ele desconstroi um array e cria um documento para cada item no array
+
+ex:
+db.books.aggregate([
+    {$unwind:"$categories"} e obrigatorio o uso do $
+]) retorna todos em um documento proprio

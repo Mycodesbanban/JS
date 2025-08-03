@@ -1,0 +1,8 @@
+usando o $skip
+
+-ele e usando para pular dados
+
+ex:
+db.books.aggregate([
+    {$skip:5} pula os 5 primeiros arquivos
+])
