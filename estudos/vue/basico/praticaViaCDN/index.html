@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexendo com vue via CDN</title>
+</head>
+    <!-- chamando via CDN -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Objeto de configuracao do vue  -->
+<script src="src/app.js" defer></script>
+<body>
+    <!-- para chamar o vue usamos a id app  -->
+    <div id="app">
+        <!--* Input e data binding -->
+
+        <!-- Formulario que sera controlado pelo o vue -->
+        <form id="app-form">
+            <!-- O que o usuario digitar vai ir para a variavel input_name -->
+            <input type="text" v-model="input_name" placeholder="Digite seu nome">
+            <!-- Quando clicamos no botao vai acionar o evento submitForm -->
+            <input type="submit" value="Enviar" v-on:click="submitForm">
+
+            <!--? v-model serve para ligar um campo do form a uma variavel do Vue de modo que sempre fique iguais  -->
+            <!--? v-on:click quando o click acontecer vai ocorrer um evento  -->
+
+        </form>
+        
+            <!--* Basico -->
+        <!-- exportando o name do MyNameApp -->
+        <p>O meu nome e: {{name}} e tenho {{age}} anos </p> 
+
+        <!-- input e Data binding  -->
+         <p>Data binding: {{input_name}}</p>
+
+    </div> 
+</body>
+</html>

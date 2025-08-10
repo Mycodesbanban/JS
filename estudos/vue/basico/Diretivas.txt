@@ -1,0 +1,15 @@
+Diretivas 
+
+- Diretivas sao atributos especiais que voce coloca no html para direcionar o vue 
+
+-existem muitos tipos de Diretivas, as mais usandas sao 
+
+v-model:ja vimos
+v-on: ja vimos
+v-bind: liga atributos do html ao vue 
+v-if: renderizar apenas se a condicao for verdadeira
+v-else:usada junto com o v-if para mostra se caso a condicao for falsa
+v-show:mostra ou esconde elementos mas nao os remove 
+v-for: repete um elemento para cada item da lista 
+v-text:insere um texto
+v-html:insere um html puro

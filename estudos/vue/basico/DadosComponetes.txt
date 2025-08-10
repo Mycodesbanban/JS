@@ -1,0 +1,3 @@
+Dados em Componentes 
+
+- Os componentes podem conter dados que fica dentro de uma funcao chamada data, essa funcao retorna os dados em formato de objetos 

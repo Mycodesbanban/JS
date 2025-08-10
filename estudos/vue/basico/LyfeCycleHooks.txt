@@ -1,0 +1,3 @@
+Lyfe Cycle Hooks
+
+- sao eventos que podem ser ativados em determinada partes da execucao do programa, simplificando sao ganchos para rodar codigo a partir de tal coisa

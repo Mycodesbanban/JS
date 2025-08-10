@@ -1,0 +1,4 @@
+Hierarquia de Componentes 
+
+- e uma forma de componentes se organizar , componentes podem ter outros componentes que dependem deles, de forma mais sorfisticada podemos dizer que estamos a criar uma arvore de componentes, E bem importante tomar cuidado para nao virar uma banguca.
+

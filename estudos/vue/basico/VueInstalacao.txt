@@ -1,0 +1,25 @@
+Instalacao do vue
+
+-exite duas formas de fazer a instalacao do vue, a primeira forma e por via CDN para projetos mais simples 
+
+- a outra forma e por via CLI que e para projetos maiores
+
+instalacao via CDN:
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+so colocar esse script no html 
+
+instalacao via CLI(npm):
+
+npm create vite@latest meu-projeto
+colocamos esse comando no terminal
+
+depois vamos entra na pasta do projeto
+cd meu-projeto
+
+ai sim vamos colocar para instalar as dependencias 
+npm i 
+
+agora vamos rodar o servidor com o comando
+
+npm run dev 
+(podemos alterar esse comando e o caminho da maquina loca )

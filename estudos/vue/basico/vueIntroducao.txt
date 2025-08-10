@@ -1,0 +1,5 @@
+Vue 
+
+- ele e usado para criar interfaces web e aplicacoes de unica pagina 
+
+- ele tem uma construcao de layouts baseada em componetes 

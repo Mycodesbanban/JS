@@ -1,0 +1,6 @@
+Input e data binding
+
+-sao formas de conectar um campo de entrada aos dados da sua aplicacao
+
+-Data binding liga um variavel do js a um elemento html e temos a possibilidade de mudar em tempo real um dado por meio de um input
+
