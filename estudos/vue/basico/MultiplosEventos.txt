@@ -1,0 +1,8 @@
+Multiplos eventos 
+
+-para usar multiplos eventos vamos separar eles por virgula
+
+ex:
+
+   <button @click="showMyfrase();  ShowMYconsole();">ativar multiplos eventos </button>
+        <p v-if="FraseVisivel">{{ frase }}</p> ativa dois metodos apos o evento de click ocorrer

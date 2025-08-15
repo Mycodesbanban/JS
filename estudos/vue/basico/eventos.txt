@@ -1,0 +1,7 @@
+Eventos 
+
+-temos diversos tipos de Eventos no Vue, que podem ser adicionados diretamente a o elemento do html, o evento recebe um parametro que significa o metodo que sera executado quando esse evento acontecer 
+
+ex:
+     <button @click="Myballs">Clicou gozou</button> colocamos o evento click, e quando esse evento ocorrer vai executar a funcao Myballs
+     

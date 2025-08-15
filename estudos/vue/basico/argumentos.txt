@@ -1,0 +1,9 @@
+Argumentos 
+
+-sao formas de passar informacoes adicionais a uma Diretiva e pode ser  usados em atributos
+
+ex:
+
+    <!-- Usando o v-bind de forma resumida -->
+    <img :src="avantar" :alt="descricao">
+    aqui passamos os atributos avantar e descricao para dentro da url 

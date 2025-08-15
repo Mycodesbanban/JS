@@ -1,0 +1,7 @@
+$emit
+
+-enviar eventos do componente filho para o pai
+
+ex:
+
+    <button @click="$emit("Funcao")> mudar </button>

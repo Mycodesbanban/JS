@@ -1,0 +1,19 @@
+Passar dados com props 
+
+- props e a forma de passar dados do componente pai para o filho 
+
+ex:
+
+primeiro vamos definir o que vamos passar para o componente filho 
+
+    <info email2="email"/>
+
+    agora vamos no componente info e colocar dentro de export default 
+
+    props:{
+        email2: String mostrando que vai receber o arquivo e que esse arquivo esta no formato string
+    }
+
+    agora vamos ultilizar 
+
+    <p>{{email2}} </p>

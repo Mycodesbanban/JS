@@ -1,0 +1,21 @@
+Renderizacao de listas 
+
+-listas (arrays) ou objetos podem ser renderizadas por diretivas, para isso vamos usar p v-for, ele repete o componente ou elemento html uma vez para cada item da lista
+
+ex:
+forma de array
+    <ul>
+           <li v-for="(formas , index) in LimparBumbum" :key="index">{{ formas }}</li> percorre o array LimparBumbum, formas e o item dentro do arrat e o :key vai identificar cada item (index)
+      </ul>
+
+    dentro de data vamos colocar a seguinte variavel
+     LimparBumbum:["Papel", "meia", "Jornal" , "espiga de milho"]
+
+  Forma de Objeto
+
+  usamos anotacao ponto para isso 
+    <li v-for="Cagar in ComoCagar" :key="Cagar.id">
+                {{ Cagar.Forma }}
+            </li>
+
+     ComoCagar:[{id:1, Forma:"ameixa"}, {id:2 , Forma:"leite de magnesio"} , {id:3, Forma:"Hamburger"}]

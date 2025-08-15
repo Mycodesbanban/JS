@@ -1,0 +1,5 @@
+Css global e scoped
+
+-global onde definimos o app.vue e se aplica a todos os elementos
+
+-scoped onde cada elemento pode ter seu estilo deixanando mais facil de personalizar elementos 

@@ -10,12 +10,20 @@
     <!-- Hieraquia de componentes  -->
     <Pessoa/>
 
+    <!-- Header -->
+     <Header/>
+
    </div>
 
 
 </template>
 
 <script>
+
+    // Importando o header com os estilos 
+
+    import Header from './components/Header.vue';
+
   // Importando o primeiro componente que criamos 
   import PrimeiroComponete from './components/PrimeiroComponete.vue';
 
@@ -34,7 +42,15 @@
       LyfeCycleHooks,
 
       // Hieraquia de componentes 
-      Pessoa
+      Pessoa, 
+
+      // Header 
+      Header
+
     }
   }
 </script>
+
+<style>
+
+</style>

@@ -1,0 +1,6 @@
+Reutilizacao de componentes 
+
+- podemos usar um componentes mais de uma vez, mudando so os dados ou a aparencia 
+
+ex:
+ <reutilizacao/> <reutilizacao/> <reutilizacao/> usamos 3 reutilizacao que cada um vai ser um componentes indepedente

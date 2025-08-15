@@ -1,0 +1,16 @@
+metodos 
+
+- servem para colocar funcoes que definimos dentro do componente para executar acoes/eventos 
+
+ex:
+    usando um atalho do v-on que e o @
+    <button @click="showEmail">Clique para ver meu bilau</button> usando o Click e a funcao que vai ser executada apos o click
+
+    dentro do export defalt vamos colocar o methods
+
+    methods:{
+        showMyBalls(e){
+            e.preventDefault()
+            console.log("my eggs")// a funcao onde vai executar a acao ou evento
+    }
+    }
