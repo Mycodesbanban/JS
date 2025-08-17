@@ -1,8 +1,8 @@
 <template>
     <div>
-        <p>Construa seu hamburguer:</p>
+        <mensage :msg="msg" v-show="msg"/>
         <div>
-            <form id="Form_buguer">
+            <form id="Form_buguer" @submit="createHamburgue">
                 <div class="input_container">
                     <label for="nome">Nome do Cliente</label>
                     <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite seu nome">
@@ -11,21 +11,21 @@
                     <label for="pao">escolha seu pao:</label>
                     <select name="pao" id="pao" v-model="pao">
                         <option value="">selecione seu pao:</option>
-                        <option value="">Integral</option>
+                        <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">{{ pao.tipo }}</option>
                     </select>
                 </div>
                  <div class="input_container">
                     <label for="carne">escolha sua carne:</label>
-                    <select name="carne" id="carne" v-model="pao">
+                    <select name="carne" id="carne" v-model="carne">
                         <option value="">selecione sua carne:</option>
-                        <option value="">cuzida</option>
+                        <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">{{ carne.tipo }}</option>
                     </select>
                 </div>
                  <div class="input_container" id="opcionais-container">
                     <label id="opcionais-title" for="opcionais">escolha os opcionais</label>
-                    <div class="checkbox_container">
-                        <input type="checkbox" name="opcionais" id="opcionais" v-model="opcionais" value="salame">
-                        <span>salame</span>
+                    <div class="checkbox_container" v-for="opcional in opcionaisData" :key="opcional.id" >
+                        <input type="checkbox" name="opcionais" id="opcionais" v-model="opcionais" :value="opcional.tipo">
+                        <span>{{ opcional.tipo }}</span>
                     </div>
                 </div>
                 <div class="input_container">
@@ -36,8 +36,88 @@
     </div>
 </template>
 <script>
+
+import Mensage from './Mensage.vue';
 export default {
-    name:"Form"
+    name:"Form",
+    data(){
+      return{
+        paes:null,
+        carnes:null,
+        opcionaisData:null,
+        nome:null,
+        pao:null,
+        carne:null,
+        opcionais:[],
+        status:"solicitado",
+        msg:null
+      }
+      
+    }, 
+  components:{
+    Mensage
+  },
+    methods:{
+      async getIngredientes(){
+        const req = await fetch("http://localhost:3000/ingredientes");
+        // Transforma em objeto JavaScript
+        const data = await req.json()
+
+        // Dados que criamos sendo preenchidos pelo os dados do servidor
+        this.paes = data.paes
+        this.carnes = data.carnes
+        this.opcionaisData = data.opcionais
+      },
+      async createHamburgue(e){
+
+        e.preventDefault()
+        const data = {
+          nome:this.nome,
+          pao:this.pao,
+          carne:this.carne,
+          opcionais:Array.from(this.opcionais),
+          status: this.status
+        }
+        // Texto no formato Json
+        const DataJson= JSON.stringify(data)
+
+        // Fazendo a requisicao
+        const req = await fetch("http://localhost:3000/burgers", {
+          method:"POST",
+          headers:{
+            "Content-Type": "application/json"
+          },
+          body:DataJson
+        })
+      // Resposta
+
+      const res = await req.json()
+      
+      // Colocar uma msg do sistema
+      this.msg=`pedido do numero ${res.id} realizado com sucesso`
+
+      // Limpar msg do sistema
+        setTimeout(() => {
+          this.msg=""
+        }, 5000);
+
+      // limpar os campos
+        this.nome="";
+        this.carne="";
+        this.pao="";
+        this.opcionais=""
+
+
+
+
+
+      console.log(res)
+      }
+    },
+    mounted(){
+      // Executa essa funcao quando esse elemento for montado
+      this.getIngredientes()
+    }
 }
 </script>
 
@@ -113,39 +193,3 @@ export default {
 
 </style>
 
-
-<!-- <template>
-  <Message :msg="msg" v-show="msg" />
-  <div>
-    <form id="burger-form" method="POST" @submit="createBurger">
-      <div class="input-container">
-        <label for="nome">Nome do cliente:</label>
-        <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o seu nome">
-      </div>
-      <div class="input-container">
-        <label for="pao">Escolha o pão:</label>
-        <select name="pao" id="pao" v-model="pao">
-          <option value="">Selecione o seu pão</option>
-          <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">{{ pao.tipo }}</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="carne">Escolha a carne do seu Burger:</label>
-        <select name="carne" id="carne" v-model="carne">
-          <option value="">Selecione o tipo de carne</option>
-          <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">{{ carne.tipo }}</option>
-        </select>
-      </div>
-      <div id="opcionais-container" class="input-container">
-        <label id="opcionais-title" for="opcionais">Selecione os opcionais:</label>
-        <div class="checkbox-container" v-for="opcional in opcionaisdata" :key="opcional.id">
-          <input type="checkbox" name="opcionais" v-model="opcionais" :value="opcional.tipo">
-          <span>{{ opcional.tipo }}</span>
-        </div>
-      </div>
-      <div class="input-container">
-        <input class="submit-btn" type="submit" value="Criar meu Burger!">
-      </div>
-    </form>
-  </div>
-</template> -->

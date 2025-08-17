@@ -65,18 +65,63 @@
   },
   "status": [
     {
-      "id": 1,
+      "id": "1",
       "tipo": "Solicitado"
     },
     {
-      "id": 2,
+      "id": "2",
       "tipo": "Em produção"
     },
     {
-      "id": 3,
+      "id": "3",
       "tipo": "Finalizado"
     }
   ],
   "burgers": [
+    {
+      "id": "1ebd",
+      "nome": "Maysa da Silva Barreto",
+      "pao": "Italiano Branco",
+      "carne": "Veggie burger",
+      "opcionais": [
+        "Cebola roxa"
+      ],
+      "status": "Em produção"
+    },
+    {
+      "id": "10f2",
+      "nome": "MayconRoludo",
+      "pao": "3 Queijos",
+      "carne": "Maminha",
+      "opcionais": [
+        "Pepino"
+      ],
+      "status": "solicitado"
+    },
+    {
+      "id": "153c",
+      "nome": "Maysa Costa",
+      "pao": "Integral",
+      "carne": "Veggie burger",
+      "opcionais": [
+        "Salame"
+      ],
+      "status": "solicitado"
+    },
+    {
+      "id": "2a4f",
+      "nome": "Maycon and maysa ",
+      "pao": "Italiano Branco",
+      "carne": "Maminha",
+      "opcionais": [
+        "Salame",
+        "Cheddar",
+        "Bacon",
+        "Tomate",
+        "Cebola roxa",
+        "Pepino"
+      ],
+      "status": "solicitado"
+    }
   ]
 }
