@@ -1,0 +1,9 @@
+Passando configuracoes extras de conexao
+
+-para passar configuracoes dentro do nosso banco db precisamos colocar chaves depois do servidor que vai esta conectado no connect
+
+ex:
+moongose.connect("mongodb://localhost/test", {
+    useNewUrlParser:true, introduiz as novas parser da URL
+    useUnifiedTopology:true usa uma nova forma de gerenciar conexoes
+})

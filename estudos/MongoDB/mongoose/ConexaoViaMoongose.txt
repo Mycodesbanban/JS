@@ -1,0 +1,13 @@
+Conexao via mongoose
+
+-precisar importar o mongoose e atualizar o metodo connect 
+
+
+connect:serve para conectar sua aplicacao node.js no mongoDB dentro dele precisamos passar as informacoes do servidor
+
+disconnect:desconecta a aplicacao
+
+ex:
+const moongose = require("moongose")
+
+moongose.connect("mongodb://localhost/test") aqui quer dizer que vai dizer ao servidor apartir do protocolo "mongodb://" e que o servidor vai esta rodando na maquina e o test que e o nome do banco
