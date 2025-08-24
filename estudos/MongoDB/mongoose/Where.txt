@@ -1,0 +1,9 @@
+Where 
+
+-Where e um metodo que facilita a ultilizacao de multiplos filtros, podemos usar varios where para a busca fica mais precisar
+
+ex:
+Pessoa.where("idade").gte(18).lte(30) // idade entre 18 e 30
+      .where("trabalho").equals(true) // trabalho = true
+      .then(res => console.log(res))
+      .catch(err => console.error(err));

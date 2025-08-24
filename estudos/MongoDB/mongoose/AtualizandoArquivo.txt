@@ -1,0 +1,12 @@
+Atualizando arquivos
+
+-podemos usar o updateOne que tem a mesma logica do shell 
+
+ex:
+
+Pessoa.updateOne(
+    {nome:"maycon1"},
+    {$set:{idade:45}}
+)
+.then(atual => console.log(`Os dados foram atualizados `, atual))
+.catch(err => console.log(`Ocorreu um erro ao atualizar os dados ${err}`))

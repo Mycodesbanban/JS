@@ -1,0 +1,17 @@
+Inserindo varios dados 
+
+-para inserir varios dados usamos o insertMany que e a mesma logica do shell do mongoDB
+
+ex:
+
+// primeiro definindo um array onde vai ter varios documents (dados)
+const pessoas =[
+   {nome:"maycon", idade:12 , trabalho:true},
+   {nome:"maycon", idade:15 , trabalho:true},
+   {nome:"maycon", idade:17 , trabalho:true},
+]
+
+// inserindo no banco de dados
+Pessoa.insertMany(pessoas) //colando o array 
+.then(res => console.log(`dados enviados com sucesso ${res}`))
+.catch(err => console.log(`ocorreu um erro ao enviar seus dados ${err}`))

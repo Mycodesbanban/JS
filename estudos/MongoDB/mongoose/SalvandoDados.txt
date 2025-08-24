@@ -1,0 +1,13 @@
+Salvando dados 
+
+-para salvar os dados no moongose precisamos usar o metodo save, por que os dados nao estao salvos , mas estao na memoria 
+
+
+ex:
+
+salvando os dados e verificando se salvo ou ocorreu algum erro (ele so aceita se for Promisse, ou funcao async)
+matheus.save()
+.then(() => console.log("documento salvo com sucesso"))
+.catch((err)=>{
+    console.log(`ocorreu um erro para salvar seu arquivo:${err}`)
+})

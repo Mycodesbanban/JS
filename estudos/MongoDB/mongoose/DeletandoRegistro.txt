@@ -1,0 +1,8 @@
+Deletar dados 
+
+- Mesma logica do shell com o deleteOne 
+
+ex:
+Pessoa.deleteOne({nome:"Matheus"})
+.then(delName => console.log(`O usuario ${delName} foi deletado`))
+.catch(err => console.log(`Nao foi possivel deletar o usuario err:${err}`))

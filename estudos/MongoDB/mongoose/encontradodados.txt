@@ -1,0 +1,10 @@
+encontrando dados 
+
+
+-para resgastar dados podemos usar o findOne e que a mesmas coisa que no mongoDB e vamos imprimir no console para vemos o resulatado
+
+ex:
+// Buscando um unico dados com o nome Matheus e depois vendo se ocorreu algum erro
+Pessoa.findOne({nome:"Matheus"})
+.then(pessoa=> console.log(pessoa))
+.catch(err => console.log(`Ocorreu um erro: ${err}`))

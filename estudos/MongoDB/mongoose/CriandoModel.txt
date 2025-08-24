@@ -1,0 +1,23 @@
+Model 
+
+- representa um objeto com uma colecao no banco de dados
+
+ex:
+
+// Cria um model chamado Pessoa que se basea em pessoaSchema
+const Pessoa =moongose.model("Pessoa", pessoaSchema)
+
+
+// cria um novo documento que se basea no model Pessoa
+const matheus = new Pessoa ({
+    nome:"Matheus",
+    idade:12,
+    trabalho:false
+})
+
+// agora podemos ver os dados pelo o console pela a anotacao ponto
+console.log(matheus.nome)
+
+console.log(matheus.idade)
+
+console.log(matheus.trabalho)

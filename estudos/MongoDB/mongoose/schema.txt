@@ -1,0 +1,10 @@
+criando um shcemas
+
+- ele define como os documentos devem ser armazenadoas no banco e validar dados logo apos criamos o model
+
+ex:
+const pessoaSchema = new moongose.Schema({  // definindo uma variavel que tem os dados para ser amarzenados e validados no banco
+    nome:String,
+    idade:Number,
+    trabalho: Boolean
+})
