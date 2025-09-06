@@ -8,6 +8,7 @@ const cors = require("cors")
 // rotas
  const authRouter = require("./routes/authRouter")
  const UserRouter = require("./routes/UserRouter")
+ const Partyrouter = require("./routes/PartyRouter")
 
 
 // middlewares (requisicioes e respostas)
@@ -23,6 +24,7 @@ app.use(express.json()) //interpreta formato json
 app.use(express.static("public")) // arquivos estaticos na pasta public
 app.use("/api/auth", authRouter)
 app.use("/api/user", UserRouter)
+app.use("/api/party", Partyrouter)
 
 // conexao mongodb
 

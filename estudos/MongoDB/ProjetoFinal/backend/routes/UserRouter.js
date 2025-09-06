@@ -30,7 +30,7 @@ router.get("/:id", verificarToken,async(req, res)=>{
 
 // atualizacao do usuario
 
-router.put("/", verificarToken,async(req, res)=>{
+router.patch("/", verificarToken,async(req, res)=>{
 
    const token = req.header("auth-token")
    // para o usuario atualizar ele mesmo
