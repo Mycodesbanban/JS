@@ -20,63 +20,95 @@ const getUserBytoken = require("../helpers/getUserBytoken")
 
 // criando a festa
 router.post("/" , verificarToken ,upload.fields([{name:"photos"}]), async (req, res)=>{
-    // pegando dados da req
-    const title = req.body.title
-    const description = req.body.description
-    const PartyDate= req.body.party_date
+    try {
+        console.log('=== INÍCIO DO UPLOAD ===');
+        console.log('Body recebido:', req.body);
+        console.log('Files recebidos:', req.files);
 
-    let files = [];
+        // Pegando dados da requisição
+        const title = req.body.title;
+        const description = req.body.description;
+        const PartyDate = req.body.party_date;
+        const privacy = req.body.privacy === 'true'; // Converter string para boolean
 
+        console.log('Dados processados:', { title, description, PartyDate, privacy });
 
-    if(req.files){
-        files = req.files.photos
+        // Validações básicas
+        if (!title || title === "null" || title.trim() === "") {
+            return res.status(400).json({error: "Título é obrigatório"});
+        }
+        
+        if (!description || description === "null" || description.trim() === "") {
+            return res.status(400).json({error: "Descrição é obrigatória"});
+        }
+        
+        if (!PartyDate || PartyDate === "null") {
+            return res.status(400).json({error: "Data da festa é obrigatória"});
+        }
+
+        // Verificar usuário
+        const token = req.header("auth-token");
+        if (!token) {
+            return res.status(401).json({error: "Token não fornecido"});
+        }
+
+        const userByToken = await getUserBytoken(token);
+        if (!userByToken) {
+            return res.status(401).json({error: "Usuário não encontrado"});
+        }
+
+        const userId = userByToken._id.toString();
+        console.log('UserId:', userId);
+
+        // Processar arquivos de imagem
+        let photos = [];
+        if (req.files && req.files.photos) {
+            const files = req.files.photos;
+            console.log('Processando arquivos:', files);
+            
+            // Se for apenas um arquivo, files não será um array
+            const fileArray = Array.isArray(files) ? files : [files];
+            
+            fileArray.forEach((file, index) => {
+                console.log(`Arquivo ${index}:`, file.filename, file.path);
+                photos.push(file.path);
+            });
+        }
+
+        console.log('Photos array final:', photos);
+
+        // Criar objeto da festa
+        const partyData = {
+            title: title.trim(),
+            description: description.trim(),
+            PartyDate: new Date(PartyDate),
+            photos: photos,
+            privacy: privacy,
+            UserId: userId
+        };
+
+        console.log('Dados da festa a serem salvos:', partyData);
+
+        // Criar e salvar a festa
+        const party = new Party(partyData);
+        const savedParty = await party.save();
+
+        console.log('Festa salva com sucesso:', savedParty);
+
+        res.status(201).json({
+            error: null,
+            msg: "Evento criado com sucesso",
+            data: savedParty
+        });
+
+    } catch (error) {
+        console.error('Erro no upload da festa:', error);
+        console.error('Stack trace:', error.stack);
+        
+        res.status(500).json({
+            error: "Erro interno do servidor: " + error.message
+        });
     }
-
-    // Fazendo validacoes
-    if(title == "null" || description == "null"|| PartyDate ==="null"){
-        return res.status(400).json({error:"prencha os campos"})
-    }
-
-    // Verificar usuario
-
-    const token = req.header("auth-token")
-
-    const userByToken = await getUserBytoken(token);
-
-    const userId= userByToken._id.toString()
-    try{
-    const user = await User.findOne({_id:userId})
-// criando um array de fotos com a imagem na pasta 
-
-    let photos = []
-    if(files && files.length >0 ){
-       files.forEach((photos, index)=>{
-        photos[index] = photos.path
-       })
-    }
-
-    const party = new Party({
-        title:title,
-        description:description,
-        PartyDate:PartyDate,
-        photos:photos,
-        privacy:req.body.privacy,
-        UserId:user._id.toString()
-    })
-    try{
-        const newParty = await party.save();
-        res.json({error:null, msg:"Evento criado com sucesso", data:newParty
-
-        })
-    }catch(err){
-         return res.status(400).json({erro:"Ocorreu um erro"})
-    }
-
-    } catch(err){
-        return res.status(400).json({erro:"prencha os campos"})
-    }
-
-
 });
 
 // resgatando as festas publicas 
@@ -114,23 +146,36 @@ router.get("/userparties", verificarToken , async(req , res)=>{
 })
     // resgatando festa individual
 
-router.get("/userparty/:id", verificarToken , async (req, res)=>{
-    try{
-        const token = req.header("auth-token")
-        const user = await getUserBytoken(token)
-        const userId = user._id.toString()
-        const partyId = req.params.id
+router.get("/userparty/:id", verificarToken, async (req, res) => {
+    try {
+        console.log('=== BUSCAR FESTA INDIVIDUAL ===');
+        const token = req.header("auth-token");
+        const user = await getUserBytoken(token);
+        const userId = user._id.toString();
+        const partyId = req.params.id;
 
-        const party = await Party.findOne({_id:partyId,UserId:userId})
+        console.log('Buscando festa:', { partyId, userId });
 
-        res.json({error:null , party:party})
+        const party = await Party.findOne({ _id: partyId, UserId: userId });
+        
+        if (!party) {
+            return res.status(404).json({ erro: "Festa não encontrada" });
+        }
 
+        console.log('Festa encontrada:', {
+            id: party._id,
+            title: party.title,
+            photos: party.photos,
+            photosLength: party.photos ? party.photos.length : 0
+        });
 
-    }catch(err){
-        return res.status(400).json({erro:"acesso negado"})
+        res.json({ error: null, party: party });
+
+    } catch (err) {
+        console.error('Erro ao buscar festa:', err);
+        return res.status(400).json({ erro: "Acesso negado: " + err.message });
     }
-})
-
+});
 // pega festa de forma nao autenticada (publica ou privada)
 
 router.get("/:id", async(req , res)=>{
@@ -225,12 +270,12 @@ router.put("/", verificarToken , upload.fields([{name:"photos"}]), async(req , r
         privacy:req.body.privacy,
         UserId:userId
     }
-     let photos = []
-    if(files && files.length >0 ){
-       files.forEach((photos, index)=>{
-        photos[index] = photos.path
-       })
-       party.photos = photos
+    let photos = []
+    if(files && files.length > 0 ){
+    files.forEach((photo, index) => {
+        photos[index] = photo.path  // CORRETO: usar photos[index] ao invés de photos
+    })
+    party.photos = photos
     }
     try{
         // retornando a atualizacao data

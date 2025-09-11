@@ -27,31 +27,45 @@ export default {
     },
     methods:{
         async getParty(){
-            // pegar o id da url e o token do store
-            const token = this.$store.getters.token
-            const id = this.$route.params.id
+        const token = this.$store.getters.token
+        const id = this.$route.params.id
 
-            await fetch(`http://localhost:3000/api/party/${id}`, {
-                method:"GET",
-                headers:{
-                    "Content-type":"application/json",
-                    "auth-token":token
-                }
-            })
-            .then((res) => res.json())
-            .then((data) =>{
-                this.party = data.party;
+        // USAR A ROTA USERPARTY ao invés da rota pública
+        await fetch(`http://localhost:3000/api/party/userparty/${id}`, {
+            method:"GET",
+            headers:{
+                "Content-type":"application/json",
+                "auth-token":token
+            }
+        })
+        .then((res) => res.json())
+        .then((data) =>{
+            console.log('Resposta do backend:', data); // Para debug
+            this.party = data.party;
+            
+            if(this.party.PartyDate) {
                 this.party.PartyDate = this.party.PartyDate.substring(0,10)
+            }
 
-                this.party.photos.forEach((photo , i)=>{
-                    console.log(photo)
-                    this.party.photos[i] = photo.replace("public", "http://localhost:3000")
+            // Verificar e corrigir as fotos
+            if(this.party.photos && this.party.photos.length > 0) {
+                console.log('Fotos antes da correção:', this.party.photos);
+                this.party.photos = this.party.photos.map(photo => {
+                    if(photo && !photo.includes('http')) {
+                        return photo.replace("public", "http://localhost:3000")
+                    }
+                    return photo;
                 });
+                console.log('Fotos após correção:', this.party.photos);
+            } else {
+                console.log('Nenhuma foto encontrada ou array vazio');
+            }
 
-                this.componetKey +=1
-            })
-            .catch(err => console.log(err))
-        }
+            this.componetKey += 1
+        })
+        .catch(err => console.log('Erro ao carregar festa:', err))
+    }
+
     }
 }
 
