@@ -63,6 +63,26 @@ const routes = [
      component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue'),  meta:{
       requiresAuth:true
     }
+  },{
+    
+    path: '/newparty',
+    name: 'NewParty',
+     // route level code-splitting
+     // this generates a separate chunk (about.[hash].js) for this route
+     // which is lazy-loaded when the route is visited.
+     component: () => import(/* webpackChunkName: "about" */ '../views/NewParty.vue'),  meta:{
+      requiresAuth:true
+    }
+  },{
+    
+    path: '/editparty/:id',
+    name: 'EditParty',
+     // route level code-splitting
+     // this generates a separate chunk (about.[hash].js) for this route
+     // which is lazy-loaded when the route is visited.
+     component: () => import(/* webpackChunkName: "about" */ '../views/EditParty.vue'),  meta:{
+      requiresAuth:true
+    }
   }
 ]
 

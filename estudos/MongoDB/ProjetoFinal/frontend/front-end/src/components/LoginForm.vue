@@ -72,9 +72,9 @@ export default {
             msgClass:null
         }
    
-}
-}
+},
 name:"LoginForm"
+}
 
 
 </script>

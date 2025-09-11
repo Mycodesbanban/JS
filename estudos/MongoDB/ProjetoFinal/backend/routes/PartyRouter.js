@@ -19,11 +19,11 @@ const verificarToken = require("../helpers/checkToken")
 const getUserBytoken = require("../helpers/getUserBytoken")
 
 // criando a festa
-router.post("/" , verificarToken ,upload.fields({name:"photos"}), async (req, res)=>{
+router.post("/" , verificarToken ,upload.fields([{name:"photos"}]), async (req, res)=>{
     // pegando dados da req
     const title = req.body.title
     const description = req.body.description
-    const PartyDate= req.body.PartyDate
+    const PartyDate= req.body.party_date
 
     let files = [];
 
@@ -61,7 +61,7 @@ router.post("/" , verificarToken ,upload.fields({name:"photos"}), async (req, re
         PartyDate:PartyDate,
         photos:photos,
         privacy:req.body.privacy,
-        userId:user._id.toString()
+        UserId:user._id.toString()
     })
     try{
         const newParty = await party.save();
@@ -102,7 +102,7 @@ router.get("/userparties", verificarToken , async(req , res)=>{
 
         const userId = user._id.toString()
 
-        const parties = await Party.find({userId:userId})
+        const parties = await Party.find({UserId:userId})
 
         res.json({error:null , parties:parties})
 
@@ -121,7 +121,7 @@ router.get("/userparty/:id", verificarToken , async (req, res)=>{
         const userId = user._id.toString()
         const partyId = req.params.id
 
-        const party = await Party.findOne({_id:partyId,userId:userId})
+        const party = await Party.findOne({_id:partyId,UserId:userId})
 
         res.json({error:null , party:party})
 
@@ -179,7 +179,7 @@ router.delete("/", verificarToken ,async(req , res)=>{
     const userId = user._id.toString()
 
     try{
-        await Party.deleteOne({_id:partyId, userId:userId})
+        await Party.deleteOne({_id:partyId, UserId:userId})
         res.json({error:null, msg:"evento removido com sucesso!"})
     }catch(errr){
         res.status(401).json({error:"acesso negado"})
@@ -192,9 +192,9 @@ router.delete("/", verificarToken ,async(req , res)=>{
 router.put("/", verificarToken , upload.fields([{name:"photos"}]), async(req , res)=>{
     const title = req.body.title
     const description = req.body.description
-    const PartyDate = req.body.PartyDate
+    const PartyDate = req.body.party_date
     const partyId = req.body.id
-    const PartyUserId = req.body.user._id
+    const PartyUserId = req.body.userId
 
      let files = [];
 
@@ -223,7 +223,7 @@ router.put("/", verificarToken , upload.fields([{name:"photos"}]), async(req , r
         description:description,
         PartyDate:PartyDate,
         privacy:req.body.privacy,
-        userId:userId
+        UserId:userId
     }
      let photos = []
     if(files && files.length >0 ){
@@ -234,7 +234,7 @@ router.put("/", verificarToken , upload.fields([{name:"photos"}]), async(req , r
     }
     try{
         // retornando a atualizacao data
-        const UpdadeParty = await Party.findOneAndUpdate({_id:partyId ,userId:userId } ,{$set:party} , {new:true})
+        const UpdadeParty = await Party.findOneAndUpdate({_id:partyId ,UserId:userId } ,{$set:party} , {new:true})
 
         res.json({error:null , msg:"evento atualizado com sucesso" , data:UpdadeParty})
 
