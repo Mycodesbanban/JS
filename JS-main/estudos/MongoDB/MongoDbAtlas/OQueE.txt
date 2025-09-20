@@ -1,0 +1,5 @@
+MongodbAtlas 
+
+- e um servico cloud dos para hospedar bancos de dados
+
+- tem varios recursos ,como clusterizacao
