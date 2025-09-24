@@ -1,8 +1,8 @@
 <% Controle de fluxo (if, for...) %>
-<%= Imprime escapando caracteres %>
-<%- Imprime sem escapar caracteres %>
+<%= Imprime escapando caracteres %> mostra 
+<%- Imprime sem escapar caracteres %> executa
 <%# Comentário %>
-<%- include('CAMINHO/ARQUIVO'); %>
+<%- include('CAMINHO/ARQUIVO'); %> incluir arquivos
 
 <% if (algumacoisa) { %>
   <%= exibe alguma coisa %>
