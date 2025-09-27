@@ -14,8 +14,10 @@ route.get("/login/index", loginController.index )
 //*Rotas de usuario cadrastro e login
 route.post("/login/index", loginController.index )
 
-route.post("/login/login", loginController.index )
+route.post("/login/login", loginController.login )
 
-route.post("/login/register", loginController.register )
+route.post("/login/register", loginController.register)
+
+route.get("/login/logout", loginController.logout)
 
 module.exports = route;
