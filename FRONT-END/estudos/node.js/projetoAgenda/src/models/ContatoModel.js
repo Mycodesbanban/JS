@@ -82,8 +82,7 @@ Contato.buscarContatos=  async function(){
 
 Contato.delete=  async function(id){
    if(typeof id !== "string") return;
-    this.validar()
-  const contatos = await ContatoModel.findOneAndDelete(id)
+  const contatos = await ContatoModel.findOneAndDelete({_id:id})
   return contatos
 }
 

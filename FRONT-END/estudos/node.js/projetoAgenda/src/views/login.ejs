@@ -8,9 +8,9 @@
           <p class="text-center lead">Faça seu login para ver seus contatos; Não tem uma conta? Cadastre-se.</p>
           <%- include("includes/messages")%>
           <div class="row">
-            <div class="col-lg">
+            <div class="col-lg my-5">
               <h4>Faça seu cadrastro</h4>
-      <form action="/login/register" method="post">
+      <form class="form-cadrastro" action="/login/register" method="post">
          <input type="hidden" name="_csrf" value='<%= csrfToken%>'>
       <div class="form-group">
         <label>seu E-mail</label>
@@ -23,9 +23,9 @@
       <button type="submit" class="btn btn-primary">Crie sua conta</button>
     </form>
             </div>
-              <div class="col-lg">
+              <div class="col-lg my-5">
                 <h4>Faça login</h4>
-        <form action="/login/login" method="post">
+        <form class="form-login" action="/login/login" method="post">
           <input type="hidden" name="_csrf" value="<%= csrfToken%>">
       <div class="form-group">
         <label>seu E-mail para o login</label>
