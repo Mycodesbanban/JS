@@ -1,0 +1,4 @@
+
+E uma ferramenta usada para identificar erros e problemas
+
+e usado bastante com vs code 

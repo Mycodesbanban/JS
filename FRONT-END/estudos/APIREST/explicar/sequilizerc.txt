@@ -1,0 +1,13 @@
+serve pra personalizar os caminhos onde vai procurar e salvar coisas como models , migrations , seeders , configuracoes
+
+
+
+ dialect:, // o nome do banco que iremos usar
+define: //configuracoao global para todos os modelas timestamps:true, //cria as colunas createdAt e updatedAt
+underscored:true, // cria coluna com snake_case que no caso seria o _
+underscoredAll:true, // aplica a essa rega a nome de tabelas e associacoes
+"createdAt", // o created guarda quando o registro foi inserido no banco
+"updatedAt": // quando o registro foi atualizado no pela a ultima vez
+dialectOptions: // serve para passar as configuracoes especificas para o drive do banco de dados
+timezone:"America/Sao_Paulo" // o horario
+
