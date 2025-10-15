@@ -3,11 +3,11 @@ import UserController from "../controllers/UserController";
 import loginRequired from "../middlewares/loginRequired";
 const router = new Router()
 
-router.post("/users", UserController.create)
+router.post("/users",loginRequired, UserController.create)
 
 // get
 
-// essas rotas que estao comentadas nao deveria existe 
+// essas rotas que estao comentadas nao deveria existe
 
 // router.get("/users", UserController.index) // lista usuarios
 
