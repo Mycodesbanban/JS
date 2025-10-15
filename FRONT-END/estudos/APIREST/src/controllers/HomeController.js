@@ -3,13 +3,10 @@ import Aluno from "../models/Aluno"
 
 class HomeController{
  async index(req, res){
-  const novoAluno = await Aluno.create({
-    nome:"Luiz",
-    sobrenome:"adolf",
-    email:"luiz@gmai.com",
-    idade:1233
-  })
-    res.json(novoAluno)
+  const dentrodofodase =(fodaci=[]) =>{
+    fodaci.push("fodase")
+  }
+    res.json(dentrodofodase())
   }
 }
 
