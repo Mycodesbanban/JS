@@ -2,12 +2,12 @@ import {resolve} from "path"
 import dotenv from "dotenv"
 dotenv.config()
 import express from "express"
-import "./src/database"
-import homeRouters from "./src/routes/homeRouters"
-import UsersRoutes from "./src/routes/UsersRoutes"
-import tokenRoutes from "./src/routes/tokenRoutes"
-import alunoRoutes from "./src/routes/alunoRoutes"
-import photoRoutes from "./src/routes/photoRoutes"
+import "./database"
+import homeRouters from "./routes/homeRouters"
+import UsersRoutes from "./routes/UsersRoutes"
+import tokenRoutes from "./routes/tokenRoutes"
+import alunoRoutes from "./routes/alunoRoutes"
+import photoRoutes from "./routes/photoRoutes"
 
 class App {
   constructor(){
