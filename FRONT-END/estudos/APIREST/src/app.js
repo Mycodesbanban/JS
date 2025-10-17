@@ -18,7 +18,7 @@ class App {
   middlewares(){
     this.app.use(express.urlencoded({extended:true}))
     this.app.use(express.json())
-    this.app.use(express.static(resolve(__dirname,"upload" )))
+    this.app.use("/images/",express.static(resolve(__dirname,"..","upload","images" )))
   }
   routes(){
     this.app.use("/",homeRouters )
