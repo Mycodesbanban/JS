@@ -1,0 +1,6 @@
+para inicializar o repositorio primeiro temos que entrar no diretorio
+
+apos entra no diretorio pelo o terminal usamos o comando:
+    git init: vai inicializar   
+
+

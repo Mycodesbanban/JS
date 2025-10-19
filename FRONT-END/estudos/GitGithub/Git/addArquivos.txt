@@ -1,0 +1,30 @@
+Para adicionar arquivos para ser reconhecidos pelo o git usamos o:
+git add (nome do arquivo)  
+
+usamos o 
+git reset HEAD para quando precisamos desfazer um add que colocamos
+
+
+podemos usar o reset com 3 tipos 
+
+git reset --soft vai tirar o commit mas nao vai mudar nada e vai esta pronto para ser commitado novamente
+
+git reset --mixed vai tirar o commit vai volta os arquivos antes do status (nao tem o add)
+
+git reset --hard vai ignorar a existencia desse commit e tudo que estiver dentro dele, simplificando vai apagar o commit
+
+
+importante lembra que:
+ 
+funcionar assim
+
+hash1
+
+hash2
+
+temos que escolher a hash2 para mudar a hash1
+
+supondo que tenha a 3
+
+
+hash3 no caso se escolhemos ela ela vai mudar o hash2 e o hash1

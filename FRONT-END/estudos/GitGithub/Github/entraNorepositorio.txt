@@ -1,0 +1,15 @@
+para acessar um repositorio usamos o:
+git remote add origin git@github.com:Mycodesbanban/JS.git
+
+acessamos, para saber mais informacoes sobre ele usamos o 
+
+git remote 
+git remote -v
+
+
+depois de acessar temos que roda o seguinte comando
+
+git push -u origin master vai enviar todos os arquivos 
+
+para mandar eles depois de serem editados usamos o:
+git push origin master

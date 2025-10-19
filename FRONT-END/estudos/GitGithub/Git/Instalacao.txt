@@ -1,0 +1,7 @@
+Para instalar o git (no linux) usamos o comando:
+
+rodamos o comando:
+sudo add-apt-repository ppa:git-core/ppa: adiocionar o repositorio do git
+sudo apt update atualizar o repositorio no sistema 
+sudo apt install git
+

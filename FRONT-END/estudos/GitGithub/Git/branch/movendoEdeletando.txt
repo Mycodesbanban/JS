@@ -1,0 +1,7 @@
+movendo e deletando os branch
+
+primeiro temos que entrar no branch
+git checkout (nome do branch)
+depois de entrar vamos deletar usando
+
+git branch -D (nome do branch)

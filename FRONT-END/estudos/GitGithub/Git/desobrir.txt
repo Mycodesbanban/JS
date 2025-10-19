@@ -1,0 +1,10 @@
+para vermos qual valor esta salvo como: "user.name", "user.email" usamos o:
+git config (aqui voce colocar o que quer ver )
+
+ex 
+ git config user.name
+
+
+vermos tudo usamos 
+
+git config --list

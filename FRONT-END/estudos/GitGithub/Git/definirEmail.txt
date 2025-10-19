@@ -1,0 +1,3 @@
+Para definir o email usamos:
+
+git config --global user.email "4444@gmail.com"

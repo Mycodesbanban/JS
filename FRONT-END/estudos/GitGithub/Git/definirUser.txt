@@ -1,0 +1,3 @@
+usamos o comando 
+
+git config --global user.name "Maycon" (nosso nome fica dentro das aspas)
