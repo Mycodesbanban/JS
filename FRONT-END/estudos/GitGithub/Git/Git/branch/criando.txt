@@ -1,0 +1,7 @@
+para criar um branch usamos:
+
+git checkout -b(dizendo que vou criar um branch)
+testing
+
+para ver os branch usamos:
+git branch         
