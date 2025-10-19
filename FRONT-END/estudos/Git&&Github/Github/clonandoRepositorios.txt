@@ -1,0 +1,10 @@
+primeiro copiamos o endereco do repositorio:
+https://github.com/Mycodesbanban/JS.git
+
+usamos o comando 
+git clone https://github.com/Mycodesbanban/JS.git
+
+
+caso queira coloca ele junto com uma pasta nova usamos
+
+git clone https://github.com/Mycodesbanban/JS.git github-course-clone

@@ -1,0 +1,22 @@
+o que e SSH
+
+E uma forma segura de conectar sevidores sem precisar usa sua senha toda vez
+
+
+para gerar a senha no nosso computador usamos:
+ 
+ primeiro vamos entra na pasta SSH
+
+ cd ~/.ssh/
+
+ depois rodamos o seguinte comando
+
+ ssh-keygen -t ed25519 -C "(email de exemplo)"
+
+depois vai lancar um token:
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtczc2gtZW
+QyNTUxOQAAAxCcCDHNjmf8oT1dM8MXSAxz/WfzPb5jIcewdlocVw5TkuuDNgAAAJguCBIlLggS
+JQAAAAtzcw2gtZWcQyNTUxOQAAACCDHNjmf8oT1dM8MXSAxz/WfzPb5jIwcedloVwc5TkuuDNg
+AAAECABwliZAqCqpncin+zoGJywKe8rbzyxZZscmYnqk5wARZ3soMc2OZ/yhPV0rzwxdIDHP9Z/c
+M9vmMhx52WhXDlOS64M2AAAAE21heWNvbnR5M0BnbWFpbC5jb20BAg==
+         
