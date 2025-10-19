@@ -1,0 +1,1 @@
+ele e responsabvel por guardar informacoes que ainda nao foram commitas em um arquivo, que possa chamar depois 

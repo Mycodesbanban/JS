@@ -1,0 +1,8 @@
+Ver as mundancas antes de enviar para isso usamos:
+
+git diff
+
+temos algumas opcos com ele 
+
+git diff --name--only
+mostra somente o nome do arquivo

@@ -1,0 +1,10 @@
+Merge:
+juntasr as alteracoes de um branch para o outro
+
+git checkout (branch principal)
+
+git merge (branch que voce quer juntar no principal)
+
+Rebase:
+reaplicar commits de outro branch em outro
+git rebase (branch que voce quer os commits) todos os commits vao para cima

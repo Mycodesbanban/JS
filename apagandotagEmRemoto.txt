@@ -1,0 +1,3 @@
+para apagar tags e branch no remoto usamos o:
+
+git push remoto :(nome da tag/ branch)

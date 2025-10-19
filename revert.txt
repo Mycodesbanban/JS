@@ -1,0 +1,3 @@
+para reverter usamos 
+
+git revert (hash do commit)

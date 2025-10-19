@@ -1,0 +1,11 @@
+serve para marca um ponto espeficico na linha do git
+
+git tag 1.00
+
+git tag -a 1.00 -m "versao estavel"
+
+para subir as tags usammos
+git push origen master --tags
+
+para apagar colocamos -d
+git tag -d (nome da tag)

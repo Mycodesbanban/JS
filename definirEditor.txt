@@ -1,0 +1,2 @@
+para definir o editor usamos:
+git config --global core.editor "code --wait"

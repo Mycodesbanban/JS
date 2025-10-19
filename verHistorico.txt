@@ -1,0 +1,18 @@
+para ver o historico usamos:
+
+git log
+
+ele tambem tem alguns complementos como 
+
+git log --decorate : mostra onde estao os nomes e tags 
+
+git log --author="(aqui nome do author)" filtrar por autores
+
+git shortlog : mostra qual foram os autorese e quantos commit fizeram
+
+git shortlog -sn: ver somente a quantidade de commit e nome da pessoa ao lado         
+
+git log -graph: mostra o historico de commit em forma de 
+
+podemos usar o:
+git show para ver o que cada detalhe especifico do commit (usando a hash do commit)

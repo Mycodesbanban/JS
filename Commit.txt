@@ -1,0 +1,10 @@
+Vai salvar as alteracoes no historico do seu projeto 
+
+ele vai guardar a parte que queremos e caso modificamos nao vai ser alterado no repositorio
+
+
+git commit -m "o que quer comentar"  
+
+quando for um arquivo que ja foi commitado e quer atualizar usamos 
+
+git commit -am "o que quer comentar"

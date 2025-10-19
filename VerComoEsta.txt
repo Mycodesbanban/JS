@@ -1,0 +1,2 @@
+Ver como esta o repositorio atual usamos o: 
+git status
