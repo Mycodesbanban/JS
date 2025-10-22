@@ -1,0 +1,5 @@
+para comecar o projeto usamos o comando:
+npm create vite@latest nome-do-projeto
+e escolhemos o nome do projeto e a opcao react
+
+ou podemos ja cria com o npx create-react app.
