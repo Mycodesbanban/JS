@@ -1,0 +1,8 @@
+.nav{
+    color: gray;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
