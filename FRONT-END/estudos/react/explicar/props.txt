@@ -1,0 +1,25 @@
+sao recursos fundamentais 
+
+que nos permite passar valores de um componente pai para filho
+
+
+elas vem em forma de objeto nop argumento da funcao do componente
+
+ex:
+
+<MeuComponente name="matheus"/> agora tem uma props name com o nome matheus
+
+agora para acessar usamos no parametro na funcao
+ex
+
+const show = (props) =>{
+    <p> hahaha {props.name} </p> agora vai retornar o matheus
+}
+
+
+
+tambem usamos de forma de destructuring quando temos mais de uma props no componente
+  
+const show = ({name, age }) =>{
+    <h1> hehehe {name , age} </h1> chamamos as props name e age
+} lembrando que e na ordem 

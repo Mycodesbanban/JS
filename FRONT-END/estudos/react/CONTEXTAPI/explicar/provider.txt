@@ -1,0 +1,21 @@
+vai delimitar onde o contexto e usado
+
+
+para isso vamos criar uma especie de componentes com a prop children
+
+e com vai encapsular os demais componentes que precisamos consultar ou alterar o valor
+
+fica no arquivo principal (main.jsx)
+
+ex:
+export const TitleContextProvider = ({children}) =>{
+    return(
+       <TitleContext.Provider>
+        {children}
+       </TitleContext.Provider>
+    )
+}
+
+
+com isso chamamos no arquivo main.jsx
+import { TitleContextProvider } from './Context/TitleContext.jsx'

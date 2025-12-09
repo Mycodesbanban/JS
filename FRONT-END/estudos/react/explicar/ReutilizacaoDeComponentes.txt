@@ -1,0 +1,7 @@
+com as props podemos reutilizar os componentes 
+e comeca a fazer sentido, as gente so vamos alterar as props
+
+ai mosta o brand com o valor sem ser alterado no principal
+
+<Detalhes brand="1"/>
+<Detalhes brand="2"/>

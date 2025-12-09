@@ -1,0 +1,27 @@
+para usar variacoes no comportamento do contexto
+usamos o useReducer, que e praticamente igual ao useState o que mudar e o estado mais complexo ou quando ha multiplas acoes que modifica o  estado de diferente forma,ele se aparenta como a funcao switch
+
+ex:
+import {useReducer} from "react;
+
+fuction reducer (estado, action){
+    if(action.type==="increment"){
+        return estado +1
+    }
+    if(action.type ==="decrement"){
+        return estado -1
+    }
+    return estado 
+}
+
+export default fuction Contador(){
+    const [count, dispatch] = useReducer(reducer, 0)  o dispatch serve para enviar uma acao como increment ou decrement
+
+    return(
+        <div>
+        <h2>O contador e {count}</h2>
+        <button onClick={() =>dispatch({type:"decrement"})}> -</button>
+        <button onClick={()=> dispatch({type:increment})}>  + </button>
+        </div>
+    )
+}

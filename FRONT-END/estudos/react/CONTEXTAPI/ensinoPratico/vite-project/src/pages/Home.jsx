@@ -29,7 +29,7 @@ const Home = () => {
           <button onClick={() => setTitleColor("RED")}>vermelho</button>
            <button onClick={() => setTitleColor("BLUE")}>azul</button>
         </div>
-
+   
 
     </div>
   )

@@ -1,0 +1,14 @@
+primeiro criamos uma funcao
+
+function showMe () {
+    console.log("oi")
+}
+
+<Detalhes myfunction={showMe}/> 
+ai no componete vamos fazer 
+
+const Detalhes = ({myfunction}) =>{
+    return (
+        <button onClick={myfunction}>clique</button>
+    )
+}

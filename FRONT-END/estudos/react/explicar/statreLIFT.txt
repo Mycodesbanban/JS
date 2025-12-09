@@ -1,0 +1,24 @@
+StateLIft 
+signifca move o estado de um componente filho para um componente pai para que varios componentes possam compartilhar e sicronizar aquele mesmo estado
+
+
+primeiro criamos um usetate
+
+const [message, setMessage] = usetate("")
+
+const handleMessage = (msg) =>{
+    setMessage(msg)
+}
+
+<Message/>
+
+no componente Message usamos
+ const Message = ({msg}) =>{
+    return(
+        <>
+        <p> a messagem e {msg} </p>
+        </>
+    )
+ }
+
+ <Message msg={message}/>

@@ -1,0 +1,5 @@
+para alterar o contexto primeiro precisamos cria um componente que ultilize a funcao da mundaca de contexto
+
+essa mundaca podera ser consumida por todos os componentes
+
+e assim finalizamos o ciclo da CONTEXT API

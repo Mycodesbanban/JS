@@ -1,0 +1,7 @@
+{
+    cars.map((car) =>(
+        <Detalhes brand={car.brand}/>
+    ))
+}
+
+pegamos o nome do array (cars) e colocamos em um loop onde vai ser mostrado todos os brand

@@ -1,0 +1,10 @@
+e um recurso onde facilita o compartilhamento de um estado entre componentea
+
+de forma mais simples, e quando preciosamos de dados globais, e provalvemente usamos o context API 
+
+esse context encapsular os componentes que receberam seus valores geralmente colocado no arquivo principal (app.jsx)
+
+os context fica na p  asta context geralmente     
+
+
+  

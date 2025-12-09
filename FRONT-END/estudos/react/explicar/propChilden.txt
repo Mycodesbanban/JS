@@ -1,0 +1,21 @@
+e um recurso ultilizado quando precisamos passar elementos filhos para um componentes
+
+ex:
+<Detalhes >
+
+    <h1>Rolas</h1>
+
+<Detalhes />
+
+
+no arquivo Detalhes vamos colocar um children nos parametros da funcao
+
+const Container = ({children}) =>{
+    return(
+        <>
+        {children}
+        </>
+    )
+}
+
+agora a mensagem que colocamos vai aparecer
