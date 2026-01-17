@@ -11,9 +11,12 @@ import Login from './pages/Login/Login.jsx'
 import Register from './pages/Register/Register.jsx'
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
 import Createpost from './pages/CreatePost/Createpost.jsx'
+import Search from './pages/search/Search.jsx'
 
 // contexto
 import {AuthProvider , useAuthValue}from "./context/AuthContext.jsx"
+import Post from './pages/post/Post.jsx'
+import Editpost from './pages/EditPost/EditPost.jsx'
 function App() {
   const [user , setUser] = useState(undefined)
   const {auth}= useAuthentication()
@@ -39,12 +42,14 @@ function App() {
     <div className="container">
     <Routes>
       <Route path="/" element= {<Home/>}/>
+      <Route path="/posts/:id" element= {<Post/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/Login" element= {!user ? <Login/> : <Navigate to="/"/>}/>
       <Route path="/Register" element={!user ? <Register/> : <Navigate to="/"/>}/>
       <Route path="/dashboard" element={user ? <Dashboard/> : <Navigate to="/login"/>}/>
       <Route path="/posts/create" element={user ? <Createpost/> : <Navigate to="/login"/>}/>
-    
+      <Route path="/posts/edit/:id" element={user ? <Editpost/> : <Navigate to="/login"/>}/>
+      <Route path="/search" element= {<Search/>}/>
     </Routes>
     </div>
     <Footer/>

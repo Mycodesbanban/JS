@@ -1,18 +1,18 @@
 import { useState,useEffect, useReducer, act } from "react";
 import {database} from "../firebase/config"
-import { collection , addDoc , Timestamp} from "firebase/firestore";
+import { doc, deleteDoc} from "firebase/firestore";
 
 const initialState = {
     loading:null,
     error:null
 }
 
-const insertReducer = (state, action) => {
+const deleteReducer = (state, action) => {
     
     switch(action.type){
         case"LOADING":
         return{loading:true , error:null}
-        case"INSERTED_DOC":
+        case"DELETED_DOC":
         return {loading:false , error:null, payload:action.payload}
         case"ERROR":
         return {loading:false, error:action.payload}
@@ -24,8 +24,8 @@ const insertReducer = (state, action) => {
 }
 
 
-export const useInsertDocument = (docCollection) => {
-    const [response, dispatch] = useReducer(insertReducer, initialState)
+export const usedeleteDocument = (docCollection) => {
+    const [response, dispatch] = useReducer(deleteReducer, initialState)
 
     // deal with memory leak
 
@@ -37,7 +37,7 @@ export const useInsertDocument = (docCollection) => {
         }
     }
 
-    const insertDocument = async (document) => {
+    const deleteDocument = async (id) => {
             checkCancelBeforeDispatch({
 
                 type:"LOADING"
@@ -45,15 +45,11 @@ export const useInsertDocument = (docCollection) => {
             )
 
         try{
-            const newDocument = {...document, createAt :Timestamp.now()}
-            const insertedDocument = await addDoc(
-                collection(database, docCollection ),
-                newDocument
-            )
+            const deleteDocument = await deleteDoc(doc(database,docCollection, id))
             checkCancelBeforeDispatch({
 
-                type:"INSERTED_DOC",
-                payload:insertedDocument
+                type:"DELETED_DOC",
+                payload:deleteDocument
             }
             )
         }catch(error) {
@@ -70,6 +66,6 @@ export const useInsertDocument = (docCollection) => {
     //     return () => setCancelled(true)
     // }, [])
     return {
-        insertDocument , response
+        deleteDocument , response
     }
 }
