@@ -1,0 +1,6 @@
+parecido com o useEffect,mas executa de forma sincrona logo apos as mutacoes do DOM ou seja bloqueando o carregamento da pagina para o sucesso de sua funcionalidade, a ideia e executa algo antes que o user veja a pagina 
+
+    useLayoutEffect(()=>{
+        console.log("")
+        setName("maycon")
+    }, []) executa primeiro

@@ -1,0 +1,35 @@
+gerencia valores a diferenca que ele e um objeto entao nao teremos o valor direto como se fosse uma variavel, o seu valor esta na propriendade current que acessamos assim (variavel.current),guarda a referencia que nao renderiza quando muda, ele e usado para acessar elementos da DOM
+
+exemplo:
+
+
+import {useRef} from 'react'
+
+
+
+const numberRef = useRef(0)
+
+
+        <p>O components renderizou:{numberRef.current} vezes </p>
+
+
+
+exemplo com dom:
+
+// useref com dom -2
+  const inputRef = useRef()
+  const [text, setText] = useState("")
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    setText("")
+    inputRef.current.focus()
+  }>
+        
+        {/* dom */}
+        <form onSubmit={handleSubmit}>
+          <input type="text" ref={inputRef} value={text} onChange={(e)=> setText(e.target.value)}/> {/* liga o ref para o input, passando a ter acesso direto ao input  */}
+          
+          <input type="submit"  value="enviar"/>
+        </form>
+    

@@ -1,0 +1,27 @@
+ele gerencia os valores, isso permite renderizar um componente, de forma simples ele altera o estado em componentes funcionais no react
+
+import React from 'react'
+import { useState } from 'react'
+const HookUseState = () => {
+    // usestate-1 
+    let userName ="jonas "
+    const [name , setName] = useState("matheus")
+
+   const changeName = () =>{
+    userName="nuem"
+    setName("piranha da jsk")
+   }
+
+  return (
+    <div>
+        {/* usestate-1 */}
+        <h2>useState</h2>
+        <p>Variavel {userName}</p>
+        <p>UseState:{name}</p>
+        <button onClick={changeName}></button>
+    <hr />
+    </div>
+  )
+}
+
+export default HookUseState

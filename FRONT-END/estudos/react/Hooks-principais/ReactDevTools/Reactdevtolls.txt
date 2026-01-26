@@ -1,0 +1,1 @@
+e uma extensao do navegador nela coseguimos entender o que o react ta gerando por meio de nosso codigo, verifar ate os states e outros parametros 

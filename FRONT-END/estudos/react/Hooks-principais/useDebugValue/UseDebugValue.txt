@@ -1,0 +1,4 @@
+usado para debug, muito ultilizado com o custom hook
+
+  useDebugValue("-- CUSTOM HOOK COM USEDEBUGVALUE --");
+  useDebugValue("O número anterior é:" + value);

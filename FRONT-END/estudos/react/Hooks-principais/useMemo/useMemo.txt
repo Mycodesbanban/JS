@@ -1,0 +1,13 @@
+otimizar a performance, memorizando o resultado de calculos de dispendiosos entre renderizacoes. ele armazena o valor de retorno de uma funcao e so recalcula quando as dependencias forem alteradas, tambem usado para referencias de objeto
+
+const expensiveValue = useMemo(() => {
+  // Cálculos complexos aqui
+  return calcularAlgoComplexo(dep1, dep2);
+}, [dep1, dep2]); so recalcula quando esse mudar
+
+
+referencia de objeto:
+ const config = useMemo(() => ({ 
+  theme: 'dark', 
+  duration: 300 
+}), []); mesmo objeto em todas as renderizacoes

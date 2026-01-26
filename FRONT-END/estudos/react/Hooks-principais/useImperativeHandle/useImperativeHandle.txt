@@ -1,0 +1,21 @@
+permite o componente filho passar funcao, metodos para o pai usado em conjuto com o forwardRef(passa a referencia para os elementos filhos), o pai executar uma funcao no componente filho de forma imperetiva 
+
+
+componente pai:
+
+const componentRef = useRef()
+
+<SomeComponent ref={componentRef}/> {/* referencia ao componente, isso so ocorre se no componente estivemos usando o forwardRef*/}
+<button onClick={() => componentRef.current.validate()}>Validate</button>
+
+
+componente filho:
+
+import { forwardRef, useRef, useImperativeHandle } from 'react'
+
+const SomeComponent =  forwardRef((props, ref) => { // referencia componentes
+  useImperativeHandle(ref, ()=>{
+    return {validate:() =>{ // metodo que vai ser retornando no elemento pai
+   console.log( "louco")
+    }}})
+})

@@ -1,0 +1,5 @@
+memoriza uma funcao fazendo ela nao ser reconstruida a cada redenrizacao de um componente, O react pode indicar que uma funcao deveria esta no useCallback para evitar problemas de performance
+
+    const getItemsFromDatabase=useCallback(()=>{
+        return ["a", "b" , "c"]
+    },[])  pegou essa funcao memorizou no sistema e so vai ser recarrega somente quando carregar

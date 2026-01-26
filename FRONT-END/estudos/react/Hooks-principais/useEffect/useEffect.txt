@@ -1,0 +1,27 @@
+podemos controlar quantas vezes algo acontece com esse hook, a sintaxe e formado por uma funcao e um array de dependencias 
+
+    useEffect(() =>{
+        console.log("Maycon")
+    }) // sempre que o componente rederizar ele vai ter sua execucao novamente
+
+
+com array de dependencias (vazio):
+     useEffect(() =>{
+        console.log("maysa delicia")
+    },[]) //
+
+
+com array de dependencias:
+    useEffect(()=>{
+        console.log("Julia fede a peixe podre e a bacalhau mal lavado por motivos de mal higieni")
+    },[anoterNumberSand]) // ele e executado de acordo com a mudanca de um valor especifico
+
+
+Limpeza do useEffect:
+    useEffect(()=>{
+        const time = setTimeout(()=>{
+            console.log("QUERO CAGAR NO SULLL, MORAR EM NOVA IGUASUL, CHUPA MANGA COM O SAL, PEGA PEGA NO BILAU")
+            setNumbersad(anoterNumberSand + 1)
+        },2000)
+         return () => clearTimeout(time) // a funcao acaba quando muda de pagina 
+    },[anoterNumberSand])
