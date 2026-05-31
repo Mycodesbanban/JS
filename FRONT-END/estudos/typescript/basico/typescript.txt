@@ -1,0 +1,1 @@
+e um superset para o javascript, com tipagem estatica novos recusos e que compila javascript puro 

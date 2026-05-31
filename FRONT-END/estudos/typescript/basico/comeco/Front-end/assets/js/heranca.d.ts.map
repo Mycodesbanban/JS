@@ -1,0 +1,1 @@
+{"version":3,"file":"heranca.d.ts","sourceRoot":"","sources":["../../../src/heranca.ts"],"names":[],"mappings":"AAAA,qBAAa,MAAM;IACf,IAAI,EAAC,MAAM,CAAA;IACX,SAAS,EAAC,MAAM,CAAA;gBACJ,IAAI,EAAE,MAAM,EAAE,SAAS,EAAC,MAAM;IAI1C,OAAO,IAAG,MAAM;CAGnB;AACD,qBAAa,KAAM,SAAQ,MAAM;IAC7B,OAAO,IAAG,MAAM;CAMnB"}

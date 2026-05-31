@@ -1,0 +1,6 @@
+{
+  "code-runner.executorMap": {
+   "typescript": "clear && npx tsx $fullFileName",
+   "code-runner.ignoreSelection": true
+  }
+}

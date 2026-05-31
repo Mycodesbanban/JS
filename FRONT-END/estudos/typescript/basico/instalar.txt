@@ -1,0 +1,1 @@
+usamos npm i typescript -D

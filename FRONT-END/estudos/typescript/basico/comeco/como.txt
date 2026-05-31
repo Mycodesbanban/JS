@@ -1,0 +1,1 @@
+para executar um arquivo ts pelo o coder runner temos que instalar o ts-node: npm i ts-node -D e depois criar a pasta .vscode e criar um arquivo settings.json (este arquivo e referente a somente esse projeto)

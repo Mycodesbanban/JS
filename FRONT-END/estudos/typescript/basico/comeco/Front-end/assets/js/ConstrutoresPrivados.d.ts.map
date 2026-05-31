@@ -1,0 +1,1 @@
+{"version":3,"file":"ConstrutoresPrivados.d.ts","sourceRoot":"","sources":["../../../src/ConstrutoresPrivados.ts"],"names":[],"mappings":"AAAA,qBAAa,QAAQ;IAEG,OAAO,CAAC,IAAI;IAAS,OAAO,CAAC,IAAI;IAAU,OAAO,CAAC,QAAQ;IAD/E,OAAO,CAAC,MAAM,CAAC,QAAQ,CAAS;IAChC,OAAO;IAGP,OAAO,IAAG,IAAI;IAGd,MAAM,CAAC,WAAW,CAAC,IAAI,EAAC,MAAM,EAAE,IAAI,EAAC,MAAM,EAAE,QAAQ,EAAC,MAAM,GAAG,QAAQ;CAO1E"}

@@ -1,0 +1,2 @@
+e como se fosse duas constante em um mesmo arquivo
+para resolver exportamos/importamos alguma coisa 

@@ -1,0 +1,1 @@
+criamos o arquivo ts e depois executamos o npx tsc (nome do arquivo) e criou o js puro
