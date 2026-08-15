@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@theme{
+  --background-image-penis:url("./assets/bg.png");
+  --default-font-family: "Poppins";
+  --animate-float-right: floatRight 1s ease-in-out infinite;
+  @keyframes floatRight {
+      0%,100%{
+        transform: translateX(0);
+      }50%{
+        transform: translateX(8px);
+      }
+      
+    }
+    --animate-pisca-pisca: piscaPisca 2.5s infinite;
+
+  @keyframes piscaPisca {
+    0%, 100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.2;
+    }
+  }
+  }

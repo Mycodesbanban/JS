@@ -27,6 +27,7 @@ const big = new Gay("Big", 23)
 console.log(big.namefull())
 
 
+
 // Declaration merging
 
 //  juntas esses dois 

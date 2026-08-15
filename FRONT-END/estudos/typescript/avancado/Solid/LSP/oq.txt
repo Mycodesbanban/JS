@@ -1,0 +1,3 @@
+princiopio da substituicao
+
+explicao: se meu programa espera Animal, algo do tipo gato (que herde de Animal) deve servir como qualquer outro Animal

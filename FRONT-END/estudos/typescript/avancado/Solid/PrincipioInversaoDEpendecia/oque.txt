@@ -1,0 +1,5 @@
+modulos de alto nivel nao devem depender de modulos de baixo nivel 
+ambos devem depender de abstracoes 
+depender de abstracoes nao e depender de implementacoes 
+as abstracoes nao devem depender de detalhes, mas os detalhes depender das abstracoes
+

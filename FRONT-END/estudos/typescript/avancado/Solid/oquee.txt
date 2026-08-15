@@ -1,0 +1,10 @@
+S O L I D 
+
+sao os 5 principios da programacao que foram reunidos pra ajudar a manter o codigo limpo estavel e facil de ser mantido
+
+
+S - principio da responsabilidade unica; diz que uma classe so deve ter apenas um motivo pra mudar 
+O - principio aberto e fechado; deve estar aberto para extensoes e fechados pra modificacoes 
+L- principio da subtituicao; 
+I - principio da segregacao de interface - nao devem ser forcados a depender de interfaces que nao ultilizam
+D- principio da inversao da dependecia; modulos de alto nivel nao devem depender de modulos de baixo nivel

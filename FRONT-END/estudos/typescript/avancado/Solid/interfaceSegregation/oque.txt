@@ -1,0 +1,4 @@
+nao pode forcar a depender de interfaces que nao usam
+
+
+tipo um cpnj
