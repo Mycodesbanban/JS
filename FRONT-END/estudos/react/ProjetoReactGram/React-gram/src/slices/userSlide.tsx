@@ -6,10 +6,13 @@ interface User {
     _id:string,
     name:string,
     email:string,
+    bio:string,
+    password:string, 
+    profileImage: string 
 }
 
 interface InitialState {
-    user:User | null
+    user:User | null | {}
     error: boolean | null
     sucess: boolean | null
     loading: boolean
@@ -25,13 +28,43 @@ const initialState:InitialState ={
 
 }
 
-export const profile = createAsyncThunk<User, void , {state:RootState}>("user/profile", async(user , thunkApi )=>{
+export const profile = createAsyncThunk<User, void>(
+    "user/profile",
+    async () => {
 
-    const token = thunkApi.getState().auth.user.token
-    const data = await userService.profile(user, token)
-    return data;
+        const user = JSON.parse(localStorage.getItem("user")!)
 
+        const token = user.token
+
+        const data = await userService.profile(null, token)
+
+        return data
+    }
+)
+
+export const updateProfile = createAsyncThunk(
+    "user/update",
+    async (formData: FormData, thunkApi) => {
+
+        const user = JSON.parse(localStorage.getItem("user")!)
+        const token = user.token
+
+        const data = await userService.updateProfile(formData, token)
+
+        if (data.errors) {
+            return thunkApi.rejectWithValue(data.errors[0])
+        }
+
+        return data
+    }
+)
+
+export const getUserDetails = createAsyncThunk("user/get", async(id, thunkAPI)=> {
+    const data = await  userService.getUserDetails(id)
+    return data 
 })
+
+
 
 export const userSlice = createSlice({
     name:"user",
@@ -45,6 +78,30 @@ export const userSlice = createSlice({
                 state.loading = true
                 state.error= false
             }).addCase(profile.fulfilled, (state, action) =>{
+                state.sucess = true
+                state.loading = false 
+                state.error = null
+                state.user = action.payload // pegando o valor que foi retornado no createAsnycThunk, no caso o usuario
+            }).addCase(updateProfile.pending, (state) =>{ // carregando
+                        state.loading = true
+                        state.error= false
+                    }).addCase(updateProfile.fulfilled, (state, action) =>{
+                        state.sucess = true
+                        state.loading = false 
+                        state.error = null
+                        state.user = action.payload // pegando o valor que foi retornado no createAsnycThunk, no caso o usuario
+                        state.message = "Usuario atualizado com sucesso"
+                    }).addCase(updateProfile.rejected, (state, action) =>{
+                        console.log(state, action)
+                        state.error= action.payload ?? "error ao cadrastar"// pegando o error retornando
+                        state.loading = false
+                        state.user = {}
+                    }).addCase(getUserDetails
+                        .pending, (state) =>{ // carregando
+                state.loading = true
+                state.error= false
+            }).addCase(getUserDetails
+                .fulfilled, (state, action) =>{
                 state.sucess = true
                 state.loading = false 
                 state.error = null

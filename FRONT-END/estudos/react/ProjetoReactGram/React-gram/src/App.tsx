@@ -12,6 +12,7 @@ import Footer from './components/Footer.tsx'
 
 import './App.css'
 import EditProfile from './Pages/EditProfile/EditProfile.tsx'
+import Profile from './Pages/Profile/Profile.tsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -34,6 +35,7 @@ function App() {
         <Route path='/login' element={!auth ? <Login/> : <Navigate to='/'/>}/>
         <Route path='/register' element={!auth ? <Register/> : <Navigate to='/'/>}/>
         <Route path='/profile' element={auth ? <EditProfile/> : <Navigate to='/login'/>}/>
+        <Route path='/users/:id' element={auth ? <Profile/> : <Navigate to='/login'/>}/>
       </Routes>
       </div>
       <Footer/>
