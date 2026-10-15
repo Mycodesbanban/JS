@@ -13,6 +13,8 @@ import Footer from './components/Footer.tsx'
 import './App.css'
 import EditProfile from './Pages/EditProfile/EditProfile.tsx'
 import Profile from './Pages/Profile/Profile.tsx'
+import Photo from './Pages/Photo/Photo.tsx'
+import Search from './Pages/Search/Search.tsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -36,6 +38,9 @@ function App() {
         <Route path='/register' element={!auth ? <Register/> : <Navigate to='/'/>}/>
         <Route path='/profile' element={auth ? <EditProfile/> : <Navigate to='/login'/>}/>
         <Route path='/users/:id' element={auth ? <Profile/> : <Navigate to='/login'/>}/>
+        <Route path='/photos/:id' element={auth ? <Photo/> : <Navigate to='/login'/>}/>
+        <Route path='/search' element={auth ? <Search/> : <Navigate to='/login'/>}/>
+
       </Routes>
       </div>
       <Footer/>
